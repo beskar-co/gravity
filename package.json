@@ -29,6 +29,7 @@
     "@vitejs/plugin-react-swc": "^3.2.0",
     "babel-loader": "^8.3.0",
     "eslint-plugin-storybook": "^0.6.11",
+    "ts-node": "^10.9.1",
     "vite": "^4.2.1"
   }
 }
