@@ -4,7 +4,7 @@ export default defineConfig({
   entry: ['src/**/*.tsx', '!src/**/*.stories.tsx'],
   sourcemap: true,
   dts: true,
-  format: ['esm'],
+  format: ['cjs'],
   clean: true,
   splitting: false,
 });
