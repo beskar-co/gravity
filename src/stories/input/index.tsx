@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import type { InputHTMLAttributes } from 'react';
 import { useId, forwardRef } from 'react';
 import { Label } from '../label';
+import { Hint } from '../hint';
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
@@ -24,7 +25,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         />
-        {props.hint && <p className="text-sm text-slate-500">{props.hint}</p>}
+        {props.hint && <Hint>{props.hint}</Hint>}
       </div>
     );
   }

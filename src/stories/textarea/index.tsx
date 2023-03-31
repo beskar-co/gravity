@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import type { TextareaHTMLAttributes } from 'react';
 import { useId, forwardRef } from 'react';
 import { Label } from '../label';
+import { Hint } from '../hint';
 
 export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label?: string;
@@ -23,7 +24,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           ref={ref}
           {...props}
         />
-        {props.hint && <p className="text-sm text-slate-500">{props.hint}</p>}
+        {props.hint && <Hint>{props.hint}</Hint>}
       </div>
     );
   }

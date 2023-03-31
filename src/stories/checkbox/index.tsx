@@ -6,6 +6,7 @@ import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import clsx from 'clsx';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import { Label } from '../label';
+import { Hint } from '../hint';
 
 type CheckboxProps = ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & {
   label: string;
@@ -37,11 +38,7 @@ const Checkbox = forwardRef<
       </CheckboxPrimitive.Root>
       <div className="grid gap-1.5 leading-none">
         <Label htmlFor={id}>{label}</Label>
-        {hint && (
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">
-            {hint}
-          </p>
-        )}
+        {hint && <Hint>{hint}</Hint>}
       </div>
     </div>
   );
