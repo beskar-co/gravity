@@ -1,3 +1,18 @@
+# v0.1.8 (Fri Mar 31 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/beskar-co/gravity ([@haydenbleasel](https://github.com/haydenbleasel))
+- Update tsup.config.ts ([@haydenbleasel](https://github.com/haydenbleasel))
+- Fix storybook build error ([@haydenbleasel](https://github.com/haydenbleasel))
+- Cleanup main.ts ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.7 (Fri Mar 31 2023)
 
 #### ⚠️ Pushed to `main`
