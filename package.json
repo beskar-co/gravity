@@ -8,11 +8,12 @@
     "package": "tsup"
   },
   "files": [
-    "dist/**"
+    "dist/*"
   ],
   "sideEffects": false,
   "exports": {
-    "./*": "./dist/*"
+    "./*/": "./dist/*/index",
+    "./dist/*": "./dist/*"
   },
   "typesVersions": {
     "*": {
