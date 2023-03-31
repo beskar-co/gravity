@@ -1,3 +1,15 @@
+# v0.1.10 (Fri Mar 31 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Attempt GPT4 fix ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.9 (Fri Mar 31 2023)
 
 #### ⚠️ Pushed to `main`
