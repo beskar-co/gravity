@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 3000",
-    "build": "build-storybook"
+    "build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
