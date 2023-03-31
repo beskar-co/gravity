@@ -7,9 +7,12 @@
     "build": "build-storybook"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.17",
+    "@radix-ui/react-navigation-menu": "^1.1.2",
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
+    "clsx": "^1.2.1",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
