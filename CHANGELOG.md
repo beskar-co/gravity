@@ -1,3 +1,15 @@
+# v0.1.3 (Fri Mar 31 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Update package.json ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.2 (Fri Mar 31 2023)
 
 #### ⚠️ Pushed to `main`
