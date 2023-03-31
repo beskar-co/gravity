@@ -1,3 +1,15 @@
+# v0.1.7 (Fri Mar 31 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Update package config ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.6 (Fri Mar 31 2023)
 
 #### ⚠️ Pushed to `main`
