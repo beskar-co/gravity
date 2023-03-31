@@ -3,12 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 3000",
+    "build": "build-storybook"
   },
   "dependencies": {
     "@types/node": "18.15.11",
