@@ -1,3 +1,15 @@
+# v0.1.4 (Fri Mar 31 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Map root to dist ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.3 (Fri Mar 31 2023)
 
 #### ⚠️ Pushed to `main`
