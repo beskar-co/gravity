@@ -11,7 +11,7 @@
     "dist/**"
   ],
   "exports": {
-    ".": "./dist/"
+    "./*": "./dist/*"
   },
   "publishConfig": {
     "access": "public",
