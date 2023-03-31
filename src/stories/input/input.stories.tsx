@@ -18,3 +18,18 @@ Default.args = {
   type: 'email',
   placeholder: 'jane@acme.com',
 };
+
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  type: 'email',
+  placeholder: 'jane@acme.com',
+  label: 'Email',
+};
+
+export const WithHint = Template.bind({});
+WithHint.args = {
+  type: 'email',
+  placeholder: 'jane@acme.com',
+  label: 'Email',
+  hint: 'We will never share your email with anyone else.',
+};

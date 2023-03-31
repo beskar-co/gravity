@@ -19,3 +19,16 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Type your message here.',
 };
+
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  placeholder: 'Type your message here.',
+  label: 'Message',
+};
+
+export const WithHint = Template.bind({});
+WithHint.args = {
+  placeholder: 'Type your message here.',
+  label: 'Message',
+  hint: 'We will never share your message with anyone else.',
+};
