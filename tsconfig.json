@@ -29,7 +29,8 @@
     "**/*.mjs",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".storybook/**/*.ts"
   ],
   "exclude": ["node_modules"],
   "ts-node": {
