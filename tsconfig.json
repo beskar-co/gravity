@@ -32,7 +32,7 @@
     ".next/types/**/*.ts",
     ".storybook/**/*.ts"
   ],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "**/*.js"],
   "ts-node": {
     "compilerOptions": {
       "module": "commonjs"
