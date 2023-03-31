@@ -12,16 +12,16 @@ export default {
 } as ComponentMeta<typeof Checkbox>;
 
 const Template: ComponentStory<typeof Checkbox> = (args) => (
-  <div className="flex items-center space-x-2">
-    <Checkbox id="terms" {...args} />
-    <label
-      htmlFor="terms"
-      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-    >
-      Accept terms and conditions
-    </label>
-  </div>
+  <Checkbox {...args} />
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  label: 'Accept terms and conditions',
+};
+
+export const WithHint = Template.bind({});
+WithHint.args = {
+  label: 'Accept terms and conditions',
+  hint: 'You agree to our Terms of Service and Privacy Policy.',
+};
