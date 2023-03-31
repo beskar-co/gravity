@@ -5,6 +5,7 @@ import { Label } from '../label';
 
 export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label?: string;
+  hint?: string;
 };
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
@@ -22,6 +23,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           ref={ref}
           {...props}
         />
+        {props.hint && <p className="text-sm text-slate-500">{props.hint}</p>}
       </div>
     );
   }

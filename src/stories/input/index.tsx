@@ -5,6 +5,7 @@ import { Label } from '../label';
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
+  hint?: string;
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -23,6 +24,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         />
+        {props.hint && <p className="text-sm text-slate-500">{props.hint}</p>}
       </div>
     );
   }
