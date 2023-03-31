@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Avatar, AvatarFallback, AvatarImage } from './';
+import { Avatar } from './';
 
 export default {
   title: 'Example/Avatar',
@@ -11,12 +11,10 @@ export default {
   },
 } as ComponentMeta<typeof Avatar>;
 
-const Template: ComponentStory<typeof Avatar> = (args) => (
-  <Avatar {...args}>
-    <AvatarImage src="https://github.com/shadcn.png" />
-    <AvatarFallback>CN</AvatarFallback>
-  </Avatar>
-);
+const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  src: 'https://github.com/haydenbleasel.png',
+  fallback: 'HB',
+};

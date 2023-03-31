@@ -5,19 +5,28 @@ import { forwardRef } from 'react';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import clsx from 'clsx';
 
-const Avatar = forwardRef<
-  ElementRef<typeof AvatarPrimitive.Root>,
-  ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
->(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Root
-    ref={ref}
-    className={clsx(
-      'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
-      className
-    )}
-    {...props}
-  />
-));
+type AvatarProps = ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & {
+  fallback: ComponentPropsWithoutRef<
+    typeof AvatarPrimitive.Fallback
+  >['children'];
+  src: ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>['src'];
+};
+
+const Avatar = forwardRef<ElementRef<typeof AvatarPrimitive.Root>, AvatarProps>(
+  ({ className, ...props }, ref) => (
+    <AvatarPrimitive.Root
+      ref={ref}
+      className={clsx(
+        'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
+        className
+      )}
+      {...props}
+    >
+      <AvatarPrimitive.Image src={props.src} />
+      <AvatarPrimitive.Fallback>{props.fallback}</AvatarPrimitive.Fallback>
+    </AvatarPrimitive.Root>
+  )
+);
 Avatar.displayName = AvatarPrimitive.Root.displayName;
 
 const AvatarImage = forwardRef<
@@ -47,4 +56,4 @@ const AvatarFallback = forwardRef<
 ));
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 
-export { Avatar, AvatarImage, AvatarFallback };
+export { Avatar };
