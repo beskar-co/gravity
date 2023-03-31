@@ -1,3 +1,15 @@
+# v0.1.9 (Fri Mar 31 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Fix JSX ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.8 (Fri Mar 31 2023)
 
 #### ⚠️ Pushed to `main`
