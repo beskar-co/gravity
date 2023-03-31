@@ -1,12 +1,12 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./"
+} from './';
 
 export default {
   title: 'Example/Accordion',
@@ -17,7 +17,7 @@ export default {
 } as ComponentMeta<typeof Accordion>;
 
 const Template: ComponentStory<typeof Accordion> = (args) => (
-  <Accordion type="single" collapsible>
+  <Accordion {...args}>
     <AccordionItem value="item-1">
       <AccordionTrigger>Is it accessible?</AccordionTrigger>
       <AccordionContent>
@@ -27,8 +27,8 @@ const Template: ComponentStory<typeof Accordion> = (args) => (
     <AccordionItem value="item-2">
       <AccordionTrigger>Is it styled?</AccordionTrigger>
       <AccordionContent>
-        Yes. It comes with default styles that matches the other components&apos;
-        aesthetic.
+        Yes. It comes with default styles that matches the other
+        components&apos; aesthetic.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="item-3">
@@ -41,4 +41,7 @@ const Template: ComponentStory<typeof Accordion> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  type: 'single',
+  collapsible: true,
+};
