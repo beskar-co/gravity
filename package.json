@@ -1,5 +1,5 @@
 {
-  "name": "gravity",
+  "name": "@beskar-labs/gravity",
   "description": "Beskar Labs Design System",
   "version": "0.1.0",
   "scripts": {
