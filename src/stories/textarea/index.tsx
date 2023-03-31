@@ -7,11 +7,18 @@ import { Hint } from '../hint';
 export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label?: string;
   hint?: string;
+  onChangeText?: (text: string) => void;
 };
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, ...props }, ref) => {
     const id = useId();
+
+    const handleChange: TextareaHTMLAttributes<HTMLTextAreaElement>['onChange'] =
+      (event) => {
+        props.onChange?.(event);
+        props.onChangeText?.(event.target.value);
+      };
 
     return (
       <div className="grid w-full max-w-sm items-center gap-1.5">
@@ -22,6 +29,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             className
           )}
           ref={ref}
+          onChange={handleChange}
           {...props}
         />
         {props.hint && <Hint>{props.hint}</Hint>}

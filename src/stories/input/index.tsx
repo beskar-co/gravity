@@ -7,11 +7,19 @@ import { Hint } from '../hint';
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   hint?: string;
+  onChangeText?: (value: string) => void;
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, ...props }, ref) => {
     const id = useId();
+
+    const handleChange: InputHTMLAttributes<HTMLInputElement>['onChange'] = (
+      event
+    ) => {
+      props.onChange?.(event);
+      props.onChangeText?.(event.target.value);
+    };
 
     return (
       <div className="grid w-full max-w-sm items-center gap-1.5">
@@ -23,6 +31,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             className
           )}
           ref={ref}
+          onChange={handleChange}
           {...props}
         />
         {props.hint && <Hint>{props.hint}</Hint>}
