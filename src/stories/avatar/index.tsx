@@ -24,7 +24,7 @@ const AvatarFallback = forwardRef<
   <AvatarPrimitive.Fallback
     ref={ref}
     className={clsx(
-      'flex h-full w-full items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700',
+      'flex h-full w-full items-center justify-center rounded-full bg-neutral-100 dark:bg-neutral-700',
       className
     )}
     {...props}
