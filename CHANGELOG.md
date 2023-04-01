@@ -1,3 +1,15 @@
+# v0.1.24 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Scaffold Tabs ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.23 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
