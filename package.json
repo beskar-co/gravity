@@ -89,21 +89,85 @@
     "extends": "@beskar-labs/harmony/stylelint"
   },
   "exports": {
-    "./accordion": "./dist/accordion/index.js",
-    "./avatar": "./dist/avatar/index.js",
-    "./button": "./dist/button/index.js",
-    "./checkbox": "./dist/checkbox/index.js",
-    "./dialog": "./dist/dialog/index.js",
-    "./dropdown": "./dist/dropdown/index.js",
-    "./fileupload": "./dist/fileupload/index.js",
-    "./hint": "./dist/hint/index.js",
-    "./input": "./dist/input/index.js",
-    "./label": "./dist/label/index.js",
-    "./navigationmenu": "./dist/navigationmenu/index.js",
-    "./progress": "./dist/progress/index.js",
-    "./select": "./dist/select/index.js",
-    "./switch": "./dist/switch/index.js",
-    "./textarea": "./dist/textarea/index.js",
-    "./tooltip": "./dist/tooltip/index.js"
+    "./accordion": {
+      "import": "./dist/accordion/index.js",
+      "require": "./dist/accordion/index.js",
+      "types": "./dist/accordion/index.d.ts"
+    },
+    "./avatar": {
+      "import": "./dist/avatar/index.js",
+      "require": "./dist/avatar/index.js",
+      "types": "./dist/avatar/index.d.ts"
+    },
+    "./button": {
+      "import": "./dist/button/index.js",
+      "require": "./dist/button/index.js",
+      "types": "./dist/button/index.d.ts"
+    },
+    "./checkbox": {
+      "import": "./dist/checkbox/index.js",
+      "require": "./dist/checkbox/index.js",
+      "types": "./dist/checkbox/index.d.ts"
+    },
+    "./dialog": {
+      "import": "./dist/dialog/index.js",
+      "require": "./dist/dialog/index.js",
+      "types": "./dist/dialog/index.d.ts"
+    },
+    "./dropdown": {
+      "import": "./dist/dropdown/index.js",
+      "require": "./dist/dropdown/index.js",
+      "types": "./dist/dropdown/index.d.ts"
+    },
+    "./fileupload": {
+      "import": "./dist/fileupload/index.js",
+      "require": "./dist/fileupload/index.js",
+      "types": "./dist/fileupload/index.d.ts"
+    },
+    "./hint": {
+      "import": "./dist/hint/index.js",
+      "require": "./dist/hint/index.js",
+      "types": "./dist/hint/index.d.ts"
+    },
+    "./input": {
+      "import": "./dist/input/index.js",
+      "require": "./dist/input/index.js",
+      "types": "./dist/input/index.d.ts"
+    },
+    "./label": {
+      "import": "./dist/label/index.js",
+      "require": "./dist/label/index.js",
+      "types": "./dist/label/index.d.ts"
+    },
+    "./navigationmenu": {
+      "import": "./dist/navigationmenu/index.js",
+      "require": "./dist/navigationmenu/index.js",
+      "types": "./dist/navigationmenu/index.d.ts"
+    },
+    "./progress": {
+      "import": "./dist/progress/index.js",
+      "require": "./dist/progress/index.js",
+      "types": "./dist/progress/index.d.ts"
+    },
+    "./select": {
+      "import": "./dist/select/index.js",
+      "require": "./dist/select/index.js",
+      "types": "./dist/select/index.d.ts"
+    },
+    "./switch": {
+      "import": "./dist/switch/index.js",
+      "require": "./dist/switch/index.js",
+      "types": "./dist/switch/index.d.ts"
+    },
+    "./textarea": {
+      "import": "./dist/textarea/index.js",
+      "require": "./dist/textarea/index.js",
+      "types": "./dist/textarea/index.d.ts"
+    },
+    "./tooltip": {
+      "import": "./dist/tooltip/index.js",
+      "require": "./dist/tooltip/index.js",
+      "types": "./dist/tooltip/index.d.ts"
+    }
   }
 }
