@@ -9,10 +9,11 @@ import { Label } from '../label';
 type FileUploadProps = {
   label?: string;
   value?: File;
-  onChange?: (file: File) => void;
+  onChange?: (files: File[]) => void;
   onError?: (error: string) => void;
   accept: string[];
   maxSize?: number;
+  maxFiles?: number;
 };
 
 export const FileUpload: FC<FileUploadProps> = ({
@@ -22,34 +23,40 @@ export const FileUpload: FC<FileUploadProps> = ({
   onError,
   accept,
   maxSize = 5,
+  maxFiles = 1,
 }) => {
   const id = useId();
   const handleChange = (files: File[]) => {
-    if (files.length > 1) {
-      onError?.('Only one file can be uploaded at a time');
+    if (files.length > maxFiles) {
+      onError?.(
+        `Only ${maxFiles} file${
+          maxFiles > 1 ? 's' : ''
+        } can be uploaded at a time`
+      );
       return;
     }
 
-    const file = files[0];
+    files.forEach((file) => {
+      if (file.size > maxSize * 1024 * 1024) {
+        onError?.(`File size must be less than ${maxSize}MB`);
+        return;
+      }
 
-    if (file.size > maxSize * 1024 * 1024) {
-      onError?.(`File size must be less than ${maxSize}MB`);
-      return;
-    }
+      const extension = getExtension(file.type);
 
-    const extension = getExtension(file.type);
+      if (!extension) {
+        onError?.(`File type ${file.type} is not supported`);
+        return;
+      }
 
-    if (!extension) {
-      onError?.('File type is not supported');
-      return;
-    }
+      if (!accept.includes(`.${extension}`)) {
+        onError?.(
+          `File type must be one of the following: ${accept.join(', ')}`
+        );
+      }
+    });
 
-    if (!accept.includes(`.${extension}`)) {
-      onError?.(`File type must be one of the following: ${accept.join(', ')}`);
-      return;
-    }
-
-    onChange?.(file);
+    onChange?.(files);
   };
 
   const inputRef = useRef<HTMLInputElement>(null);
