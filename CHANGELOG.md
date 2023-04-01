@@ -1,3 +1,15 @@
+# v0.1.29 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Start implementing argTypes for events ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.28 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
