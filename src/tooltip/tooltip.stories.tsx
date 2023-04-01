@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   content: 'Add to library',
-  trigger: (
+  children: (
     <button type="button" className="w-10 rounded-full p-0">
       <PlusIcon className="h-4 w-4" />
       <span className="sr-only">Add</span>
