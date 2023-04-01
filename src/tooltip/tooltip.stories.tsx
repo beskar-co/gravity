@@ -1,7 +1,6 @@
-import React from 'react';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './';
+import { Tooltip, TooltipProvider } from './';
 import { PlusIcon } from '@heroicons/react/20/solid';
 
 export default {
@@ -14,19 +13,17 @@ export default {
 
 const Template: ComponentStory<typeof Tooltip> = (args) => (
   <TooltipProvider>
-    <Tooltip {...args}>
-      <TooltipTrigger asChild>
-        <button type="button" className="w-10 rounded-full p-0">
-          <PlusIcon className="h-4 w-4" />
-          <span className="sr-only">Add</span>
-        </button>
-      </TooltipTrigger>
-      <TooltipContent>
-        <p>Add to library</p>
-      </TooltipContent>
-    </Tooltip>
+    <Tooltip {...args} />
   </TooltipProvider>
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  content: 'Add to library',
+  trigger: (
+    <button type="button" className="w-10 rounded-full p-0">
+      <PlusIcon className="h-4 w-4" />
+      <span className="sr-only">Add</span>
+    </button>
+  ),
+};
