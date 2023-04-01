@@ -13,8 +13,26 @@ type TabsProps = React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root> & {
     label: TabsPrimitive.TabsTriggerProps['children'];
     href?: string;
     content?: TabsPrimitive.TabsContentProps['children'];
+    badge?: string;
   }[];
 };
+
+const Badge: React.FC<{
+  children: React.ReactNode;
+  active: boolean;
+}> = ({ children, active }) => (
+  <span
+    className={clsx(
+      active ? 'bg-neutral-100 text-neutral-900' : 'bg-white text-neutral-500',
+      active
+        ? 'dark:bg-neutral-800 dark:text-white'
+        : 'dark:bg-neutral-900 dark:text-neutral-400',
+      'ml-3 hidden rounded-full px-2.5 py-0.5 text-xs font-medium md:inline-block'
+    )}
+  >
+    {children}
+  </span>
+);
 
 const Tabs = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Root>,
@@ -56,9 +74,19 @@ const Tabs = React.forwardRef<
             asChild={!!item.href}
           >
             {item.href ? (
-              <Link href={item.href}>{item.label}</Link>
+              <Link href={item.href} className="flex items-center gap-2">
+                {item.label}
+                {item.badge && (
+                  <Badge active={item.value === value}>{item.badge}</Badge>
+                )}
+              </Link>
             ) : (
-              item.label
+              <span className="flex items-center gap-2">
+                {item.label}
+                {item.badge && (
+                  <Badge active={item.value === value}>{item.badge}</Badge>
+                )}
+              </span>
             )}
           </TabsPrimitive.Trigger>
         ))}

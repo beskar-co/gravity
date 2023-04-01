@@ -53,3 +53,12 @@ AllLinks.args = {
     { value: 'three', label: 'Three', href: 'https://www.google.com/' },
   ],
 };
+
+export const WithBadges = Template.bind({});
+WithBadges.args = {
+  items: [
+    { value: 'one', label: 'One', badge: 'New' },
+    { value: 'two', label: 'Two', badge: 'New' },
+    { value: 'three', label: 'Three', badge: 'New' },
+  ],
+};
