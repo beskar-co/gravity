@@ -1,3 +1,15 @@
+# v0.1.23 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Export new components ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.22 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
