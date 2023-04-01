@@ -55,4 +55,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx auto shipit --only-publish-with-release-label false
+        run: npx auto shipit
