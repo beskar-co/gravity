@@ -1,3 +1,16 @@
+# v0.1.14 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Update exports ([@haydenbleasel](https://github.com/haydenbleasel))
+- Update exports field ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.13 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
