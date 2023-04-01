@@ -119,10 +119,10 @@
       "require": "./dist/dropdown/index.js",
       "types": "./dist/dropdown/index.d.ts"
     },
-    "./fileupload": {
-      "import": "./dist/fileupload/index.js",
-      "require": "./dist/fileupload/index.js",
-      "types": "./dist/fileupload/index.d.ts"
+    "./fileUpload": {
+      "import": "./dist/fileUpload/index.js",
+      "require": "./dist/fileUpload/index.js",
+      "types": "./dist/fileUpload/index.d.ts"
     },
     "./hint": {
       "import": "./dist/hint/index.js",
@@ -139,10 +139,10 @@
       "require": "./dist/label/index.js",
       "types": "./dist/label/index.d.ts"
     },
-    "./navigationmenu": {
-      "import": "./dist/navigationmenu/index.js",
-      "require": "./dist/navigationmenu/index.js",
-      "types": "./dist/navigationmenu/index.d.ts"
+    "./navigationMenu": {
+      "import": "./dist/navigationMenu/index.js",
+      "require": "./dist/navigationMenu/index.js",
+      "types": "./dist/navigationMenu/index.d.ts"
     },
     "./progress": {
       "import": "./dist/progress/index.js",
