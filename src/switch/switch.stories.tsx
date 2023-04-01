@@ -1,4 +1,3 @@
-import React from 'react';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Switch } from './';
@@ -14,4 +13,12 @@ export default {
 const Template: ComponentStory<typeof Switch> = (args) => <Switch {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  label: 'Airplane Mode',
+};
+
+export const WithHint = Template.bind({});
+WithHint.args = {
+  label: 'Airplane Mode',
+  hint: 'Turn on airplane mode to disable all wireless connections.',
+};
