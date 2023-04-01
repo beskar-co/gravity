@@ -11,6 +11,7 @@ export * from './label';
 export * from './navigationMenu';
 export * from './progress';
 export * from './select';
+export * from './snippet';
 export * from './switch';
 export * from './textarea';
 export * from './tooltip';
