@@ -37,6 +37,7 @@ Link.args = {
 
 export const Pressable = Template.bind({});
 Pressable.args = {
+  // eslint-disable-next-line no-console
   onClick: console.log,
   children: 'Button',
 };
