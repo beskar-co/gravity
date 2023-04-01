@@ -9,16 +9,9 @@
     "postpackage": "node lib/generate-exports.js"
   },
   "files": [
-    "dist/*"
+    "dist/**"
   ],
   "sideEffects": false,
-  "typesVersions": {
-    "*": {
-      "*": [
-        "dist/*"
-      ]
-    }
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
