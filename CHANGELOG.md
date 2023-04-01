@@ -1,3 +1,15 @@
+# v0.1.26 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Update index.ts ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.25 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
