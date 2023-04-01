@@ -9,6 +9,10 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
+  argTypes: {
+    onChange: { action: 'File Upload Success' },
+    onError: { action: 'File Upload Error' },
+  },
 } as ComponentMeta<typeof FileUpload>;
 
 const Template: ComponentStory<typeof FileUpload> = (args) => (
@@ -20,10 +24,4 @@ Default.args = {
   label: 'Cover Photo',
   accept: ['.jpg', '.jpeg', '.png'],
   maxSize: 5,
-  onChange: (file) => {
-    console.log(file);
-  },
-  onError: (error) => {
-    console.log(error);
-  },
 };
