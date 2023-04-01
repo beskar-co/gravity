@@ -12169,6 +12169,11 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
+sonner@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/sonner/-/sonner-0.3.0.tgz#efd68ac34c25814f8a80a309622230211cf71a7e"
+  integrity sha512-PJ/3k97N+/Kt/uu5tnPp3HFpFGF/iQs+hq+lAEtEQcEMc7o9S4axOV8pd7RKpFJoKt199aMUqHIgzs2re4MPbw==
+
 source-list-map@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/source-list-map/-/source-list-map-2.0.1.tgz"
