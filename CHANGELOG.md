@@ -1,3 +1,17 @@
+# v0.1.30 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/beskar-co/gravity ([@haydenbleasel](https://github.com/haydenbleasel))
+- Rebuild Dropdown ([@haydenbleasel](https://github.com/haydenbleasel))
+- Remove useless imports ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.29 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
