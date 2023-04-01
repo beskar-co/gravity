@@ -95,15 +95,67 @@
     "./checkbox": "./dist/checkbox/index.js",
     "./dialog": "./dist/dialog/index.js",
     "./dropdown": "./dist/dropdown/index.js",
-    "./fileUpload": "./dist/fileUpload/index.js",
+    "./fileupload": "./dist/fileupload/index.js",
     "./hint": "./dist/hint/index.js",
     "./input": "./dist/input/index.js",
     "./label": "./dist/label/index.js",
-    "./navigationMenu": "./dist/navigationMenu/index.js",
+    "./navigationmenu": "./dist/navigationmenu/index.js",
     "./progress": "./dist/progress/index.js",
     "./select": "./dist/select/index.js",
     "./switch": "./dist/switch/index.js",
     "./textarea": "./dist/textarea/index.js",
     "./tooltip": "./dist/tooltip/index.js"
+  },
+  "typesVersions": {
+    "*": {
+      "./accordion": [
+        "./dist/accordion/index.d.ts"
+      ],
+      "./avatar": [
+        "./dist/avatar/index.d.ts"
+      ],
+      "./button": [
+        "./dist/button/index.d.ts"
+      ],
+      "./checkbox": [
+        "./dist/checkbox/index.d.ts"
+      ],
+      "./dialog": [
+        "./dist/dialog/index.d.ts"
+      ],
+      "./dropdown": [
+        "./dist/dropdown/index.d.ts"
+      ],
+      "./fileupload": [
+        "./dist/fileupload/index.d.ts"
+      ],
+      "./hint": [
+        "./dist/hint/index.d.ts"
+      ],
+      "./input": [
+        "./dist/input/index.d.ts"
+      ],
+      "./label": [
+        "./dist/label/index.d.ts"
+      ],
+      "./navigationmenu": [
+        "./dist/navigationmenu/index.d.ts"
+      ],
+      "./progress": [
+        "./dist/progress/index.d.ts"
+      ],
+      "./select": [
+        "./dist/select/index.d.ts"
+      ],
+      "./switch": [
+        "./dist/switch/index.d.ts"
+      ],
+      "./textarea": [
+        "./dist/textarea/index.d.ts"
+      ],
+      "./tooltip": [
+        "./dist/tooltip/index.d.ts"
+      ]
+    }
   }
 }
