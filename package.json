@@ -94,5 +94,24 @@
   "prettier": "@beskar-labs/harmony/prettier",
   "stylelint": {
     "extends": "@beskar-labs/harmony/stylelint"
+  },
+  "exports": {
+    "./dist/*": "./dist/*",
+    "./accordion": "./dist/accordion/index",
+    "./avatar": "./dist/avatar/index",
+    "./button": "./dist/button/index",
+    "./checkbox": "./dist/checkbox/index",
+    "./dialog": "./dist/dialog/index",
+    "./dropdown": "./dist/dropdown/index",
+    "./fileUpload": "./dist/fileUpload/index",
+    "./hint": "./dist/hint/index",
+    "./input": "./dist/input/index",
+    "./label": "./dist/label/index",
+    "./navigationMenu": "./dist/navigationMenu/index",
+    "./progress": "./dist/progress/index",
+    "./select": "./dist/select/index",
+    "./switch": "./dist/switch/index",
+    "./textarea": "./dist/textarea/index",
+    "./tooltip": "./dist/tooltip/index"
   }
 }
