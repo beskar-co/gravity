@@ -33,7 +33,7 @@ export const Select = forwardRef<
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content className="relative z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-100 bg-white text-neutral-700 shadow-md animate-in fade-in-80 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400">
         <SelectPrimitive.Viewport className="p-1">
-          {data.map((group) => (
+          {data.map((group, index) => (
             <>
               <SelectPrimitive.Group key={group.label}>
                 {data.length > 1 && (
@@ -60,7 +60,7 @@ export const Select = forwardRef<
                   </SelectPrimitive.Item>
                 ))}
               </SelectPrimitive.Group>
-              {data.length > 1 && (
+              {data.length > 1 && index < data.length - 1 && (
                 <SelectPrimitive.Separator className="-mx-1 my-1 h-px bg-neutral-100 dark:bg-neutral-700" />
               )}
             </>

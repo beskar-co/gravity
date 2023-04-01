@@ -9,13 +9,13 @@ import type {
 import { forwardRef } from 'react';
 
 const buttonSizes = {
-  default: 'h-10 py-2 px-4',
-  sm: 'h-9 px-2 rounded-md',
-  lg: 'h-11 px-8 rounded-md',
+  sm: 'h-9 px-2',
+  md: 'h-10 py-2 px-4',
+  lg: 'h-11 px-8',
 };
 
 const buttonVariants = {
-  default:
+  primary:
     'bg-neutral-900 text-white hover:bg-neutral-700 dark:bg-neutral-50 dark:text-neutral-900',
   destructive: 'bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600',
   outline:
@@ -35,35 +35,35 @@ export type ButtonProps = {
   | ComponentPropsWithoutRef<typeof Link>
 );
 
+const baseClassName =
+  'inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900 dark:data-[state=open]:bg-neutral-800';
+
 const Button = forwardRef<
   HTMLButtonElement | ElementRef<typeof Link>,
   ButtonProps
->(({ className, variant = 'default', size = 'default', ...props }, ref) =>
-  'href' in props ? (
+>(({ className, variant = 'primary', size = 'md', ...props }, ref) => {
+  const compiledClassName = clsx(
+    baseClassName,
+    buttonVariants[variant],
+    buttonSizes[size],
+    className
+  );
+
+  return 'href' in props ? (
     <Link
-      className={clsx(
-        'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900 dark:data-[state=open]:bg-neutral-800',
-        buttonVariants[variant],
-        buttonSizes[size],
-        className
-      )}
+      className={compiledClassName}
       ref={ref as ForwardedRef<ElementRef<typeof Link>>}
       {...props}
     />
   ) : (
     // eslint-disable-next-line react/button-has-type
     <button
-      className={clsx(
-        'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900 dark:data-[state=open]:bg-neutral-800',
-        buttonVariants[variant],
-        buttonSizes[size],
-        className
-      )}
+      className={compiledClassName}
       ref={ref as ForwardedRef<HTMLButtonElement>}
       {...props}
     />
-  )
-);
+  );
+});
 Button.displayName = 'Button';
 
 export { Button, buttonVariants };
