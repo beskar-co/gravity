@@ -33,8 +33,20 @@ jobs:
           restore-keys: |
             yarn-deps-${{ hashFiles('yarn.lock') }}
 
-      - name: Build package
+      - name: Build package and modify package.json
         run: yarn package
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Hayden Bleasel"
+          git config user.email "hello@haydenbleasel.com"
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update exports"
+            git push
+          fi
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
