@@ -96,22 +96,21 @@
     "extends": "@beskar-labs/harmony/stylelint"
   },
   "exports": {
-    "./dist/*": "./dist/*",
-    "./accordion": "./dist/accordion/index",
-    "./avatar": "./dist/avatar/index",
-    "./button": "./dist/button/index",
-    "./checkbox": "./dist/checkbox/index",
-    "./dialog": "./dist/dialog/index",
-    "./dropdown": "./dist/dropdown/index",
-    "./fileUpload": "./dist/fileUpload/index",
-    "./hint": "./dist/hint/index",
-    "./input": "./dist/input/index",
-    "./label": "./dist/label/index",
-    "./navigationMenu": "./dist/navigationMenu/index",
-    "./progress": "./dist/progress/index",
-    "./select": "./dist/select/index",
-    "./switch": "./dist/switch/index",
-    "./textarea": "./dist/textarea/index",
-    "./tooltip": "./dist/tooltip/index"
+    "./accordion": "./dist/accordion/index.js",
+    "./avatar": "./dist/avatar/index.js",
+    "./button": "./dist/button/index.js",
+    "./checkbox": "./dist/checkbox/index.js",
+    "./dialog": "./dist/dialog/index.js",
+    "./dropdown": "./dist/dropdown/index.js",
+    "./fileUpload": "./dist/fileUpload/index.js",
+    "./hint": "./dist/hint/index.js",
+    "./input": "./dist/input/index.js",
+    "./label": "./dist/label/index.js",
+    "./navigationMenu": "./dist/navigationMenu/index.js",
+    "./progress": "./dist/progress/index.js",
+    "./select": "./dist/select/index.js",
+    "./switch": "./dist/switch/index.js",
+    "./textarea": "./dist/textarea/index.js",
+    "./tooltip": "./dist/tooltip/index.js"
   }
 }
