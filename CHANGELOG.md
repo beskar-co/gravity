@@ -1,3 +1,15 @@
+# v0.1.31 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Add support for links ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.30 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
