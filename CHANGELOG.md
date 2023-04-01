@@ -1,3 +1,17 @@
+# v0.1.22 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Add Sonner as Toast component ([@haydenbleasel](https://github.com/haydenbleasel))
+- Create Video component using React Player ([@haydenbleasel](https://github.com/haydenbleasel))
+- Misc fixes ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.21 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
