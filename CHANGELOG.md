@@ -1,3 +1,16 @@
+# v0.1.16 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Attempt single file export ([@haydenbleasel](https://github.com/haydenbleasel))
+- Flatten directory, remove generate-exports script ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.15 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
