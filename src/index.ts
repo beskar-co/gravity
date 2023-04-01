@@ -13,6 +13,7 @@ export * from './progress';
 export * from './select';
 export * from './snippet';
 export * from './switch';
+export * from './tabs';
 export * from './textarea';
 export * from './toast';
 export * from './tooltip';
