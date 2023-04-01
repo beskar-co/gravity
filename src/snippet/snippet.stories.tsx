@@ -24,7 +24,7 @@ Default.args = {
   onCopyError: console.log,
   // eslint-disable-next-line no-console
   onCopySuccess: console.log,
-  code: `const waitlist = 'cleftordg0002l8082tu040gj';
+  children: `const waitlist = 'cleftordg0002l8082tu040gj';
 const email = 'janesmith@acme.com';
 const name = 'Jane Smith'; // Optional
 const phone = '555-555-5555'; // Optional

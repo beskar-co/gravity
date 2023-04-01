@@ -204,10 +204,10 @@ type HljsLanguage =
 
 export const Snippet: FC<{
   language: HljsLanguage;
-  code: string;
+  children: string;
   onCopySuccess?: (text: string) => void;
   onCopyError?: (text: string) => void;
-}> = ({ language, code, onCopySuccess, onCopyError }) => {
+}> = ({ language, children, onCopySuccess, onCopyError }) => {
   const SyntaxHighlighter = dynamic(
     async () =>
       import(
@@ -238,13 +238,13 @@ export const Snippet: FC<{
           fontSize: 14,
         }}
       >
-        {code}
+        {children}
       </SyntaxHighlighter>
       <Tooltip content="Copy to clipboard">
         <button
           type="button"
           className="absolute right-4 top-4 rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800"
-          onClick={async () => handleCopy(code)}
+          onClick={async () => handleCopy(children)}
         >
           <ClipboardDocumentIcon
             className="h-4 w-4 text-neutral-400"
