@@ -2,7 +2,7 @@ import { DocumentArrowUpIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import type { ChangeEventHandler, FC } from 'react';
 import { useId, useRef } from 'react';
-import { useDrop } from 'react-use';
+import { useDropArea } from 'react-use';
 import { getExtension } from 'mime';
 import { Label } from '../label';
 
@@ -61,7 +61,7 @@ export const FileUpload: FC<FileUploadProps> = ({
   };
 
   const inputRef = useRef<HTMLInputElement>(null);
-  const state = useDrop({ onFiles: handleChange });
+  const [bond, state] = useDropArea({ onFiles: handleChange });
 
   const handleClickChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     const { files } = event.target;
@@ -85,6 +85,7 @@ export const FileUpload: FC<FileUploadProps> = ({
           'border-neutral-100 dark:border-neutral-800',
           state.over && 'bg-neutral-100 dark:bg-neutral-900'
         )}
+        {...bond}
       >
         <div className="grid gap-2 text-center">
           <DocumentArrowUpIcon
