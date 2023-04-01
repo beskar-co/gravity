@@ -1,5 +1,11 @@
 import clsx from 'clsx';
-import type { ButtonHTMLAttributes } from 'react';
+import Link from 'next/link';
+import type {
+  ButtonHTMLAttributes,
+  ComponentPropsWithoutRef,
+  ElementRef,
+  ForwardedRef,
+} from 'react';
 import { forwardRef } from 'react';
 
 const buttonSizes = {
@@ -21,13 +27,30 @@ const buttonVariants = {
   link: 'bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-neutral-900 dark:text-neutral-100 hover:bg-transparent dark:hover:bg-transparent',
 };
 
-export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = {
   variant?: keyof typeof buttonVariants;
   size?: keyof typeof buttonSizes;
-};
+} & (
+  | ButtonHTMLAttributes<HTMLButtonElement>
+  | ComponentPropsWithoutRef<typeof Link>
+);
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'default', size = 'default', ...props }, ref) => (
+const Button = forwardRef<
+  HTMLButtonElement | ElementRef<typeof Link>,
+  ButtonProps
+>(({ className, variant = 'default', size = 'default', ...props }, ref) =>
+  'href' in props ? (
+    <Link
+      className={clsx(
+        'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900 dark:data-[state=open]:bg-neutral-800',
+        buttonVariants[variant],
+        buttonSizes[size],
+        className
+      )}
+      ref={ref as ForwardedRef<ElementRef<typeof Link>>}
+      {...props}
+    />
+  ) : (
     // eslint-disable-next-line react/button-has-type
     <button
       className={clsx(
@@ -36,7 +59,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         buttonSizes[size],
         className
       )}
-      ref={ref}
+      ref={ref as ForwardedRef<HTMLButtonElement>}
       {...props}
     />
   )

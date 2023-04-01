@@ -26,3 +26,17 @@ Small.args = {
   children: 'Button',
   size: 'sm',
 };
+
+export const Link = Template.bind({});
+Link.args = {
+  href: 'https://www.google.com',
+  children: 'Button',
+  target: '_blank',
+  rel: 'noopener noreferrer',
+};
+
+export const Pressable = Template.bind({});
+Pressable.args = {
+  onClick: console.log,
+  children: 'Button',
+};
