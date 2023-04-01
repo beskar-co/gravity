@@ -1,3 +1,26 @@
+# v0.1.21 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Fix typo ([@haydenbleasel](https://github.com/haydenbleasel))
+- Update README.md ([@haydenbleasel](https://github.com/haydenbleasel))
+- Bump deps ([@haydenbleasel](https://github.com/haydenbleasel))
+- Update push.yml ([@haydenbleasel](https://github.com/haydenbleasel))
+- Revert "Attempt running via npx" ([@haydenbleasel](https://github.com/haydenbleasel))
+- Attempt running via npx ([@haydenbleasel](https://github.com/haydenbleasel))
+- Update package.json ([@haydenbleasel](https://github.com/haydenbleasel))
+- Use children instead of code ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add snippet to exports ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add Snippet component ([@haydenbleasel](https://github.com/haydenbleasel))
+- Use children instead of trigger ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add label and hint to Switch ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.20 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
