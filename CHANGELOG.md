@@ -1,3 +1,16 @@
+# v0.1.15 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Update exports ([@haydenbleasel](https://github.com/haydenbleasel))
+- Update generate-exports.js ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.14 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
