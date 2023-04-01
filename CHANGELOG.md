@@ -1,3 +1,15 @@
+# v0.1.17 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Misc dark mode fixes ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.16 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
