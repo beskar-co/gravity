@@ -1,3 +1,15 @@
+# v0.1.18 (Sat Apr 01 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Allow variable files limit ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.17 (Sat Apr 01 2023)
 
 #### ⚠️ Pushed to `main`
