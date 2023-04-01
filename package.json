@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 3000",
     "build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
-    "package": "tsup",
-    "postpackage": "node lib/generate-exports.js"
+    "package": "rm -fr dist/ && tsup"
   },
   "files": [
     "dist/**"
   ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
@@ -87,87 +88,5 @@
   "prettier": "@beskar-labs/harmony/prettier",
   "stylelint": {
     "extends": "@beskar-labs/harmony/stylelint"
-  },
-  "exports": {
-    "./accordion": {
-      "import": "./dist/accordion/index.js",
-      "require": "./dist/accordion/index.js",
-      "types": "./dist/accordion/index.d.ts"
-    },
-    "./avatar": {
-      "import": "./dist/avatar/index.js",
-      "require": "./dist/avatar/index.js",
-      "types": "./dist/avatar/index.d.ts"
-    },
-    "./button": {
-      "import": "./dist/button/index.js",
-      "require": "./dist/button/index.js",
-      "types": "./dist/button/index.d.ts"
-    },
-    "./checkbox": {
-      "import": "./dist/checkbox/index.js",
-      "require": "./dist/checkbox/index.js",
-      "types": "./dist/checkbox/index.d.ts"
-    },
-    "./dialog": {
-      "import": "./dist/dialog/index.js",
-      "require": "./dist/dialog/index.js",
-      "types": "./dist/dialog/index.d.ts"
-    },
-    "./dropdown": {
-      "import": "./dist/dropdown/index.js",
-      "require": "./dist/dropdown/index.js",
-      "types": "./dist/dropdown/index.d.ts"
-    },
-    "./fileUpload": {
-      "import": "./dist/fileUpload/index.js",
-      "require": "./dist/fileUpload/index.js",
-      "types": "./dist/fileUpload/index.d.ts"
-    },
-    "./hint": {
-      "import": "./dist/hint/index.js",
-      "require": "./dist/hint/index.js",
-      "types": "./dist/hint/index.d.ts"
-    },
-    "./input": {
-      "import": "./dist/input/index.js",
-      "require": "./dist/input/index.js",
-      "types": "./dist/input/index.d.ts"
-    },
-    "./label": {
-      "import": "./dist/label/index.js",
-      "require": "./dist/label/index.js",
-      "types": "./dist/label/index.d.ts"
-    },
-    "./navigationMenu": {
-      "import": "./dist/navigationMenu/index.js",
-      "require": "./dist/navigationMenu/index.js",
-      "types": "./dist/navigationMenu/index.d.ts"
-    },
-    "./progress": {
-      "import": "./dist/progress/index.js",
-      "require": "./dist/progress/index.js",
-      "types": "./dist/progress/index.d.ts"
-    },
-    "./select": {
-      "import": "./dist/select/index.js",
-      "require": "./dist/select/index.js",
-      "types": "./dist/select/index.d.ts"
-    },
-    "./switch": {
-      "import": "./dist/switch/index.js",
-      "require": "./dist/switch/index.js",
-      "types": "./dist/switch/index.d.ts"
-    },
-    "./textarea": {
-      "import": "./dist/textarea/index.js",
-      "require": "./dist/textarea/index.js",
-      "types": "./dist/textarea/index.d.ts"
-    },
-    "./tooltip": {
-      "import": "./dist/tooltip/index.js",
-      "require": "./dist/tooltip/index.js",
-      "types": "./dist/tooltip/index.d.ts"
-    }
   }
 }
