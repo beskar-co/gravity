@@ -33,46 +33,45 @@ export type DropdownProps = ComponentPropsWithoutRef<
   }[];
 };
 
-const DropdownMenuItem: FC<{ item: DropdownItemProps }> = ({ item }) =>
-  'href' in item ? (
+const DropdownMenuItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
+  const className =
+    'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-neutral-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-700';
+  const Inner = (
+    <>
+      {item.icon && (
+        <div className="mr-2 h-4 w-4">
+          <item.icon />
+        </div>
+      )}
+      {item.label}
+      {item.shortcut && (
+        <span className="ml-auto text-xs tracking-widest text-neutral-500">
+          {item.shortcut}
+        </span>
+      )}
+    </>
+  );
+
+  return 'href' in item ? (
     <Link
-      className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-neutral-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-700"
+      className={className}
       key={item.label}
       data-disabled={item.disabled}
       {...item}
     >
-      {item.icon && (
-        <div className="mr-2 h-4 w-4">
-          <item.icon />
-        </div>
-      )}
-      {item.label}
-      {item.shortcut && (
-        <span className="ml-auto text-xs tracking-widest text-neutral-500">
-          {item.shortcut}
-        </span>
-      )}
+      {Inner}
     </Link>
   ) : (
     <DropdownMenuPrimitive.Item
-      className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-neutral-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-700"
+      className={className}
       key={item.label}
       data-disabled={item.disabled}
       onClick={item.onClick}
     >
-      {item.icon && (
-        <div className="mr-2 h-4 w-4">
-          <item.icon />
-        </div>
-      )}
-      {item.label}
-      {item.shortcut && (
-        <span className="ml-auto text-xs tracking-widest text-neutral-500">
-          {item.shortcut}
-        </span>
-      )}
+      {Inner}
     </DropdownMenuPrimitive.Item>
   );
+};
 
 const DropdownMenu = forwardRef<
   ElementRef<typeof DropdownMenuPrimitive.Root>,
