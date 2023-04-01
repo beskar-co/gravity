@@ -53,6 +53,7 @@ export const FileUpload: FC<FileUploadProps> = ({
         onError?.(
           `File type must be one of the following: ${accept.join(', ')}`
         );
+        return;
       }
     });
 
