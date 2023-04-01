@@ -1,19 +1,6 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from './';
+import { DropdownMenu } from './';
 import {
   ArrowLeftOnRectangleIcon,
   BoltIcon,
@@ -40,92 +27,97 @@ export default {
 } as ComponentMeta<typeof DropdownMenu>;
 
 const Template: ComponentStory<typeof DropdownMenu> = (args) => (
-  <DropdownMenu {...args}>
-    <DropdownMenuTrigger asChild>
-      <button type="button">Open</button>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent className="w-56">
-      <DropdownMenuLabel>My Account</DropdownMenuLabel>
-      <DropdownMenuSeparator />
-      <DropdownMenuGroup>
-        <DropdownMenuItem>
-          <UserIcon className="mr-2 h-4 w-4" />
-          <span>Profile</span>
-          <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <CreditCardIcon className="mr-2 h-4 w-4" />
-          <span>Billing</span>
-          <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <CogIcon className="mr-2 h-4 w-4" />
-          <span>Settings</span>
-          <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <BoltIcon className="mr-2 h-4 w-4" />
-          <span>Keyboard shortcuts</span>
-          <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-        </DropdownMenuItem>
-      </DropdownMenuGroup>
-      <DropdownMenuSeparator />
-      <DropdownMenuGroup>
-        <DropdownMenuItem>
-          <UsersIcon className="mr-2 h-4 w-4" />
-          <span>Team</span>
-        </DropdownMenuItem>
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>
-            <UserPlusIcon className="mr-2 h-4 w-4" />
-            <span>Invite users</span>
-          </DropdownMenuSubTrigger>
-          <DropdownMenuPortal>
-            <DropdownMenuSubContent>
-              <DropdownMenuItem>
-                <EnvelopeIcon className="mr-2 h-4 w-4" />
-                <span>Email</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <ChatBubbleBottomCenterIcon className="mr-2 h-4 w-4" />
-                <span>Message</span>
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <PlusCircleIcon className="mr-2 h-4 w-4" />
-                <span>More...</span>
-              </DropdownMenuItem>
-            </DropdownMenuSubContent>
-          </DropdownMenuPortal>
-        </DropdownMenuSub>
-        <DropdownMenuItem>
-          <PlusIcon className="mr-2 h-4 w-4" />
-          <span>New Team</span>
-          <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-        </DropdownMenuItem>
-      </DropdownMenuGroup>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem>
-        <CodeBracketIcon className="mr-2 h-4 w-4" />
-        <span>GitHub</span>
-      </DropdownMenuItem>
-      <DropdownMenuItem>
-        <LifebuoyIcon className="mr-2 h-4 w-4" />
-        <span>Support</span>
-      </DropdownMenuItem>
-      <DropdownMenuItem disabled>
-        <CloudIcon className="mr-2 h-4 w-4" />
-        <span>API</span>
-      </DropdownMenuItem>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem>
-        <ArrowLeftOnRectangleIcon className="mr-2 h-4 w-4" />
-        <span>Log out</span>
-        <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-      </DropdownMenuItem>
-    </DropdownMenuContent>
-  </DropdownMenu>
+  <DropdownMenu {...args} />
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  className: 'w-56',
+  children: <button type="button">Open</button>,
+  items: [
+    {
+      label: 'My Account',
+    },
+    {
+      items: [
+        {
+          icon: UserIcon,
+          label: 'Profile',
+          shortcut: '⇧⌘P',
+        },
+        {
+          icon: CreditCardIcon,
+          label: 'Billing',
+          shortcut: '⌘B',
+        },
+        {
+          icon: CogIcon,
+          label: 'Settings',
+          shortcut: '⌘S',
+        },
+        {
+          icon: BoltIcon,
+          label: 'Keyboard shortcuts',
+          shortcut: '⌘K',
+        },
+      ],
+    },
+    {
+      items: [
+        {
+          icon: UsersIcon,
+          label: 'Team',
+        },
+        {
+          icon: UserPlusIcon,
+          label: 'Invite users',
+          items: [
+            {
+              icon: EnvelopeIcon,
+              label: 'Email',
+            },
+            {
+              icon: ChatBubbleBottomCenterIcon,
+              label: 'Message',
+            },
+            {
+              icon: PlusCircleIcon,
+              label: 'More...',
+            },
+          ],
+        },
+        {
+          icon: PlusIcon,
+          label: 'New Team',
+          shortcut: '⌘+T',
+        },
+      ],
+    },
+    {
+      items: [
+        {
+          icon: CodeBracketIcon,
+          label: 'GitHub',
+        },
+        {
+          icon: LifebuoyIcon,
+          label: 'Support',
+        },
+        {
+          icon: CloudIcon,
+          label: 'API',
+          disabled: true,
+        },
+      ],
+    },
+    {
+      items: [
+        {
+          icon: ArrowLeftOnRectangleIcon,
+          label: 'Log out',
+          shortcut: '⇧⌘Q',
+        },
+      ],
+    },
+  ],
+};
