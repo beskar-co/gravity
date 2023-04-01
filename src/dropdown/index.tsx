@@ -5,14 +5,21 @@ import { forwardRef } from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import clsx from 'clsx';
 import { ChevronRightIcon, PlusIcon } from '@heroicons/react/20/solid';
+import Link from 'next/link';
 
 type DropdownItemProps = {
   label?: string;
   icon?: typeof PlusIcon;
   shortcut?: string;
-  onClick?: () => void;
   disabled?: boolean;
-};
+} & (
+  | {
+      onClick?: () => void;
+    }
+  | (ComponentPropsWithoutRef<typeof Link> & {
+      href?: string;
+    })
+);
 
 export type DropdownProps = ComponentPropsWithoutRef<
   typeof DropdownMenuPrimitive.Root
@@ -26,26 +33,46 @@ export type DropdownProps = ComponentPropsWithoutRef<
   }[];
 };
 
-const DropdownMenuItem: FC<{ item: DropdownItemProps }> = ({ item }) => (
-  <DropdownMenuPrimitive.Item
-    className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-neutral-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-700"
-    key={item.label}
-    data-disabled={item.disabled}
-    onClick={item.onClick}
-  >
-    {item.icon && (
-      <div className="mr-2 h-4 w-4">
-        <item.icon />
-      </div>
-    )}
-    {item.label}
-    {item.shortcut && (
-      <span className="ml-auto text-xs tracking-widest text-neutral-500">
-        {item.shortcut}
-      </span>
-    )}
-  </DropdownMenuPrimitive.Item>
-);
+const DropdownMenuItem: FC<{ item: DropdownItemProps }> = ({ item }) =>
+  'href' in item ? (
+    <Link
+      className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-neutral-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-700"
+      key={item.label}
+      data-disabled={item.disabled}
+      {...item}
+    >
+      {item.icon && (
+        <div className="mr-2 h-4 w-4">
+          <item.icon />
+        </div>
+      )}
+      {item.label}
+      {item.shortcut && (
+        <span className="ml-auto text-xs tracking-widest text-neutral-500">
+          {item.shortcut}
+        </span>
+      )}
+    </Link>
+  ) : (
+    <DropdownMenuPrimitive.Item
+      className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-neutral-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-700"
+      key={item.label}
+      data-disabled={item.disabled}
+      onClick={item.onClick}
+    >
+      {item.icon && (
+        <div className="mr-2 h-4 w-4">
+          <item.icon />
+        </div>
+      )}
+      {item.label}
+      {item.shortcut && (
+        <span className="ml-auto text-xs tracking-widest text-neutral-500">
+          {item.shortcut}
+        </span>
+      )}
+    </DropdownMenuPrimitive.Item>
+  );
 
 const DropdownMenu = forwardRef<
   ElementRef<typeof DropdownMenuPrimitive.Root>,

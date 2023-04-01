@@ -44,11 +44,15 @@ Default.args = {
           icon: UserIcon,
           label: 'Profile',
           shortcut: '⇧⌘P',
+          onClick: () => console.log('Profile'),
         },
         {
           icon: CreditCardIcon,
           label: 'Billing',
           shortcut: '⌘B',
+          href: 'https://google.com',
+          target: '_blank',
+          rel: 'noopener noreferrer',
         },
         {
           icon: CogIcon,
