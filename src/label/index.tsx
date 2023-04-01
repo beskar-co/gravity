@@ -13,6 +13,7 @@ const Label = forwardRef<
     ref={ref}
     className={clsx(
       'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+      'text-neutral-900 dark:text-white',
       className
     )}
     {...props}

@@ -15,7 +15,8 @@ const AccordionItem = forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={clsx(
-      'border-b border-b-neutral-200 dark:border-b-neutral-700',
+      'border-b',
+      'border-b-neutral-200 dark:border-b-neutral-700',
       className
     )}
     {...props}
@@ -32,6 +33,7 @@ const AccordionTrigger = forwardRef<
       ref={ref}
       className={clsx(
         'flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
+        'text-neutral-900 dark:text-white',
         className
       )}
       {...props}
@@ -51,6 +53,7 @@ const AccordionContent = forwardRef<
     ref={ref}
     className={clsx(
       'overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
+      'text-neutral-900 dark:text-white',
       className
     )}
     {...props}

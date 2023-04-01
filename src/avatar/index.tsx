@@ -5,33 +5,6 @@ import { forwardRef } from 'react';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import clsx from 'clsx';
 
-const AvatarImage = forwardRef<
-  ElementRef<typeof AvatarPrimitive.Image>,
-  ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
->(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Image
-    ref={ref}
-    className={clsx('aspect-square h-full w-full', className)}
-    {...props}
-  />
-));
-AvatarImage.displayName = AvatarPrimitive.Image.displayName;
-
-const AvatarFallback = forwardRef<
-  ElementRef<typeof AvatarPrimitive.Fallback>,
-  ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
->(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Fallback
-    ref={ref}
-    className={clsx(
-      'flex h-full w-full items-center justify-center rounded-full bg-neutral-100 dark:bg-neutral-700',
-      className
-    )}
-    {...props}
-  />
-));
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
-
 type AvatarProps = ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & {
   fallback: ComponentPropsWithoutRef<
     typeof AvatarPrimitive.Fallback
@@ -49,8 +22,22 @@ const Avatar = forwardRef<ElementRef<typeof AvatarPrimitive.Root>, AvatarProps>(
       )}
       {...props}
     >
-      <AvatarImage src={src} />
-      <AvatarFallback>{fallback}</AvatarFallback>
+      <AvatarPrimitive.Image
+        className={clsx('aspect-square h-full w-full', className)}
+        src={src}
+        {...props}
+      />
+      <AvatarPrimitive.Fallback
+        className={clsx(
+          'flex h-full w-full items-center justify-center rounded-full',
+          'bg-neutral-100 dark:bg-neutral-700',
+          'text-neutral-900 dark:text-white',
+          className
+        )}
+        {...props}
+      >
+        {fallback}
+      </AvatarPrimitive.Fallback>
     </AvatarPrimitive.Root>
   )
 );

@@ -1,8 +1,7 @@
 import { DocumentArrowUpIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import type { ChangeEventHandler, FC } from 'react';
-import { useId } from 'react';
-import { useRef } from 'react';
+import { useId, useRef } from 'react';
 import { useDrop } from 'react-use';
 import { getExtension } from 'mime';
 import { Label } from '../label';
@@ -76,9 +75,7 @@ export const FileUpload: FC<FileUploadProps> = ({
         className={clsx(
           'flex justify-center rounded-md border-2 border-dashed px-6 pb-6 pt-5 transition-colors',
           'border-neutral-100 dark:border-neutral-800',
-          state.over
-            ? 'bg-neutral-100 dark:bg-neutral-900'
-            : 'bg-white dark:bg-black'
+          state.over && 'bg-neutral-100 dark:bg-neutral-900'
         )}
       >
         <div className="grid gap-2 text-center">
@@ -99,10 +96,7 @@ export const FileUpload: FC<FileUploadProps> = ({
               className={clsx(
                 'relative cursor-pointer rounded-md font-medium transition-colors focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2',
                 'text-black dark:text-white',
-                'focus-within:ring-neutral-100 dark:focus-within:ring-neutral-900',
-                state.over
-                  ? 'bg-neutral-100 dark:bg-neutral-900'
-                  : 'bg-white dark:bg-black'
+                'focus-within:ring-neutral-100 dark:focus-within:ring-neutral-900'
               )}
             >
               {value ? <span>{value.name}</span> : <span>Upload a file</span>}

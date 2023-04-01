@@ -18,3 +18,9 @@ Default.args = {
   src: 'https://github.com/haydenbleasel.png',
   fallback: 'HB',
 };
+
+export const NoSrc = Template.bind({});
+NoSrc.args = {
+  src: '',
+  fallback: 'HB',
+};
