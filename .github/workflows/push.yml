@@ -41,18 +41,6 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
         run: yarn package
 
-      - name: Commit and push changes
-        run: |
-          git config user.name "Hayden Bleasel"
-          git config user.email "hello@haydenbleasel.com"
-          git add .
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update exports"
-            git push
-          fi
-
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
