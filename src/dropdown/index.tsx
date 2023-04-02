@@ -122,7 +122,10 @@ export const Dropdown = forwardRef<
                       )}
                     >
                       {subItem.items.map((subSubItem) => (
-                        <DropdownItem item={subSubItem} />
+                        <DropdownItem
+                          item={subSubItem}
+                          key={subSubItem.label}
+                        />
                       ))}
                     </DropdownMenuPrimitive.SubContent>
                   </DropdownMenuPrimitive.Portal>
