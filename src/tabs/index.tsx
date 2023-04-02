@@ -23,7 +23,9 @@ const Badge: React.FC<{
 }> = ({ children, active }) => (
   <span
     className={clsx(
-      active ? 'bg-neutral-200 text-neutral-900' : 'bg-white text-neutral-500',
+      active
+        ? 'bg-neutral-200 text-neutral-900'
+        : 'bg-neutral-100 text-neutral-500',
       active
         ? 'dark:bg-neutral-800 dark:text-white'
         : 'dark:bg-neutral-900 dark:text-neutral-400',
