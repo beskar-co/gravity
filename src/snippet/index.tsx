@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC } from 'react';
 import dynamic from 'next/dynamic';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
