@@ -1,3 +1,15 @@
+# v0.1.38 (Sun Apr 02 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Fix dropdown menu ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.37 (Sun Apr 02 2023)
 
 #### ⚠️ Pushed to `main`
