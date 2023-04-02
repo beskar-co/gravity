@@ -10,11 +10,14 @@ type NavigationDropdownItemProps = {
   items: ({
     label: string;
     description?: string;
+    active?: boolean;
   } & ComponentPropsWithoutRef<typeof Link>)[];
   feature?: FC;
 };
 
-type NavigationLinkItemProps = ComponentPropsWithoutRef<typeof Link>;
+type NavigationLinkItemProps = ComponentPropsWithoutRef<typeof Link> & {
+  active?: boolean;
+};
 
 type NavigationMenuProps = ComponentPropsWithoutRef<
   typeof NavigationMenuPrimitive.Root
@@ -43,7 +46,12 @@ export const NavigationMenu = forwardRef<
             <NavigationMenuPrimitive.Link
               href={item.href as string}
               asChild
-              className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-neutral-50 data-[state=open]:bg-neutral-50 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:bg-neutral-800 dark:data-[active]:bg-neutral-800 dark:data-[state=open]:bg-neutral-800"
+              data-active={item.active}
+              className={clsx(
+                'group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors',
+                'hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-neutral-50 data-[state=open]:bg-neutral-50 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:bg-neutral-800',
+                'dark:data-[active]:bg-neutral-800 dark:data-[state=open]:bg-neutral-800'
+              )}
             >
               <Link href={item.href}>{item.label}</Link>
             </NavigationMenuPrimitive.Link>
@@ -76,6 +84,7 @@ export const NavigationMenu = forwardRef<
                       <NavigationMenuPrimitive.Link
                         href={subItem.href as string}
                         asChild
+                        data-active={subItem.active}
                       >
                         <Link
                           href={subItem.href}
