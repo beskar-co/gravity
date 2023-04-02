@@ -1,6 +1,6 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { DropdownMenu } from './';
+import { Dropdown } from '.';
 import {
   ArrowLeftOnRectangleIcon,
   BoltIcon,
@@ -20,14 +20,14 @@ import {
 
 export default {
   title: 'Example/Dropdown',
-  component: DropdownMenu,
+  component: Dropdown,
   parameters: {
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof DropdownMenu>;
+} as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof DropdownMenu> = (args) => (
-  <DropdownMenu {...args} />
+const Template: ComponentStory<typeof Dropdown> = (args) => (
+  <Dropdown {...args} />
 );
 
 export const Default = Template.bind({});

@@ -33,7 +33,7 @@ export type DropdownProps = ComponentPropsWithoutRef<
   }[];
 };
 
-const DropdownMenuItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
+const DropdownItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
   const className = clsx(
     'relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none',
     'focus:bg-neutral-100 dark:focus:bg-neutral-700',
@@ -80,7 +80,7 @@ const DropdownMenuItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
   );
 };
 
-const DropdownMenu = forwardRef<
+export const Dropdown = forwardRef<
   ElementRef<typeof DropdownMenuPrimitive.Root>,
   DropdownProps
 >(({ className, children, items, ...props }, ref) => (
@@ -122,13 +122,13 @@ const DropdownMenu = forwardRef<
                       )}
                     >
                       {subItem.items.map((subSubItem) => (
-                        <DropdownMenuItem item={subSubItem} />
+                        <DropdownItem item={subSubItem} />
                       ))}
                     </DropdownMenuPrimitive.SubContent>
                   </DropdownMenuPrimitive.Portal>
                 </DropdownMenuPrimitive.Sub>
               ) : (
-                <DropdownMenuItem item={subItem} />
+                <DropdownItem item={subItem} />
               )
             )}
           </DropdownMenuPrimitive.Group>
@@ -140,5 +140,3 @@ const DropdownMenu = forwardRef<
     </DropdownMenuPrimitive.Content>
   </DropdownMenuPrimitive.Root>
 ));
-
-export { DropdownMenu };
