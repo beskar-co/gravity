@@ -1,3 +1,16 @@
+# v0.1.42 (Sun Apr 02 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Fix colors ([@haydenbleasel](https://github.com/haydenbleasel))
+- Fix Navigation Menu component ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.41 (Sun Apr 02 2023)
 
 #### ⚠️ Pushed to `main`
