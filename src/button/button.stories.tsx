@@ -8,22 +8,46 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
+  argTypes: {
+    onClick: { action: 'Button Clicked' },
+  },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  variant: 'default',
   children: 'Button',
-  size: 'default',
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  variant: 'secondary',
+  children: 'Button',
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  variant: 'tertiary',
+  children: 'Button',
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  variant: 'ghost',
   children: 'Button',
   size: 'sm',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  children: 'Button',
+  size: 'lg',
+};
+
+export const Destructive = Template.bind({});
+Destructive.args = {
+  variant: 'destructive',
+  children: 'Button',
 };
 
 export const Link = Template.bind({});
@@ -32,11 +56,5 @@ Link.args = {
   children: 'Button',
   target: '_blank',
   rel: 'noopener noreferrer',
-};
-
-export const Pressable = Template.bind({});
-Pressable.args = {
-  // eslint-disable-next-line no-console
-  onClick: console.log,
-  children: 'Button',
+  variant: 'link',
 };
