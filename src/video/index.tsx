@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import { ElementRef, forwardRef } from 'react';
 import { ReactPlayerProps } from 'react-player';
-import Player from 'react-player';
+import Player from './player';
 
 type VideoProps = ReactPlayerProps & {
   className?: string;
