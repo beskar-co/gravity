@@ -23,7 +23,7 @@ const Badge: React.FC<{
 }> = ({ children, active }) => (
   <span
     className={clsx(
-      active ? 'bg-neutral-100 text-neutral-900' : 'bg-white text-neutral-500',
+      active ? 'bg-neutral-200 text-neutral-900' : 'bg-white text-neutral-500',
       active
         ? 'dark:bg-neutral-800 dark:text-white'
         : 'dark:bg-neutral-900 dark:text-neutral-400',
@@ -64,7 +64,7 @@ const Tabs = React.forwardRef<
       <TabsPrimitive.List
         className={clsx(
           '-mb-px flex gap-4 border-b md:gap-6',
-          'border-neutral-100 dark:border-neutral-800'
+          'border-neutral-200 dark:border-neutral-800'
         )}
       >
         {items.map((item) => (
