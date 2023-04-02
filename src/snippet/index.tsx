@@ -214,7 +214,7 @@ export const Snippet: FC<{
     async () =>
       import(
         /* webpackChunkName: "react-syntax-highlighter" */
-        'react-syntax-highlighter'
+        'react-syntax-highlighter/dist/cjs/default-highlight'
       ),
     { ssr: false }
   );
