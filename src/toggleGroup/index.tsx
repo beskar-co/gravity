@@ -28,10 +28,7 @@ export const ToggleGroup = forwardRef<
     { className, variant = 'default', size = 'default', items, ...props },
     ref
   ) => (
-    <ToggleGroupPrimitive.Root
-      // className="bg-mauve6 shadow-blackA7 inline-flex space-x-px rounded shadow-[0_2px_10px]"
-      {...props}
-    >
+    <ToggleGroupPrimitive.Root {...props}>
       {items.map((item, index) => (
         <ToggleGroupPrimitive.Item
           key={item.value}
