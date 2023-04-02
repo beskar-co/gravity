@@ -1,3 +1,15 @@
+# v0.1.48 (Sun Apr 02 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Make rounding optional ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.47 (Sun Apr 02 2023)
 
 #### ⚠️ Pushed to `main`
