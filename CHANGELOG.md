@@ -1,3 +1,15 @@
+# v0.1.41 (Sun Apr 02 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Fix badge props ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.40 (Sun Apr 02 2023)
 
 #### ⚠️ Pushed to `main`
