@@ -15,9 +15,11 @@ type TooltipProps = ComponentPropsWithoutRef<typeof TooltipPrimitive.Root> & {
 const Tooltip = forwardRef<
   ElementRef<typeof TooltipPrimitive.Root>,
   TooltipProps
->(({ children, content, ...props }) => (
+>(({ children, content, ...props }, ref) => (
   <TooltipPrimitive.Root delayDuration={0} {...props}>
-    <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
+    <TooltipPrimitive.Trigger ref={ref} asChild>
+      {children}
+    </TooltipPrimitive.Trigger>
     <TooltipPrimitive.Content
       sideOffset={4}
       className={clsx(

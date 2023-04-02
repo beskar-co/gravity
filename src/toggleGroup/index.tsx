@@ -28,7 +28,7 @@ export const ToggleGroup = forwardRef<
     { className, variant = 'default', size = 'default', items, ...props },
     ref
   ) => (
-    <ToggleGroupPrimitive.Root {...props}>
+    <ToggleGroupPrimitive.Root {...props} ref={ref}>
       {items.map((item, index) => (
         <ToggleGroupPrimitive.Item
           key={item.value}
