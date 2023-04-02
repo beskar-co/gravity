@@ -33,7 +33,11 @@ const Checkbox = forwardRef<
         <CheckboxPrimitive.Indicator
           className={clsx('flex items-center justify-center')}
         >
-          <CheckIcon className="h-4 w-4" />
+          <CheckIcon
+            className="h-4 w-4 text-neutral-900 dark:text-white"
+            width={16}
+            height={16}
+          />
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
       <div className="grid gap-1.5 leading-none">
