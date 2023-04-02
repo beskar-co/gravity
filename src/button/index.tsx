@@ -28,20 +28,22 @@ const buttonVariants = {
 export type ButtonProps = {
   variant?: keyof typeof buttonVariants;
   size?: keyof typeof buttonSizes;
+  rounded?: boolean;
 } & (
   | ButtonHTMLAttributes<HTMLButtonElement>
   | ComponentPropsWithoutRef<typeof Link>
 );
 
 const baseClassName =
-  'inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900 dark:data-[state=open]:bg-neutral-800';
+  'inline-flex items-center justify-center text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900 dark:data-[state=open]:bg-neutral-800';
 
 const Button = forwardRef<
   HTMLButtonElement | ElementRef<typeof Link>,
   ButtonProps
->(({ className, variant = 'primary', size = 'md', ...props }, ref) => {
+>(({ className, variant = 'primary', size = 'md', rounded, ...props }, ref) => {
   const compiledClassName = clsx(
     baseClassName,
+    rounded ? 'rounded-full' : 'rounded-md',
     buttonVariants[variant],
     buttonSizes[size],
     className
