@@ -1,3 +1,16 @@
+# v0.1.35 (Sun Apr 02 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Fix dropdown menu focus states ([@haydenbleasel](https://github.com/haydenbleasel))
+- Fix checkbox icon ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.34 (Sun Apr 02 2023)
 
 #### ⚠️ Pushed to `main`
