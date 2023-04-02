@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { Select } from '..';
+import { Select } from '../select';
 
 type TabsProps = React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root> & {
   value?: TabsPrimitive.TabsContentProps['value'];

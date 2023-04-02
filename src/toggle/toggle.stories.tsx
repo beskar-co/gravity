@@ -1,7 +1,7 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Toggle } from './';
-import { TooltipProvider } from '..';
+import { TooltipProvider } from '../tooltip';
 import { CommandLineIcon } from '@heroicons/react/20/solid';
 
 export default {

@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import dynamic from 'next/dynamic';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { ClipboardDocumentIcon } from '@heroicons/react/24/outline';
-import { Tooltip } from '..';
+import { Tooltip } from '../tooltip';
 
 type HljsLanguage =
   | '1c'

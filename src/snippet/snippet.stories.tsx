@@ -1,7 +1,7 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Snippet } from './';
-import { TooltipProvider } from '..';
+import { TooltipProvider } from '../tooltip';
 
 export default {
   title: 'Example/Snippet',

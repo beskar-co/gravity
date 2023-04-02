@@ -4,7 +4,8 @@ import type { ElementRef, ComponentPropsWithoutRef } from 'react';
 import { forwardRef, useId } from 'react';
 import * as SwitchPrimitives from '@radix-ui/react-switch';
 import clsx from 'clsx';
-import { Hint, Label } from '..';
+import { Hint } from '../hint';
+import { Label } from '../label';
 
 type SwitchProps = ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & {
   label: string;
