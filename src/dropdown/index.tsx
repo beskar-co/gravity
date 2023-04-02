@@ -34,8 +34,11 @@ export type DropdownProps = ComponentPropsWithoutRef<
 };
 
 const DropdownMenuItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
-  const className =
-    'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-neutral-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-700';
+  const className = clsx(
+    'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none',
+    'focus:bg-neutral-100 dark:focus:bg-neutral-700',
+    'data-[disabled]:pointer-events-none data-[disabled]:opacity-50'
+  );
   const Inner = (
     <>
       {item.icon && (
@@ -52,23 +55,14 @@ const DropdownMenuItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
     </>
   );
 
-  return 'href' in item ? (
-    <Link
-      className={className}
-      key={item.label}
-      data-disabled={item.disabled}
-      {...item}
-    >
-      {Inner}
-    </Link>
-  ) : (
+  return (
     <DropdownMenuPrimitive.Item
       className={className}
       key={item.label}
       data-disabled={item.disabled}
-      onClick={item.onClick}
+      asChild={'href' in item}
     >
-      {Inner}
+      {'href' in item ? <Link {...item}>{Inner}</Link> : Inner}
     </DropdownMenuPrimitive.Item>
   );
 };
