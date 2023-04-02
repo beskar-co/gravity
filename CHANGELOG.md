@@ -1,3 +1,20 @@
+# v0.1.51 (Sun Apr 02 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Update exports ([@haydenbleasel](https://github.com/haydenbleasel))
+- Update push.yml ([@haydenbleasel](https://github.com/haydenbleasel))
+- Revert "Attempt to rework package.json" ([@haydenbleasel](https://github.com/haydenbleasel))
+- Attempt to rework package.json ([@haydenbleasel](https://github.com/haydenbleasel))
+- Merge branch 'main' of https://github.com/beskar-co/gravity ([@haydenbleasel](https://github.com/haydenbleasel))
+- Update package.json ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.50 (Sun Apr 02 2023)
 
 #### ⚠️ Pushed to `main`
