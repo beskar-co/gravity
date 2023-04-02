@@ -8,10 +8,6 @@
     "package": "tsup",
     "postpackage": "node scripts/generate-exports.js"
   },
-  "files": [
-    "dist/**"
-  ],
-  "sideEffects": false,
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -63,6 +59,11 @@
     "sonner": "^0.3.0",
     "typescript": "^5.0.3"
   },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "next": "13.2.4"
+  },
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@beskar-labs/harmony": "^2.0.10",
@@ -94,122 +95,5 @@
   "prettier": "@beskar-labs/harmony/prettier",
   "stylelint": {
     "extends": "@beskar-labs/harmony/stylelint"
-  },
-  "exports": {
-    "./accordion": {
-      "import": "./dist/accordion/index.mjs",
-      "require": "./dist/accordion/index.js",
-      "types": "./dist/accordion/index.d.ts"
-    },
-    "./avatar": {
-      "import": "./dist/avatar/index.mjs",
-      "require": "./dist/avatar/index.js",
-      "types": "./dist/avatar/index.d.ts"
-    },
-    "./badge": {
-      "import": "./dist/badge/index.mjs",
-      "require": "./dist/badge/index.js",
-      "types": "./dist/badge/index.d.ts"
-    },
-    "./button": {
-      "import": "./dist/button/index.mjs",
-      "require": "./dist/button/index.js",
-      "types": "./dist/button/index.d.ts"
-    },
-    "./checkbox": {
-      "import": "./dist/checkbox/index.mjs",
-      "require": "./dist/checkbox/index.js",
-      "types": "./dist/checkbox/index.d.ts"
-    },
-    "./dialog": {
-      "import": "./dist/dialog/index.mjs",
-      "require": "./dist/dialog/index.js",
-      "types": "./dist/dialog/index.d.ts"
-    },
-    "./dropdown": {
-      "import": "./dist/dropdown/index.mjs",
-      "require": "./dist/dropdown/index.js",
-      "types": "./dist/dropdown/index.d.ts"
-    },
-    "./fileUpload": {
-      "import": "./dist/fileUpload/index.mjs",
-      "require": "./dist/fileUpload/index.js",
-      "types": "./dist/fileUpload/index.d.ts"
-    },
-    "./hint": {
-      "import": "./dist/hint/index.mjs",
-      "require": "./dist/hint/index.js",
-      "types": "./dist/hint/index.d.ts"
-    },
-    "./input": {
-      "import": "./dist/input/index.mjs",
-      "require": "./dist/input/index.js",
-      "types": "./dist/input/index.d.ts"
-    },
-    "./label": {
-      "import": "./dist/label/index.mjs",
-      "require": "./dist/label/index.js",
-      "types": "./dist/label/index.d.ts"
-    },
-    "./navigationMenu": {
-      "import": "./dist/navigationMenu/index.mjs",
-      "require": "./dist/navigationMenu/index.js",
-      "types": "./dist/navigationMenu/index.d.ts"
-    },
-    "./progress": {
-      "import": "./dist/progress/index.mjs",
-      "require": "./dist/progress/index.js",
-      "types": "./dist/progress/index.d.ts"
-    },
-    "./select": {
-      "import": "./dist/select/index.mjs",
-      "require": "./dist/select/index.js",
-      "types": "./dist/select/index.d.ts"
-    },
-    "./snippet": {
-      "import": "./dist/snippet/index.mjs",
-      "require": "./dist/snippet/index.js",
-      "types": "./dist/snippet/index.d.ts"
-    },
-    "./switch": {
-      "import": "./dist/switch/index.mjs",
-      "require": "./dist/switch/index.js",
-      "types": "./dist/switch/index.d.ts"
-    },
-    "./tabs": {
-      "import": "./dist/tabs/index.mjs",
-      "require": "./dist/tabs/index.js",
-      "types": "./dist/tabs/index.d.ts"
-    },
-    "./textarea": {
-      "import": "./dist/textarea/index.mjs",
-      "require": "./dist/textarea/index.js",
-      "types": "./dist/textarea/index.d.ts"
-    },
-    "./toast": {
-      "import": "./dist/toast/index.mjs",
-      "require": "./dist/toast/index.js",
-      "types": "./dist/toast/index.d.ts"
-    },
-    "./toggle": {
-      "import": "./dist/toggle/index.mjs",
-      "require": "./dist/toggle/index.js",
-      "types": "./dist/toggle/index.d.ts"
-    },
-    "./toggleGroup": {
-      "import": "./dist/toggleGroup/index.mjs",
-      "require": "./dist/toggleGroup/index.js",
-      "types": "./dist/toggleGroup/index.d.ts"
-    },
-    "./tooltip": {
-      "import": "./dist/tooltip/index.mjs",
-      "require": "./dist/tooltip/index.js",
-      "types": "./dist/tooltip/index.d.ts"
-    },
-    "./video": {
-      "import": "./dist/video/index.mjs",
-      "require": "./dist/video/index.js",
-      "types": "./dist/video/index.d.ts"
-    }
   }
 }
