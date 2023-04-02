@@ -35,7 +35,7 @@ export type DropdownProps = ComponentPropsWithoutRef<
 
 const DropdownMenuItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
   const className = clsx(
-    'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none',
+    'relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none',
     'focus:bg-neutral-100 dark:focus:bg-neutral-700',
     'data-[disabled]:pointer-events-none data-[disabled]:opacity-50'
   );
@@ -85,7 +85,7 @@ const DropdownMenu = forwardRef<
   DropdownProps
 >(({ className, children, items, ...props }, ref) => (
   <DropdownMenuPrimitive.Root {...props}>
-    <DropdownMenuPrimitive.Trigger asChild>
+    <DropdownMenuPrimitive.Trigger asChild className="cursor-pointer">
       {children}
     </DropdownMenuPrimitive.Trigger>
     <DropdownMenuPrimitive.Content
