@@ -1,3 +1,16 @@
+# v0.1.40 (Sun Apr 02 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Add Badge component ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add WithValue story for File Upload ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.39 (Sun Apr 02 2023)
 
 #### ⚠️ Pushed to `main`
