@@ -16,5 +16,7 @@ export * from './switch';
 export * from './tabs';
 export * from './textarea';
 export * from './toast';
+export * from './toggle';
+export * from './toggleGroup';
 export * from './tooltip';
 export * from './video';
