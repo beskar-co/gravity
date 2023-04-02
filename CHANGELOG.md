@@ -1,3 +1,15 @@
+# v0.1.37 (Sun Apr 02 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Add Toggle and ToggleGroup to exports ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.36 (Sun Apr 02 2023)
 
 #### ⚠️ Pushed to `main`
