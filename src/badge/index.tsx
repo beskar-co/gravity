@@ -3,8 +3,8 @@ import { ReactNode, forwardRef } from 'react';
 
 type BadgeProps = {
   children: ReactNode;
-  size: 'md' | 'sm';
-  variant: 'primary' | 'secondary' | 'tertiary';
+  size?: 'md' | 'sm';
+  variant?: 'primary' | 'secondary' | 'tertiary';
 };
 
 const badgeSizes = {
