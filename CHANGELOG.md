@@ -1,3 +1,17 @@
+# v0.1.36 (Sun Apr 02 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Update index.tsx ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add ToggleGroup component ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add Toggle Component ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.35 (Sun Apr 02 2023)
 
 #### ⚠️ Pushed to `main`
