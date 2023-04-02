@@ -11,13 +11,13 @@ export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
 };
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, ...props }, ref) => {
+  ({ className, onChangeText, ...props }, ref) => {
     const id = useId();
 
     const handleChange: TextareaHTMLAttributes<HTMLTextAreaElement>['onChange'] =
       (event) => {
         props.onChange?.(event);
-        props.onChangeText?.(event.target.value);
+        onChangeText?.(event.target.value);
       };
 
     return (

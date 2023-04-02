@@ -11,14 +11,14 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, ...props }, ref) => {
+  ({ className, onChangeText, ...props }, ref) => {
     const id = useId();
 
     const handleChange: InputHTMLAttributes<HTMLInputElement>['onChange'] = (
       event
     ) => {
       props.onChange?.(event);
-      props.onChangeText?.(event.target.value);
+      onChangeText?.(event.target.value);
     };
 
     return (
