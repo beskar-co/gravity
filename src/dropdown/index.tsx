@@ -55,14 +55,27 @@ const DropdownMenuItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
     </>
   );
 
+  if ('href' in item) {
+    return (
+      <DropdownMenuPrimitive.Item
+        className={className}
+        key={item.label}
+        data-disabled={item.disabled}
+        asChild
+      >
+        <Link {...item}>{Inner}</Link>
+      </DropdownMenuPrimitive.Item>
+    );
+  }
+
   return (
     <DropdownMenuPrimitive.Item
       className={className}
       key={item.label}
       data-disabled={item.disabled}
-      asChild={'href' in item}
+      onClick={item.onClick}
     >
-      {'href' in item ? <Link {...item}>{Inner}</Link> : Inner}
+      {Inner}
     </DropdownMenuPrimitive.Item>
   );
 };
