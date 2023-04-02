@@ -24,3 +24,13 @@ Default.args = {
   accept: ['.jpg', '.jpeg', '.png'],
   maxSize: 5,
 };
+
+export const WithValue = Template.bind({});
+WithValue.args = {
+  label: 'Cover Photo',
+  accept: ['.jpg', '.jpeg', '.png'],
+  maxSize: 5,
+  value: new File([new Blob([''], { type: 'image/jpeg' })], 'test.jpg', {
+    type: 'image/jpeg',
+  }),
+};

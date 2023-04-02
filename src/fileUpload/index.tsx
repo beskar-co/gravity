@@ -103,7 +103,7 @@ export const FileUpload: FC<FileUploadProps> = ({
             <label
               htmlFor="file-upload"
               className={clsx(
-                'relative cursor-pointer rounded-md font-medium transition-colors focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2',
+                'relative mx-auto cursor-pointer rounded-md font-medium transition-colors focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2',
                 'text-black dark:text-white',
                 'focus-within:ring-neutral-100 dark:focus-within:ring-neutral-900'
               )}
