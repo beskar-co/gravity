@@ -1,3 +1,16 @@
+# v0.1.60 (Mon Apr 03 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Fix import path ([@haydenbleasel](https://github.com/haydenbleasel))
+- Switch up the dynamic import approach ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.59 (Sun Apr 02 2023)
 
 #### ⚠️ Pushed to `main`
