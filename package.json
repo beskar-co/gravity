@@ -1,7 +1,7 @@
 {
   "name": "@beskar-labs/gravity",
   "description": "Beskar Labs Design System",
-  "version": "0.1.67",
+  "version": "0.1.68",
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 3000",
     "build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
