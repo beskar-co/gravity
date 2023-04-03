@@ -1,10 +1,13 @@
-import clsx from 'clsx';
-import type { FC, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import { forwardRef } from 'react';
 
 type HintProps = { children: ReactNode };
 
-export const Hint: FC<HintProps> = ({ children }) => (
-  <p className={clsx('text-sm', 'text-neutral-500 dark:text-neutral-400')}>
-    {children}
-  </p>
+export const Hint = forwardRef<HTMLParagraphElement, HintProps>(
+  ({ children }, ref) => (
+    <p className="text-sm text-neutral-500 dark:text-neutral-400" ref={ref}>
+      {children}
+    </p>
+  )
 );
+Hint.displayName = 'Hint';
