@@ -3,7 +3,8 @@
 import { ElementRef, forwardRef } from 'react';
 import { ClipboardDocumentIcon } from '@heroicons/react/24/outline';
 import { Tooltip } from '../tooltip';
-import { Highlighter, HighlighterProps } from './highlighter';
+import dynamic from 'next/dynamic';
+import { HighlighterProps } from '../../dist/snippet/highlighter';
 
 type SnippetProps = {
   language: HighlighterProps['language'];
@@ -11,6 +12,15 @@ type SnippetProps = {
   onCopySuccess?: (text: string) => void;
   onCopyError?: (text: string) => void;
 };
+
+const Highlighter = dynamic(
+  async () =>
+    import(
+      /* webpackChunkName: "react-syntax-highlighter" */
+      './highlighter'
+    ),
+  { ssr: false }
+);
 
 export const Snippet = forwardRef<ElementRef<'div'>, SnippetProps>(
   ({ language, children, onCopySuccess, onCopyError }, ref) => {
@@ -29,7 +39,16 @@ export const Snippet = forwardRef<ElementRef<'div'>, SnippetProps>(
         className="relative overflow-hidden rounded border border-neutral-800 bg-black p-4"
         ref={ref}
       >
-        <Highlighter language={language}>{children}</Highlighter>
+        <Highlighter
+          language={language}
+          customStyle={{
+            background: 'transparent',
+            padding: 0,
+            fontSize: 14,
+          }}
+        >
+          {children}
+        </Highlighter>
         <Tooltip content="Copy to clipboard">
           <button
             type="button"

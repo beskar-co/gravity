@@ -1,19 +1,11 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import { FC } from 'react';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/default-highlight';
+import { SyntaxHighlighterProps } from 'react-syntax-highlighter';
 
-const SyntaxHighlighter = dynamic(
-  async () =>
-    import(
-      /* webpackChunkName: "react-syntax-highlighter" */
-      'react-syntax-highlighter/dist/cjs/default-highlight'
-    ),
-  { ssr: false }
-);
-
-export type HighlighterProps = {
+export type HighlighterProps = Omit<SyntaxHighlighterProps, 'language'> & {
   language:
     | '1c'
     | 'abnf'
@@ -214,16 +206,8 @@ export type HighlighterProps = {
   children: string;
 };
 
-export const Highlighter: FC<HighlighterProps> = ({ language, children }) => (
-  <SyntaxHighlighter
-    language={language}
-    style={nord}
-    customStyle={{
-      background: 'transparent',
-      padding: 0,
-      fontSize: 14,
-    }}
-  >
-    {children}
-  </SyntaxHighlighter>
+const Highlighter: FC<HighlighterProps> = (props) => (
+  <SyntaxHighlighter style={nord} {...props} />
 );
+
+export default Highlighter;

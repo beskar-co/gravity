@@ -3,7 +3,18 @@
 import clsx from 'clsx';
 import { ElementRef, forwardRef } from 'react';
 import { ReactPlayerProps } from 'react-player';
-import Player from './player';
+import dynamic from 'next/dynamic';
+
+const Player = dynamic(
+  () =>
+    import(
+      /* webpackChunkName: 'react-player' */
+      './player'
+    ),
+  {
+    ssr: false,
+  }
+);
 
 type VideoProps = ReactPlayerProps & {
   className?: string;

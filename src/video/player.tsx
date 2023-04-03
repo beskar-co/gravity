@@ -1,16 +1,10 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import { FC } from 'react';
+import ReactPlayer, { ReactPlayerProps } from 'react-player';
 
-const Player = dynamic(
-  () =>
-    import(
-      /* webpackChunkName: 'react-player' */
-      'react-player'
-    ),
-  {
-    ssr: false,
-  }
+export const Player: FC<ReactPlayerProps> = (props) => (
+  <ReactPlayer {...props} />
 );
 
 export default Player;
