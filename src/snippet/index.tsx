@@ -6,6 +6,7 @@ import { ClipboardDocumentIcon } from '@heroicons/react/24/outline';
 import { Tooltip } from '../tooltip';
 import dynamic from 'next/dynamic';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import clsx from 'clsx';
 
 type Language =
   | '1c'
@@ -235,6 +236,9 @@ export const Snippet = forwardRef<
     }
   };
 
+  const code = children.toString();
+  const lines = code.split('\n');
+
   return (
     <div className="relative overflow-hidden rounded border border-neutral-800 bg-black p-4">
       <Highlighter
@@ -247,12 +251,15 @@ export const Snippet = forwardRef<
           fontSize: 14,
         }}
       >
-        {children.toString()}
+        {code}
       </Highlighter>
       <Tooltip content="Copy to clipboard">
         <button
           type="button"
-          className="absolute right-4 top-4 rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800"
+          className={clsx(
+            'absolute rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800',
+            lines.length > 1 ? 'right-4 top-4' : 'right-2.5 top-2.5'
+          )}
           onClick={async () => handleCopy(children)}
         >
           <ClipboardDocumentIcon

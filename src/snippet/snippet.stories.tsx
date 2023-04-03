@@ -59,3 +59,9 @@ if (!response.ok) {
 
 window.alert('You have been subscribed!');`,
 };
+
+export const SingleLine = Template.bind({});
+SingleLine.args = {
+  language: 'python',
+  children: `python -m SimpleHTTPServer 8080`,
+};
