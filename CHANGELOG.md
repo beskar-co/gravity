@@ -1,3 +1,15 @@
+# v0.1.65 (Mon Apr 03 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Add console logs within component lol ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.64 (Mon Apr 03 2023)
 
 #### ⚠️ Pushed to `main`
