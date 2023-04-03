@@ -6,4 +6,6 @@ import ReactPlayer from 'react-player';
 
 const Player: FC<ReactPlayerProps> = (props) => <ReactPlayer {...props} />;
 
+console.log({ Player2: Player });
+
 export default Player;

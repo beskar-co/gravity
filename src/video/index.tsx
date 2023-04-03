@@ -16,6 +16,8 @@ const Player = dynamic(
   }
 );
 
+console.log({ Player });
+
 type VideoProps = ReactPlayerProps & {
   className?: string;
 };
