@@ -247,7 +247,7 @@ export const Snippet = forwardRef<
           fontSize: 14,
         }}
       >
-        {children}
+        {children.toString()}
       </Highlighter>
       <Tooltip content="Copy to clipboard">
         <button
