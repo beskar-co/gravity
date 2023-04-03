@@ -1,7 +1,7 @@
 'use client';
 
 import type { ElementRef, ComponentPropsWithoutRef, FC } from 'react';
-import { forwardRef } from 'react';
+import { Fragment, forwardRef } from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import clsx from 'clsx';
 import type { PlusIcon } from '@heroicons/react/20/solid';
@@ -98,8 +98,8 @@ export const Dropdown = forwardRef<
       )}
     >
       {items.map((item, index) => (
-        <>
-          <DropdownMenuPrimitive.Group key={index}>
+        <Fragment key={index}>
+          <DropdownMenuPrimitive.Group>
             {item.label && (
               <DropdownMenuPrimitive.Label className="px-2 py-1.5 text-sm font-semibold text-neutral-900 dark:text-neutral-300">
                 {item.label}
@@ -140,7 +140,7 @@ export const Dropdown = forwardRef<
           {index !== items.length - 1 && (
             <DropdownMenuPrimitive.Separator className="-mx-1 my-1 h-px bg-neutral-100 dark:bg-neutral-700" />
           )}
-        </>
+        </Fragment>
       ))}
     </DropdownMenuPrimitive.Content>
   </DropdownMenuPrimitive.Root>
