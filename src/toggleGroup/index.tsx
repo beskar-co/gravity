@@ -2,7 +2,8 @@
 
 import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
 import clsx from 'clsx';
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react';
+import type { ComponentPropsWithoutRef, ElementRef } from 'react';
+import { forwardRef } from 'react';
 
 const toggleVariants = {
   default: 'bg-transparent',
@@ -38,7 +39,8 @@ export const ToggleGroup = forwardRef<
             toggleSizes[size],
             index === 0 && 'rounded-l-md',
             index === items.length - 1 && 'rounded-r-md',
-            variant === 'outline' && index > 0 && 'border-l-0'
+            variant === 'outline' && index > 0 && 'border-l-0',
+            className
           )}
           {...item}
         />
@@ -46,3 +48,4 @@ export const ToggleGroup = forwardRef<
     </ToggleGroupPrimitive.Root>
   )
 );
+ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName;

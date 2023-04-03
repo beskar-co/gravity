@@ -4,7 +4,8 @@ import type { ElementRef, ComponentPropsWithoutRef, FC } from 'react';
 import { forwardRef } from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import clsx from 'clsx';
-import { ChevronRightIcon, PlusIcon } from '@heroicons/react/20/solid';
+import type { PlusIcon } from '@heroicons/react/20/solid';
+import { ChevronRightIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 
 type DropdownItemProps = {
@@ -73,6 +74,7 @@ const DropdownItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
       className={className}
       key={item.label}
       data-disabled={item.disabled}
+      // eslint-disable-next-line react/jsx-handler-names
       onClick={item.onClick}
     >
       {Inner}
@@ -105,7 +107,7 @@ export const Dropdown = forwardRef<
             )}
             {item.items?.map((subItem) =>
               subItem.items ? (
-                <DropdownMenuPrimitive.Sub>
+                <DropdownMenuPrimitive.Sub key={subItem.label}>
                   <DropdownMenuPrimitive.SubTrigger className="flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-neutral-100 data-[state=open]:bg-neutral-100 dark:focus:bg-neutral-700 dark:data-[state=open]:bg-neutral-700">
                     {subItem.icon && (
                       <div className="mr-2 h-4 w-4">
@@ -131,7 +133,7 @@ export const Dropdown = forwardRef<
                   </DropdownMenuPrimitive.Portal>
                 </DropdownMenuPrimitive.Sub>
               ) : (
-                <DropdownItem item={subItem} />
+                <DropdownItem item={subItem} key={subItem.label} />
               )
             )}
           </DropdownMenuPrimitive.Group>
@@ -143,3 +145,4 @@ export const Dropdown = forwardRef<
     </DropdownMenuPrimitive.Content>
   </DropdownMenuPrimitive.Root>
 ));
+Dropdown.displayName = 'Dropdown';

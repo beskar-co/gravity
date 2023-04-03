@@ -29,7 +29,7 @@ AlertDialogPortal.displayName = AlertDialogPrimitive.Portal.displayName;
 const AlertDialogOverlay = forwardRef<
   ElementRef<typeof AlertDialogPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>
->(({ className, children, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <AlertDialogPrimitive.Overlay
     className={clsx(
       'fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-opacity animate-in fade-in',

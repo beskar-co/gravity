@@ -2,7 +2,8 @@
 
 import * as TogglePrimitive from '@radix-ui/react-toggle';
 import clsx from 'clsx';
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react';
+import type { ComponentPropsWithoutRef, ElementRef } from 'react';
+import { forwardRef } from 'react';
 
 const toggleVariants = {
   default: 'bg-transparent',

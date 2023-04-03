@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import { ReactNode, forwardRef } from 'react';
+import type { ReactNode } from 'react';
+import { forwardRef } from 'react';
 
 type BadgeProps = {
   children: ReactNode;
@@ -21,17 +22,16 @@ const badgeVariants = {
 };
 
 export const Badge = forwardRef<HTMLDivElement, BadgeProps>(
-  ({ size = 'md', variant = 'primary', ...props }, ref) => {
-    return (
-      <span
-        ref={ref}
-        className={clsx(
-          'inline-flex items-center rounded-full font-medium',
-          badgeSizes[size],
-          badgeVariants[variant]
-        )}
-        {...props}
-      />
-    );
-  }
+  ({ size = 'md', variant = 'primary', ...props }, ref) => (
+    <span
+      ref={ref}
+      className={clsx(
+        'inline-flex items-center rounded-full font-medium',
+        badgeSizes[size],
+        badgeVariants[variant]
+      )}
+      {...props}
+    />
+  )
 );
+Badge.displayName = 'Badge';

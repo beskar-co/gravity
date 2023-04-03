@@ -36,28 +36,31 @@ export const FileUpload: FC<FileUploadProps> = ({
       return;
     }
 
-    files.forEach((file) => {
-      if (file.size > maxSize * 1024 * 1024) {
-        onError?.(`File size must be less than ${maxSize}MB`);
-        return;
-      }
+    try {
+      files.forEach((file) => {
+        if (file.size > maxSize * 1024 * 1024) {
+          throw new Error(`File size must be less than ${maxSize}MB`);
+        }
 
-      const extension = getExtension(file.type);
+        const extension = getExtension(file.type);
 
-      if (!extension) {
-        onError?.(`File type ${file.type} is not supported`);
-        return;
-      }
+        if (!extension) {
+          throw new Error(`File type ${file.type} is not supported`);
+        }
 
-      if (!accept.includes(`.${extension}`)) {
-        onError?.(
-          `File type must be one of the following: ${accept.join(', ')}`
-        );
-        return;
-      }
-    });
+        if (!accept.includes(`.${extension}`)) {
+          throw new Error(
+            `File type must be one of the following: ${accept.join(', ')}`
+          );
+        }
+      });
 
-    onChange?.(files);
+      onChange?.(files);
+    } catch (error) {
+      const castedError = error as Error;
+
+      onError?.(castedError.message);
+    }
   };
 
   const inputRef = useRef<HTMLInputElement>(null);

@@ -81,8 +81,8 @@ export const NavigationMenu = forwardRef<
                       <item.feature />
                     </li>
                   )}
-                  {item.items?.map((subItem) => (
-                    <NavigationMenuPrimitive.Item>
+                  {item.items.map((subItem) => (
+                    <NavigationMenuPrimitive.Item key={subItem.label}>
                       <NavigationMenuPrimitive.Link
                         href={subItem.href as string}
                         asChild
