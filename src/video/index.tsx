@@ -10,7 +10,7 @@ const Player = dynamic(
     import(
       /* webpackChunkName: 'player' */
       './player'
-    ),
+    ).then((mod) => mod.default),
   {
     ssr: false,
   }

@@ -18,7 +18,7 @@ const Highlighter = dynamic(
     import(
       /* webpackChunkName: "react-syntax-highlighter" */
       './highlighter'
-    ),
+    ).then((mod) => mod.default),
   { ssr: false }
 );
 
