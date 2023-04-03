@@ -1,3 +1,15 @@
+# v0.1.61 (Mon Apr 03 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Misc fixes ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.60 (Mon Apr 03 2023)
 
 #### ⚠️ Pushed to `main`
