@@ -1,3 +1,15 @@
+# v0.1.69 (Mon Apr 03 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Fix Fragment issue ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.68 (Mon Apr 03 2023)
 
 #### ⚠️ Pushed to `main`
