@@ -1,10 +1,11 @@
 'use client';
 
-import { ElementRef, forwardRef } from 'react';
+import type { ElementRef } from 'react';
+import { forwardRef } from 'react';
 import { ClipboardDocumentIcon } from '@heroicons/react/24/outline';
 import { Tooltip } from '../tooltip';
 import dynamic from 'next/dynamic';
-import { HighlighterProps } from './highlighter';
+import type { HighlighterProps } from './highlighter';
 
 type SnippetProps = {
   language: HighlighterProps['language'];
@@ -66,3 +67,4 @@ export const Snippet = forwardRef<ElementRef<'div'>, SnippetProps>(
     );
   }
 );
+Snippet.displayName = 'Snippet';

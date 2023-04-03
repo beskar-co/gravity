@@ -1,9 +1,9 @@
 'use client';
 
-import { FC } from 'react';
+import type { FC } from 'react';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/default-highlight';
-import { SyntaxHighlighterProps } from 'react-syntax-highlighter';
+import type { SyntaxHighlighterProps } from 'react-syntax-highlighter';
 
 export type HighlighterProps = Omit<SyntaxHighlighterProps, 'language'> & {
   language:

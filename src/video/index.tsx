@@ -1,14 +1,15 @@
 'use client';
 
 import clsx from 'clsx';
-import { ElementRef, forwardRef } from 'react';
-import { ReactPlayerProps } from 'react-player';
+import type { ElementRef } from 'react';
+import { forwardRef } from 'react';
+import type { ReactPlayerProps } from 'react-player';
 import dynamic from 'next/dynamic';
 
 const Player = dynamic(
-  () =>
+  async () =>
     import(
-      /* webpackChunkName: 'react-player' */
+      /* webpackChunkName: 'player' */
       './player'
     ),
   {
@@ -21,7 +22,7 @@ type VideoProps = ReactPlayerProps & {
 };
 
 export const Video = forwardRef<ElementRef<'div'>, VideoProps>(
-  ({ children, className, ...props }, ref) => (
+  ({ className, ...props }, ref) => (
     <div
       className={clsx(
         'relative w-full overflow-hidden rounded',
@@ -42,3 +43,4 @@ export const Video = forwardRef<ElementRef<'div'>, VideoProps>(
     </div>
   )
 );
+Video.displayName = 'Video';

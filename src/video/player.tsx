@@ -1,10 +1,9 @@
 'use client';
 
-import { FC } from 'react';
-import ReactPlayer, { ReactPlayerProps } from 'react-player';
+import type { FC } from 'react';
+import type { ReactPlayerProps } from 'react-player';
+import ReactPlayer from 'react-player';
 
-export const Player: FC<ReactPlayerProps> = (props) => (
-  <ReactPlayer {...props} />
-);
+const Player: FC<ReactPlayerProps> = (props) => <ReactPlayer {...props} />;
 
 export default Player;
