@@ -1,7 +1,6 @@
 'use client';
 
 import clsx from 'clsx';
-import type { ElementRef } from 'react';
 import { forwardRef } from 'react';
 import type { ReactPlayerProps } from 'react-player';
 import dynamic from 'next/dynamic';
@@ -21,7 +20,7 @@ type VideoProps = ReactPlayerProps & {
   className?: string;
 };
 
-export const Video = forwardRef<ElementRef<'div'>, VideoProps>(
+export const Video = forwardRef<HTMLDivElement, VideoProps>(
   ({ className, ...props }, ref) => (
     <div
       className={clsx(
