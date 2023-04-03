@@ -1,7 +1,7 @@
 'use client';
 
 import type { ElementRef, ComponentPropsWithoutRef } from 'react';
-import { forwardRef } from 'react';
+import { Fragment, forwardRef } from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 
@@ -34,8 +34,8 @@ export const Select = forwardRef<
       <SelectPrimitive.Content className="relative z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-100 bg-white text-neutral-700 shadow-md animate-in fade-in-80 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400">
         <SelectPrimitive.Viewport className="p-1">
           {data.map((group, index) => (
-            <>
-              <SelectPrimitive.Group key={group.label}>
+            <Fragment key={group.label}>
+              <SelectPrimitive.Group>
                 {data.length > 1 && (
                   <SelectPrimitive.Label className="py-1.5 pl-8 pr-2 text-sm font-semibold text-neutral-900 dark:text-neutral-300">
                     {group.label}
@@ -63,7 +63,7 @@ export const Select = forwardRef<
               {data.length > 1 && index < data.length - 1 && (
                 <SelectPrimitive.Separator className="-mx-1 my-1 h-px bg-neutral-100 dark:bg-neutral-700" />
               )}
-            </>
+            </Fragment>
           ))}
         </SelectPrimitive.Viewport>
       </SelectPrimitive.Content>
