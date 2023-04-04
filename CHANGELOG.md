@@ -1,3 +1,20 @@
+# v0.1.70 (Tue Apr 04 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Add Popover component ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add Slider ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add support for RadioGroup component ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add support for single-line snippets ([@haydenbleasel](https://github.com/haydenbleasel))
+- Attempt to fix Syntax Highlighter ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add forwardRef to Badge ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.69 (Mon Apr 03 2023)
 
 #### ⚠️ Pushed to `main`
