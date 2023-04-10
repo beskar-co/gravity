@@ -1,3 +1,15 @@
+# v0.1.71 (Mon Apr 10 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Add support for Next.js 13 apps ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.70 (Tue Apr 04 2023)
 
 #### ⚠️ Pushed to `main`
