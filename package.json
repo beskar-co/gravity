@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 3000",
     "build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
-    "package": "tsup"
+    "package": "tsup",
+    "postpackage": "node scripts/postprocess.js"
   },
   "files": [
     "dist/**"
