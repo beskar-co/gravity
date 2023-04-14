@@ -91,6 +91,7 @@ export const Dropdown = forwardRef<
       {children}
     </DropdownMenuPrimitive.Trigger>
     <DropdownMenuPrimitive.Content
+      collisionPadding={4}
       ref={ref}
       className={clsx(
         'z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-100 bg-white p-1 text-neutral-700 shadow-md animate-in slide-in-from-left-1 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400',
