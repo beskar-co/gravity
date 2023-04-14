@@ -5,7 +5,7 @@ import { CommandLineIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 
 export default {
-  label: 'Example/Navigation Menu',
+  label: 'Example/NavigationMenu',
   component: NavigationMenu,
   parameters: {
     layout: 'fullscreen',
