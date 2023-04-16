@@ -1,3 +1,15 @@
+# v0.1.74 (Fri Apr 14 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Fix collisionPadding ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.73 (Fri Apr 14 2023)
 
 #### ⚠️ Pushed to `main`
