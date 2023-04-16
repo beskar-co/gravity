@@ -10,20 +10,31 @@ function processFile(filepath) {
   }
 
   const contents = fs.readFileSync(filepath, 'utf8');
-  if (!contents.includes('use client')) {
-    return; // file does not contain "use client"
+  const lines = contents.split('\n');
+
+  if (contents.includes('use client')) {
+    const useClientIndex = lines.findIndex((line) =>
+      line.includes('"use client";')
+    );
+
+    if (useClientIndex !== -1) {
+      const useClientLine = lines.splice(useClientIndex, 1)[0];
+      lines.unshift(useClientLine);
+    }
   }
 
-  // move "use client" to top of file
-  const lines = contents.split('\n');
-  const useClientIndex = lines.findIndex((line) =>
-    line.includes('"use client";')
-  );
-  if (useClientIndex === -1) {
-    return; // should not happen, but just in case
+  const nextModuleRegex = /next\/\w+/;
+  if (contents.match(nextModuleRegex)) {
+    const nextModuleIndex = lines.findIndex((line) =>
+      nextModuleRegex.test(line)
+    );
+    if (nextModuleIndex !== -1) {
+      lines[nextModuleIndex] = lines[nextModuleIndex].replace(
+        nextModuleRegex,
+        '$&.js'
+      );
+    }
   }
-  const useClientLine = lines.splice(useClientIndex, 1)[0];
-  lines.unshift(useClientLine);
 
   // write updated file contents
   const newContents = lines.join('\n');
