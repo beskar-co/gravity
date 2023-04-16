@@ -21,7 +21,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       };
 
     return (
-      <div className="grid w-full max-w-sm items-center gap-1.5">
+      <div className="grid w-full items-center gap-1.5">
         {props.label && <Label htmlFor={id}>{props.label}</Label>}
         <textarea
           className={clsx(
