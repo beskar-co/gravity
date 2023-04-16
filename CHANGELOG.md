@@ -1,3 +1,16 @@
+# v0.1.77 (Sun Apr 16 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/beskar-co/gravity ([@haydenbleasel](https://github.com/haydenbleasel))
+- Attempt to convert all next submodules to .js ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.76 (Sun Apr 16 2023)
 
 #### ⚠️ Pushed to `main`
