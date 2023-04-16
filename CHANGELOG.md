@@ -1,3 +1,15 @@
+# v0.1.76 (Sun Apr 16 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Move Next / React / React-DOM deps to devDeps ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.75 (Sun Apr 16 2023)
 
 #### ⚠️ Pushed to `main`
