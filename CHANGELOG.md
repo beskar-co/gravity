@@ -1,3 +1,15 @@
+# v0.1.78 (Sun Apr 16 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Remove max widths from form elements ([@haydenbleasel](https://github.com/haydenbleasel))
+
+#### Authors: 1
+
+- Hayden Bleasel ([@haydenbleasel](https://github.com/haydenbleasel))
+
+---
+
 # v0.1.77 (Sun Apr 16 2023)
 
 #### ⚠️ Pushed to `main`
