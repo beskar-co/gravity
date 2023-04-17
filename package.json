@@ -6,11 +6,11 @@
     "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 3000",
     "build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "package": "tsup",
-    "postpackage": "node scripts/postprocess.js",
+    "postpackage": "node scripts/postprocess.js && node scripts/copy.js",
     "release": "semantic-release"
   },
   "files": [
-    "dist/**"
+    "*"
   ],
   "sideEffects": false,
   "publishConfig": {
@@ -110,12 +110,5 @@
   "prettier": "@beskar-labs/harmony/prettier",
   "stylelint": {
     "extends": "@beskar-labs/harmony/stylelint"
-  },
-  "exports": {
-    "./*": {
-      "import": "./dist/*/index.mjs",
-      "require": "./dist/*/index.js",
-      "types": "./dist/*/index.d.ts"
-    }
   }
 }
