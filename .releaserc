@@ -13,7 +13,7 @@
     [
       "@semantic-release/changelog",
       {
-        "changelogFile": "build/CHANGELOG.md"
+        "changelogFile": "dist/CHANGELOG.md"
       }
     ],
     [
