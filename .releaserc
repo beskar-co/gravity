@@ -27,7 +27,7 @@
       {
         "npmPublish": true,
         "registry": "https://npm.pkg.github.com",
-        "pkgRoot": "./build"
+        "pkgRoot": "./dist"
       }
     ],
     [
