@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/beskar-co/gravity/compare/v0.2.0...v0.2.1) (2023-04-17)
+
+
+### Bug Fixes
+
+* **build:** fix typo ([565e767](https://github.com/beskar-co/gravity/commit/565e76743094b2d634e23b1744bc8f42d34d7d41))
+
 # [0.2.0](https://github.com/beskar-co/gravity/compare/v0.1.78...v0.2.0) (2023-04-17)
 
 
