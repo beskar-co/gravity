@@ -1,3 +1,18 @@
+# [0.2.0](https://github.com/beskar-co/gravity/compare/v0.1.78...v0.2.0) (2023-04-17)
+
+
+### Bug Fixes
+
+* **build:** add custom release release config ([7aadf9c](https://github.com/beskar-co/gravity/commit/7aadf9c2390773e1f9bef9d422f0a28fed687ce8))
+* **build:** fix typo ([dc4d881](https://github.com/beskar-co/gravity/commit/dc4d8815b5b5b57c6679cd50c53c606e518931d2))
+* **build:** replace auto with semantic-release ([15e9383](https://github.com/beskar-co/gravity/commit/15e93835161923101a8ee986a9a50fb9b1365d84))
+* **build:** resolves [#1](https://github.com/beskar-co/gravity/issues/1) ([2a4847a](https://github.com/beskar-co/gravity/commit/2a4847a8bc7d7065bea2cf0379ccdc8d5bb01a25))
+
+
+### Features
+
+* **build:** rework build config to remove dependency on nodenext ([f89f5e1](https://github.com/beskar-co/gravity/commit/f89f5e16ebec3264ee1ce91297d79695e8ec8b6f))
+
 # v0.1.78 (Sun Apr 16 2023)
 
 #### ⚠️ Pushed to `main`
