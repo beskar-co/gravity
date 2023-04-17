@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/beskar-co/gravity/compare/v0.2.1...v0.2.2) (2023-04-17)
+
+
+### Bug Fixes
+
+* **lint:** misc fix ([e8192e3](https://github.com/beskar-co/gravity/commit/e8192e3374d4a10de695bc9f99ba2748a8b248db))
+
 ## [0.2.1](https://github.com/beskar-co/gravity/compare/v0.2.0...v0.2.1) (2023-04-17)
 
 
