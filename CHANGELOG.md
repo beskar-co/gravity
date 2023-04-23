@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/beskar-co/gravity/compare/v0.2.2...v0.2.3) (2023-04-23)
+
+
+### Bug Fixes
+
+* **snippet:** make snippet more versatile ([0147557](https://github.com/beskar-co/gravity/commit/014755790f0ef207e0dd01e3eb08a06df5c8fe70))
+
 ## [0.2.2](https://github.com/beskar-co/gravity/compare/v0.2.1...v0.2.2) (2023-04-17)
 
 
