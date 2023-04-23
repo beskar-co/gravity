@@ -211,6 +211,7 @@ type SnippetProps = {
   children: string;
   onCopySuccess?: (text: string) => void;
   onCopyError?: (text: string) => void;
+  className?: string;
 };
 
 const Highlighter = dynamic(
@@ -225,7 +226,7 @@ const Highlighter = dynamic(
 export const Snippet = forwardRef<
   ComponentPropsWithoutRef<typeof Highlighter>,
   SnippetProps
->(({ language, children, onCopySuccess, onCopyError }, ref) => {
+>(({ language, children, onCopySuccess, onCopyError, className }, ref) => {
   const handleCopy = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -240,7 +241,12 @@ export const Snippet = forwardRef<
   const lines = code.split('\n');
 
   return (
-    <div className="relative overflow-hidden rounded border border-neutral-800 bg-black p-4">
+    <div
+      className={clsx(
+        'relative overflow-hidden rounded bg-black p-4',
+        className
+      )}
+    >
       <Highlighter
         language={language}
         style={nord}
@@ -253,22 +259,24 @@ export const Snippet = forwardRef<
       >
         {code}
       </Highlighter>
-      <Tooltip content="Copy to clipboard">
-        <button
-          type="button"
-          className={clsx(
-            'absolute rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800',
-            lines.length > 1 ? 'right-4 top-4' : 'right-2.5 top-2.5'
-          )}
-          onClick={async () => handleCopy(children)}
-        >
-          <ClipboardDocumentIcon
-            className="h-4 w-4 text-neutral-400"
-            width={16}
-            height={16}
-          />
-        </button>
-      </Tooltip>
+      {onCopySuccess && onCopyError && (
+        <Tooltip content="Copy to clipboard">
+          <button
+            type="button"
+            className={clsx(
+              'absolute rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800',
+              lines.length > 1 ? 'right-4 top-4' : 'right-2.5 top-2.5'
+            )}
+            onClick={async () => handleCopy(children)}
+          >
+            <ClipboardDocumentIcon
+              className="h-4 w-4 text-neutral-400"
+              width={16}
+              height={16}
+            />
+          </button>
+        </Tooltip>
+      )}
     </div>
   );
 });
