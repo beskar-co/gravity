@@ -1,3 +1,10 @@
+## [0.2.4](https://github.com/beskar-co/gravity/compare/v0.2.3...v0.2.4) (2023-04-29)
+
+
+### Bug Fixes
+
+* **alertdialog:** unify alert dialog ([e416745](https://github.com/beskar-co/gravity/commit/e4167456e46e05b95c043fbef726fa790a0d2acf))
+
 ## [0.2.3](https://github.com/beskar-co/gravity/compare/v0.2.2...v0.2.3) (2023-04-23)
 
 
