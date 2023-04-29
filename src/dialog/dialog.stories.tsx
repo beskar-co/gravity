@@ -1,43 +1,25 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from './';
+import { Dialog, DialogAction, DialogCancel } from './';
 export default {
   title: 'Example/Alert Dialog',
-  component: AlertDialog,
+  component: Dialog,
   parameters: {
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof AlertDialog>;
+} as ComponentMeta<typeof Dialog>;
 
-const Template: ComponentStory<typeof AlertDialog> = (args) => (
-  <AlertDialog {...args}>
-    <AlertDialogTrigger asChild>
-      <button type="button">Open</button>
-    </AlertDialogTrigger>
-    <AlertDialogContent>
-      <AlertDialogHeader>
-        <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-        <AlertDialogDescription>
-          This action cannot be undone. This will permanently delete your
-          account and remove your data from our servers.
-        </AlertDialogDescription>
-      </AlertDialogHeader>
-      <AlertDialogFooter>
-        <AlertDialogCancel>Cancel</AlertDialogCancel>
-        <AlertDialogAction>Continue</AlertDialogAction>
-      </AlertDialogFooter>
-    </AlertDialogContent>
-  </AlertDialog>
-);
+const Template: ComponentStory<typeof Dialog> = (args) => <Dialog {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  title: 'Are you absolutely sure?',
+  description:
+    'This action cannot be undone. This will permanently delete your account and remove your data from our servers.',
+  content: (
+    <div className="flex items-center justify-center gap-2 sm:justify-normal">
+      <DialogCancel>Cancel</DialogCancel>
+      <DialogAction>Continue</DialogAction>
+    </div>
+  ),
+  children: <button type="button">Open</button>,
+};
