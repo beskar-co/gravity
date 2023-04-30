@@ -4,10 +4,10 @@ import type { ElementRef, ComponentPropsWithoutRef } from 'react';
 import { Fragment, forwardRef } from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
-import { Label } from '@radix-ui/react-label';
+import { Label } from '../label';
 
 type SelectProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
-  placeholder: string;
+  placeholder?: string;
   label?: string;
   data: {
     label: string;
