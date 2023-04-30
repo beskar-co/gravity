@@ -1,3 +1,10 @@
+## [0.2.6](https://github.com/beskar-co/gravity/compare/v0.2.5...v0.2.6) (2023-04-30)
+
+
+### Bug Fixes
+
+* **select:** fix select props and label ([a8a9731](https://github.com/beskar-co/gravity/commit/a8a97316fd7ae40bb2849394790464aa7048a0f3))
+
 ## [0.2.5](https://github.com/beskar-co/gravity/compare/v0.2.4...v0.2.5) (2023-04-30)
 
 
