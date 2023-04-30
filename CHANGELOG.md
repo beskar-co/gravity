@@ -1,3 +1,10 @@
+## [0.2.5](https://github.com/beskar-co/gravity/compare/v0.2.4...v0.2.5) (2023-04-30)
+
+
+### Bug Fixes
+
+* **select:** add support for label ([1b979f0](https://github.com/beskar-co/gravity/commit/1b979f0f9dc207641e08ee73b8cb67bd600726ee))
+
 ## [0.2.4](https://github.com/beskar-co/gravity/compare/v0.2.3...v0.2.4) (2023-04-29)
 
 
