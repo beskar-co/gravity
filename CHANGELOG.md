@@ -1,3 +1,10 @@
+## [0.2.7](https://github.com/beskar-co/gravity/compare/v0.2.6...v0.2.7) (2023-05-01)
+
+
+### Bug Fixes
+
+* **accordion:** rebuild accordion ([e8a34b0](https://github.com/beskar-co/gravity/commit/e8a34b07c08e392cb99f0aca86a0a4409d3edae9))
+
 ## [0.2.6](https://github.com/beskar-co/gravity/compare/v0.2.5...v0.2.6) (2023-04-30)
 
 
