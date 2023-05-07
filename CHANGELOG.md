@@ -1,3 +1,10 @@
+## [0.2.8](https://github.com/beskar-co/gravity/compare/v0.2.7...v0.2.8) (2023-05-07)
+
+
+### Bug Fixes
+
+* **snippet:** add support for react-syntax-highlighter props ([9434f8d](https://github.com/beskar-co/gravity/commit/9434f8d94d5cd2224dd399820a75717269c2c1f8))
+
 ## [0.2.7](https://github.com/beskar-co/gravity/compare/v0.2.6...v0.2.7) (2023-05-01)
 
 
