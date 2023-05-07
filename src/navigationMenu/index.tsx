@@ -41,7 +41,7 @@ export const NavigationMenu = forwardRef<
     )}
     {...props}
   >
-    <NavigationMenuPrimitive.List className="group flex flex-1 list-none items-center justify-center">
+    <NavigationMenuPrimitive.List className="group flex flex-1 list-none items-center justify-center gap-1">
       {items.map((item) => (
         <NavigationMenuPrimitive.Item key={item.label}>
           {'href' in item ? (
@@ -50,7 +50,7 @@ export const NavigationMenu = forwardRef<
               asChild
               data-active={item.active}
               className={clsx(
-                'group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors',
+                'group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-3 text-sm font-medium transition-colors',
                 'hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active=true]:bg-neutral-50 data-[state=open]:bg-neutral-50 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:bg-neutral-800',
                 'dark:data-[active=true]:bg-neutral-800 dark:data-[state=open]:bg-neutral-800'
               )}
@@ -59,7 +59,7 @@ export const NavigationMenu = forwardRef<
             </NavigationMenuPrimitive.Link>
           ) : (
             <>
-              <NavigationMenuPrimitive.Trigger className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active=true]:bg-neutral-50 data-[state=open]:bg-neutral-50 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:bg-neutral-800 dark:data-[active=true]:bg-neutral-800 dark:data-[state=open]:bg-neutral-800">
+              <NavigationMenuPrimitive.Trigger className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-3 text-sm font-medium transition-colors hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active=true]:bg-neutral-50 data-[state=open]:bg-neutral-50 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:bg-neutral-800 dark:data-[active=true]:bg-neutral-800 dark:data-[state=open]:bg-neutral-800">
                 {item.label}
                 <ChevronDownIcon
                   className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
@@ -67,42 +67,44 @@ export const NavigationMenu = forwardRef<
                 />
               </NavigationMenuPrimitive.Trigger>
               <NavigationMenuPrimitive.Content className="left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto">
-                <ul
-                  className={clsx(
-                    'grid gap-3',
-                    item.layout === 'list' &&
-                      'w-[400px] p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]',
-                    item.layout === 'grid' &&
-                      'p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'
-                  )}
-                >
+                <div className="flex">
                   {item.feature && (
-                    <li className="row-span-3">
+                    <div className="flex-1 shrink-0 py-4 pl-4">
                       <item.feature />
-                    </li>
+                    </div>
                   )}
-                  {item.items.map((subItem) => (
-                    <NavigationMenuPrimitive.Item key={subItem.label}>
-                      <NavigationMenuPrimitive.Link
-                        href={subItem.href as string}
-                        asChild
-                        data-active={subItem.active}
-                      >
-                        <Link
-                          href={subItem.href}
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-neutral-100 focus:bg-neutral-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                  <ul
+                    className={clsx(
+                      'grid flex-1 gap-3',
+                      item.layout === 'list' &&
+                        'w-[400px] p-4 md:w-[500px] lg:w-[600px]',
+                      item.layout === 'grid' &&
+                        'p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'
+                    )}
+                  >
+                    {item.items.map((subItem) => (
+                      <NavigationMenuPrimitive.Item key={subItem.label}>
+                        <NavigationMenuPrimitive.Link
+                          href={subItem.href as string}
+                          asChild
+                          data-active={subItem.active}
                         >
-                          <div className="text-sm font-medium leading-none">
-                            {subItem.label}
-                          </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-neutral-500 dark:text-neutral-400">
-                            {subItem.description}
-                          </p>
-                        </Link>
-                      </NavigationMenuPrimitive.Link>
-                    </NavigationMenuPrimitive.Item>
-                  ))}
-                </ul>
+                          <Link
+                            href={subItem.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-neutral-100 focus:bg-neutral-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                          >
+                            <div className="text-sm font-medium leading-none text-black dark:text-white">
+                              {subItem.label}
+                            </div>
+                            <p className="line-clamp-2 text-sm leading-snug text-neutral-500 dark:text-neutral-400">
+                              {subItem.description}
+                            </p>
+                          </Link>
+                        </NavigationMenuPrimitive.Link>
+                      </NavigationMenuPrimitive.Item>
+                    ))}
+                  </ul>
+                </div>
               </NavigationMenuPrimitive.Content>
             </>
           )}
@@ -115,7 +117,7 @@ export const NavigationMenu = forwardRef<
       </NavigationMenuPrimitive.Indicator> */}
     </NavigationMenuPrimitive.List>
     <div className="absolute left-0 top-full flex justify-center">
-      <NavigationMenuPrimitive.Viewport className="origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border border-neutral-200 bg-white shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 dark:border-neutral-700 dark:bg-neutral-800 md:w-[var(--radix-navigation-menu-viewport-width)]" />
+      <NavigationMenuPrimitive.Viewport className="origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border border-neutral-200 bg-white shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 dark:border-neutral-800 dark:bg-neutral-900 md:w-[var(--radix-navigation-menu-viewport-width)]" />
     </div>
   </NavigationMenuPrimitive.Root>
 ));
