@@ -1,7 +1,7 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { NavigationMenu } from './';
-import { CommandLineIcon } from '@heroicons/react/20/solid';
+import { CommandLineIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 export default {
@@ -28,11 +28,13 @@ Default.args = {
           href: '/docs',
           description:
             'Re-usable components built using Radix UI and Tailwind CSS.',
+          icon: CommandLineIcon,
         },
         {
           label: 'Installation',
           href: '/docs/installation',
           description: 'How to install dependencies and structure your app.',
+          icon: CommandLineIcon,
         },
         {
           label: 'Typography',
@@ -65,6 +67,7 @@ Default.args = {
           href: '/docs/primitives/alert-dialog',
           description:
             'A modal dialog that interrupts the user with important content and expects a response.',
+          icon: CommandLineIcon,
         },
         {
           label: 'Hover Card',
@@ -77,11 +80,13 @@ Default.args = {
           href: '/docs/primitives/progress',
           description:
             'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
+          icon: CommandLineIcon,
         },
         {
           label: 'Scroll-area',
           href: '/docs/primitives/scroll-area',
           description: 'Visually or semantically separates content.',
+          icon: CommandLineIcon,
         },
         {
           label: 'Tabs',

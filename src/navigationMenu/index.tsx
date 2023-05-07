@@ -2,10 +2,10 @@
 
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import clsx from 'clsx';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 import { forwardRef } from 'react';
 import Link from 'next/link';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 type NavigationDropdownItemProps = {
   layout: 'list' | 'grid';
@@ -13,6 +13,7 @@ type NavigationDropdownItemProps = {
     label: string;
     description?: string;
     active?: boolean;
+    icon?: typeof ChevronDownIcon;
   } & ComponentPropsWithoutRef<typeof Link>)[];
   feature?: FC;
 };
@@ -91,14 +92,19 @@ export const NavigationMenu = forwardRef<
                         >
                           <Link
                             href={subItem.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-neutral-100 focus:bg-neutral-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                            className="flex select-none gap-2 space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-neutral-100 focus:bg-neutral-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
                           >
-                            <div className="text-sm font-medium leading-none text-black dark:text-white">
-                              {subItem.label}
+                            {subItem.icon && (
+                              <subItem.icon className="h-6 w-6 shrink-0 text-neutral-500 dark:text-neutral-400" />
+                            )}
+                            <div className="grid gap-1">
+                              <div className="text-sm font-medium leading-none text-black dark:text-white">
+                                {subItem.label}
+                              </div>
+                              <p className="line-clamp-2 text-sm leading-snug text-neutral-500 dark:text-neutral-400">
+                                {subItem.description}
+                              </p>
                             </div>
-                            <p className="line-clamp-2 text-sm leading-snug text-neutral-500 dark:text-neutral-400">
-                              {subItem.description}
-                            </p>
                           </Link>
                         </NavigationMenuPrimitive.Link>
                       </NavigationMenuPrimitive.Item>
