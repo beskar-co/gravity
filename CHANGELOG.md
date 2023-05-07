@@ -1,3 +1,15 @@
+# [0.3.0](https://github.com/beskar-co/gravity/compare/v0.2.8...v0.3.0) (2023-05-07)
+
+
+### Bug Fixes
+
+* **navigation-menu:** fix colors and layout ([e785206](https://github.com/beskar-co/gravity/commit/e7852064154b19271cb536218de53c744db1ed50))
+
+
+### Features
+
+* **navigation-menu:** add icon support ([0bc36b1](https://github.com/beskar-co/gravity/commit/0bc36b1dab9f5eb0b5b408310774fecdd6f1f5b8))
+
 ## [0.2.8](https://github.com/beskar-co/gravity/compare/v0.2.7...v0.2.8) (2023-05-07)
 
 
