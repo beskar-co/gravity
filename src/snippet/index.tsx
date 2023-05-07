@@ -7,6 +7,7 @@ import { Tooltip } from '../tooltip';
 import dynamic from 'next/dynamic';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import clsx from 'clsx';
+import type { SyntaxHighlighterProps } from 'react-syntax-highlighter';
 
 type Language =
   | '1c'
@@ -206,7 +207,7 @@ type Language =
   | 'yaml'
   | 'zephir';
 
-type SnippetProps = {
+type SnippetProps = Omit<SyntaxHighlighterProps, 'language' | 'children'> & {
   language: Language;
   children: string;
   onCopySuccess?: (text: string) => void;
@@ -226,58 +227,64 @@ const Highlighter = dynamic(
 export const Snippet = forwardRef<
   ComponentPropsWithoutRef<typeof Highlighter>,
   SnippetProps
->(({ language, children, onCopySuccess, onCopyError, className }, ref) => {
-  const handleCopy = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
+>(
+  (
+    { language, children, onCopySuccess, onCopyError, className, ...props },
+    ref
+  ) => {
+    const handleCopy = async (text: string) => {
+      try {
+        await navigator.clipboard.writeText(text);
 
-      onCopySuccess?.('Copied code to clipboard');
-    } catch (error) {
-      onCopyError?.('Failed to copy code to clipboard');
-    }
-  };
+        onCopySuccess?.('Copied code to clipboard');
+      } catch (error) {
+        onCopyError?.('Failed to copy code to clipboard');
+      }
+    };
 
-  const code = children.toString();
-  const lines = code.split('\n');
+    const code = children.toString();
+    const lines = code.split('\n');
 
-  return (
-    <div
-      className={clsx(
-        'relative overflow-hidden rounded bg-black p-4',
-        className
-      )}
-    >
-      <Highlighter
-        language={language}
-        style={nord}
-        ref={ref}
-        customStyle={{
-          background: 'transparent',
-          padding: 0,
-          fontSize: 14,
-        }}
+    return (
+      <div
+        className={clsx(
+          'relative overflow-hidden rounded bg-black p-4',
+          className
+        )}
       >
-        {code}
-      </Highlighter>
-      {onCopySuccess && onCopyError && (
-        <Tooltip content="Copy to clipboard">
-          <button
-            type="button"
-            className={clsx(
-              'absolute rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800',
-              lines.length > 1 ? 'right-4 top-4' : 'right-2.5 top-2.5'
-            )}
-            onClick={async () => handleCopy(children)}
-          >
-            <ClipboardDocumentIcon
-              className="h-4 w-4 text-neutral-400"
-              width={16}
-              height={16}
-            />
-          </button>
-        </Tooltip>
-      )}
-    </div>
-  );
-});
+        <Highlighter
+          language={language}
+          style={nord}
+          ref={ref}
+          customStyle={{
+            background: 'transparent',
+            padding: 0,
+            fontSize: 14,
+          }}
+          {...props}
+        >
+          {code}
+        </Highlighter>
+        {onCopySuccess && onCopyError && (
+          <Tooltip content="Copy to clipboard">
+            <button
+              type="button"
+              className={clsx(
+                'absolute rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800',
+                lines.length > 1 ? 'right-4 top-4' : 'right-2.5 top-2.5'
+              )}
+              onClick={async () => handleCopy(children)}
+            >
+              <ClipboardDocumentIcon
+                className="h-4 w-4 text-neutral-400"
+                width={16}
+                height={16}
+              />
+            </button>
+          </Tooltip>
+        )}
+      </div>
+    );
+  }
+);
 Snippet.displayName = 'Snippet';
