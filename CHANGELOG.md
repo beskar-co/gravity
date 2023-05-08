@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/beskar-co/gravity/compare/v0.6.0...v0.7.0) (2023-05-08)
+
+
+### Features
+
+* **select:** add rudimentary search select support ([0685044](https://github.com/beskar-co/gravity/commit/06850441a7d78425f9916c7daa7391f1ffe150b2))
+
 # [0.6.0](https://github.com/beskar-co/gravity/compare/v0.5.2...v0.6.0) (2023-05-08)
 
 
