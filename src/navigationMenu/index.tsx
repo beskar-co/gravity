@@ -80,7 +80,7 @@ export const NavigationMenu = forwardRef<
                       item.layout === 'list' &&
                         'w-[400px] p-4 md:w-[500px] lg:w-[600px]',
                       item.layout === 'grid' &&
-                        'p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'
+                        'grid-cols-2 p-6 md:w-[400px] lg:w-[500px]'
                     )}
                   >
                     {item.items.map((subItem) => (
