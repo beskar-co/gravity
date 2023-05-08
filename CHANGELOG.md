@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/beskar-co/gravity/compare/v0.4.2...v0.5.0) (2023-05-08)
+
+
+### Features
+
+* **select:** add badge support ([5e0a403](https://github.com/beskar-co/gravity/commit/5e0a40302421b1211b452e424d5439f8a02ad4f9))
+
 ## [0.4.2](https://github.com/beskar-co/gravity/compare/v0.4.1...v0.4.2) (2023-05-08)
 
 
