@@ -104,3 +104,27 @@ WithBadge.args = {
     },
   ],
 };
+
+export const WithSearch = Template.bind({});
+WithSearch.args = {
+  disabled: false,
+  name: 'fruit',
+  placeholder: 'Select a fruit',
+  search: true,
+  data: [
+    {
+      label: 'Fruits',
+      items: [
+        {
+          value: 'apple',
+          label: 'Apple',
+          badge: 'New',
+        },
+      ],
+    },
+    {
+      label: 'Vegetables',
+      items: [{ value: 'aubergine', label: 'Aubergine', disabled: true }],
+    },
+  ],
+};
