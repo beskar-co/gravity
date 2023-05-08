@@ -1,3 +1,10 @@
+## [0.3.2](https://github.com/beskar-co/gravity/compare/v0.3.1...v0.3.2) (2023-05-08)
+
+
+### Bug Fixes
+
+* **select:** fix misc style issue ([a1ba752](https://github.com/beskar-co/gravity/commit/a1ba752d6dad2e8fe5a393929c779f3625fa1eb8))
+
 ## [0.3.1](https://github.com/beskar-co/gravity/compare/v0.3.0...v0.3.1) (2023-05-08)
 
 
