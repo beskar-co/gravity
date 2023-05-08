@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/beskar-co/gravity/compare/v0.3.2...v0.4.0) (2023-05-08)
+
+
+### Features
+
+* **select:** add image and icon support to select ([cd0f948](https://github.com/beskar-co/gravity/commit/cd0f948836f8d8aa10856faa1da94e1d1f030172))
+
 ## [0.3.2](https://github.com/beskar-co/gravity/compare/v0.3.1...v0.3.2) (2023-05-08)
 
 
