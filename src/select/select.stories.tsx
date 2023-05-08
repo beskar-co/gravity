@@ -81,3 +81,26 @@ WithIcon.args = {
     },
   ],
 };
+
+export const WithBadge = Template.bind({});
+WithBadge.args = {
+  disabled: false,
+  name: 'fruit',
+  placeholder: 'Select a fruit',
+  data: [
+    {
+      label: 'Fruits',
+      items: [
+        {
+          value: 'apple',
+          label: 'Apple',
+          badge: 'New',
+        },
+      ],
+    },
+    {
+      label: 'Vegetables',
+      items: [{ value: 'aubergine', label: 'Aubergine', disabled: true }],
+    },
+  ],
+};

@@ -6,6 +6,7 @@ import * as SelectPrimitive from '@radix-ui/react-select';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 import { Label } from '../label';
 import Image from 'next/image';
+import { Badge } from '../badge';
 
 type SelectProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
   placeholder?: string;
@@ -18,6 +19,7 @@ type SelectProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
       disabled?: boolean;
       icon?: typeof CheckIcon;
       image?: string;
+      badge?: string;
     }[];
   }[];
 };
@@ -74,6 +76,11 @@ export const Select = forwardRef<
                             />
                           )}
                           <span>{item.label}</span>
+                          {item.badge && (
+                            <Badge size="sm" variant="secondary">
+                              {item.badge}
+                            </Badge>
+                          )}
                         </span>
                       </SelectPrimitive.ItemText>
                     </SelectPrimitive.Item>
