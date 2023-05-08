@@ -19,12 +19,24 @@ const buttonVariants = {
     'bg-neutral-900 text-white hover:bg-neutral-700',
     'dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200'
   ),
-  destructive: 'bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600',
-  tertiary:
-    'bg-transparent border border-neutral-200 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-100',
-  secondary:
-    'bg-neutral-100 text-neutral-900 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-100',
-  link: 'bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-neutral-900 dark:text-neutral-100 hover:bg-transparent dark:hover:bg-transparent',
+  destructive: clsx(
+    'bg-red-500 text-white hover:bg-red-600',
+    'dark:hover:bg-red-600'
+  ),
+  secondary: clsx(
+    'bg-neutral-100 text-neutral-900 hover:bg-neutral-200',
+    'dark:bg-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-600'
+  ),
+  tertiary: clsx(
+    'bg-transparent border',
+    'border-white/80 hover:bg-neutral-100 text-neutral-800',
+    'dark:border-white/20 dark:text-neutral-100 dark:hover:bg-neutral-700'
+  ),
+  link: clsx(
+    'underline-offset-4 hover:underline',
+    'bg-transparent text-neutral-900 hover:bg-transparent',
+    'dark:text-neutral-100 dark:bg-transparent dark:hover:bg-transparent'
+  ),
 };
 
 export type ButtonProps = {
