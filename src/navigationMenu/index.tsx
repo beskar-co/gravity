@@ -51,7 +51,7 @@ export const NavigationMenu = forwardRef<
               asChild
               data-active={item.active}
               className={clsx(
-                'group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-3 text-sm font-medium transition-colors',
+                'group inline-flex w-max items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-medium transition-colors',
                 'hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active=true]:bg-neutral-50 data-[state=open]:bg-neutral-50 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:bg-neutral-800',
                 'dark:data-[active=true]:bg-neutral-800 dark:data-[state=open]:bg-neutral-800'
               )}
@@ -60,7 +60,7 @@ export const NavigationMenu = forwardRef<
             </NavigationMenuPrimitive.Link>
           ) : (
             <>
-              <NavigationMenuPrimitive.Trigger className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-3 text-sm font-medium transition-colors hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active=true]:bg-neutral-50 data-[state=open]:bg-neutral-50 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:bg-neutral-800 dark:data-[active=true]:bg-neutral-800 dark:data-[state=open]:bg-neutral-800">
+              <NavigationMenuPrimitive.Trigger className="group inline-flex w-max items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active=true]:bg-neutral-50 data-[state=open]:bg-neutral-50 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:bg-neutral-800 dark:data-[active=true]:bg-neutral-800 dark:data-[state=open]:bg-neutral-800">
                 {item.label}
                 <ChevronDownIcon
                   className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
