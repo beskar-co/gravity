@@ -1,3 +1,10 @@
+## [0.4.2](https://github.com/beskar-co/gravity/compare/v0.4.1...v0.4.2) (2023-05-08)
+
+
+### Bug Fixes
+
+* **button:** fix classname ([6c131c2](https://github.com/beskar-co/gravity/commit/6c131c2067cf29da7e8f32be8bbacf3e66ac15e0))
+
 ## [0.4.1](https://github.com/beskar-co/gravity/compare/v0.4.0...v0.4.1) (2023-05-08)
 
 
