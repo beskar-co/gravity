@@ -70,6 +70,7 @@ export const Select = forwardRef<
                               width={16}
                               height={16}
                               alt=""
+                              unoptimized
                             />
                           )}
                           <span>{item.label}</span>
