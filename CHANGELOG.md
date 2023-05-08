@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/beskar-co/gravity/compare/v0.4.0...v0.4.1) (2023-05-08)
+
+
+### Bug Fixes
+
+* **select:** dont optimize image ([41119c5](https://github.com/beskar-co/gravity/commit/41119c5a386cf4cf5d0b04e754d5828e7088f86e))
+
 # [0.4.0](https://github.com/beskar-co/gravity/compare/v0.3.2...v0.4.0) (2023-05-08)
 
 
