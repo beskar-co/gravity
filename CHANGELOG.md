@@ -1,3 +1,16 @@
+# [0.6.0](https://github.com/beskar-co/gravity/compare/v0.5.2...v0.6.0) (2023-05-08)
+
+
+### Bug Fixes
+
+* **navbar:** fix nav item height ([5943e2a](https://github.com/beskar-co/gravity/commit/5943e2aad046ee462d829fd474b75005307b80ea))
+* **navbar:** fix navbar width ([31cf9f0](https://github.com/beskar-co/gravity/commit/31cf9f028cb05756d29cd8f73273c80592549622))
+
+
+### Features
+
+* **navbar:** automatically process outbound links ([3293d63](https://github.com/beskar-co/gravity/commit/3293d635b4c95db2d0a2fa241b4a5f234f90514f))
+
 ## [0.5.2](https://github.com/beskar-co/gravity/compare/v0.5.1...v0.5.2) (2023-05-08)
 
 
