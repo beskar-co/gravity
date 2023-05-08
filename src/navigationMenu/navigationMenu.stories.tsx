@@ -104,9 +104,7 @@ Default.args = {
     },
     {
       label: 'Documentation',
-      href: '/docs',
-      target: '_blank',
-      rel: 'noopener noreferrer',
+      href: 'https://www.google.com/',
     },
   ],
 };

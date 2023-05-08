@@ -6,6 +6,11 @@ import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 import { forwardRef } from 'react';
 import Link from 'next/link';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
+
+type ModifiedLink = Omit<ComponentPropsWithoutRef<typeof Link>, 'href'> & {
+  href: string;
+};
 
 type NavigationDropdownItemProps = {
   layout: 'list' | 'grid';
@@ -14,11 +19,12 @@ type NavigationDropdownItemProps = {
     description?: string;
     active?: boolean;
     icon?: typeof ChevronDownIcon;
-  } & ComponentPropsWithoutRef<typeof Link>)[];
+    href: string;
+  } & ModifiedLink)[];
   feature?: FC;
 };
 
-type NavigationLinkItemProps = ComponentPropsWithoutRef<typeof Link> & {
+type NavigationLinkItemProps = ModifiedLink & {
   active?: boolean;
 };
 
@@ -47,7 +53,7 @@ export const NavigationMenu = forwardRef<
         <NavigationMenuPrimitive.Item key={item.label}>
           {'href' in item ? (
             <NavigationMenuPrimitive.Link
-              href={item.href as string}
+              href={item.href}
               asChild
               data-active={item.active}
               className={clsx(
@@ -56,7 +62,20 @@ export const NavigationMenu = forwardRef<
                 'dark:data-[active=true]:bg-neutral-800 dark:data-[state=open]:bg-neutral-800'
               )}
             >
-              <Link href={item.href}>{item.label}</Link>
+              <Link
+                href={item.href}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={
+                  item.href.startsWith('http')
+                    ? 'noopener noreferrer'
+                    : undefined
+                }
+              >
+                {item.label}
+                {item.href.startsWith('http') && (
+                  <ArrowUpRightIcon className="relative ml-1 h-3 w-3" />
+                )}
+              </Link>
             </NavigationMenuPrimitive.Link>
           ) : (
             <>
@@ -86,7 +105,7 @@ export const NavigationMenu = forwardRef<
                     {item.items.map((subItem) => (
                       <NavigationMenuPrimitive.Item key={subItem.label}>
                         <NavigationMenuPrimitive.Link
-                          href={subItem.href as string}
+                          href={subItem.href}
                           asChild
                           data-active={subItem.active}
                         >
