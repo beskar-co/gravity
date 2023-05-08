@@ -1,3 +1,10 @@
+## [0.5.2](https://github.com/beskar-co/gravity/compare/v0.5.1...v0.5.2) (2023-05-08)
+
+
+### Bug Fixes
+
+* **button:** improve button class composition ([8cd0f8c](https://github.com/beskar-co/gravity/commit/8cd0f8c0977d0c1bb173979b09494148d7c6ab8a))
+
 ## [0.5.1](https://github.com/beskar-co/gravity/compare/v0.5.0...v0.5.1) (2023-05-08)
 
 
