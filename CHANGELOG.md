@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/beskar-co/gravity/compare/v0.3.0...v0.3.1) (2023-05-08)
+
+
+### Bug Fixes
+
+* **button:** fix button hover state ([8dc1810](https://github.com/beskar-co/gravity/commit/8dc1810f3c358732e39dd552daf0d3b541307d30))
+
 # [0.3.0](https://github.com/beskar-co/gravity/compare/v0.2.8...v0.3.0) (2023-05-07)
 
 
