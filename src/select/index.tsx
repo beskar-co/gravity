@@ -5,6 +5,7 @@ import { Fragment, forwardRef } from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 import { Label } from '../label';
+import Image from 'next/image';
 
 type SelectProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
   placeholder?: string;
@@ -15,6 +16,8 @@ type SelectProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
       value: string;
       label: string;
       disabled?: boolean;
+      icon?: typeof CheckIcon;
+      image?: string;
     }[];
   }[];
 };
@@ -59,7 +62,18 @@ export const Select = forwardRef<
                       </span>
 
                       <SelectPrimitive.ItemText>
-                        {item.label}
+                        <span className="flex items-center gap-2">
+                          {item.icon && <item.icon className="h-4 w-4" />}
+                          {item.image && (
+                            <Image
+                              src={item.image}
+                              width={16}
+                              height={16}
+                              alt=""
+                            />
+                          )}
+                          <span>{item.label}</span>
+                        </span>
                       </SelectPrimitive.ItemText>
                     </SelectPrimitive.Item>
                   ))}
