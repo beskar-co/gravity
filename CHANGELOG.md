@@ -1,3 +1,10 @@
+## [0.5.1](https://github.com/beskar-co/gravity/compare/v0.5.0...v0.5.1) (2023-05-08)
+
+
+### Bug Fixes
+
+* **button:** remove duplicate hover classes ([e3894e4](https://github.com/beskar-co/gravity/commit/e3894e44fed643576f83b1d8f350fafbcd5c33ca))
+
 # [0.5.0](https://github.com/beskar-co/gravity/compare/v0.4.2...v0.5.0) (2023-05-08)
 
 
