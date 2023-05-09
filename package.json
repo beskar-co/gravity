@@ -4,9 +4,11 @@
   "version": "0.10.16",
   "scripts": {
     "dev": "concurrently \"npm:dev:storybook\" \"npm:dev:next\"",
-    "dev:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev",
+    "dev:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 3001",
     "dev:next": "next dev",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider storybook build",
+    "build": "npm run build:next && npm run build:storybook",
+    "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook build -o public/components",
+    "build:next": "next build",
     "package": "tsup",
     "postpackage": "node scripts/postprocess.js && node scripts/copy.js",
     "release": "semantic-release"
