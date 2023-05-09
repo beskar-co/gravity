@@ -16,6 +16,7 @@ const config: StorybookConfig = {
         postCss: true,
       },
     },
+    '@storybook/addon-a11y',
   ],
   framework: {
     name: '@storybook/nextjs',
