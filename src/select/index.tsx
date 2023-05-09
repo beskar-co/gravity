@@ -1,6 +1,6 @@
 'use client';
 
-import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, FC } from 'react';
 import { useState } from 'react';
 import { Fragment, forwardRef } from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
@@ -27,7 +27,7 @@ type SelectProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
   }[];
 };
 
-export const Select = forwardRef<
+export const Select: FC<SelectProps> = forwardRef<
   ElementRef<typeof SelectPrimitive.Root>,
   SelectProps
 >(({ placeholder, data, label, search, ...props }, ref) => {

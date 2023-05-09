@@ -36,7 +36,7 @@ type NavigationMenuProps = ComponentPropsWithoutRef<
   } & (NavigationDropdownItemProps | NavigationLinkItemProps))[];
 };
 
-export const NavigationMenu = forwardRef<
+export const NavigationMenu: FC<NavigationMenuProps> = forwardRef<
   ElementRef<typeof NavigationMenuPrimitive.Root>,
   NavigationMenuProps
 >(({ className, children, items, ...props }, ref) => (

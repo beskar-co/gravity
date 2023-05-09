@@ -1,6 +1,11 @@
 'use client';
 
-import type { ComponentPropsWithoutRef, ElementRef, ReactNode } from 'react';
+import type {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  FC,
+  ReactNode,
+} from 'react';
 import { forwardRef } from 'react';
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import clsx from 'clsx';
@@ -43,7 +48,7 @@ type DialogProps = ComponentPropsWithoutRef<
   description?: string;
 };
 
-const Dialog = forwardRef<
+const Dialog: FC<DialogProps> = forwardRef<
   ElementRef<typeof AlertDialogPrimitive.Content>,
   DialogProps
 >(({ className, content, title, description, children, ...props }, ref) => (

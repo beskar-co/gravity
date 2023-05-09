@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import type { InputHTMLAttributes } from 'react';
+import type { FC, InputHTMLAttributes } from 'react';
 import { useId, forwardRef } from 'react';
 import { Label } from '@/label';
 import { Hint } from '@/hint';
@@ -10,7 +10,7 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   onChangeText?: (value: string) => void;
 };
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
   ({ className, onChangeText, ...props }, ref) => {
     const id = useId();
 

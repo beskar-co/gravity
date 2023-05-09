@@ -1,6 +1,6 @@
 'use client';
 
-import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, FC } from 'react';
 import { forwardRef, useId } from 'react';
 import * as SwitchPrimitives from '@radix-ui/react-switch';
 import clsx from 'clsx';
@@ -12,7 +12,7 @@ type SwitchProps = ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & {
   hint?: string;
 };
 
-const Switch = forwardRef<
+const Switch: FC<SwitchProps> = forwardRef<
   ElementRef<typeof SwitchPrimitives.Root>,
   SwitchProps
 >(({ label, hint, className, ...props }, ref) => {

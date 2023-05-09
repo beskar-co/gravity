@@ -2,8 +2,16 @@
 
 import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
 import clsx from 'clsx';
-import type { ComponentPropsWithoutRef, ElementRef } from 'react';
+import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 import { forwardRef } from 'react';
+
+type ToggleGroupProps = ComponentPropsWithoutRef<
+  typeof ToggleGroupPrimitive.Root
+> & {
+  variant?: keyof typeof toggleVariants;
+  size?: keyof typeof toggleSizes;
+  items: ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item>[];
+};
 
 const toggleVariants = {
   default: 'bg-transparent',
@@ -17,13 +25,9 @@ const toggleSizes = {
   lg: 'h-11 px-5',
 };
 
-export const ToggleGroup = forwardRef<
+export const ToggleGroup: FC<ToggleGroupProps> = forwardRef<
   ElementRef<typeof ToggleGroupPrimitive.Root>,
-  ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root> & {
-    variant?: keyof typeof toggleVariants;
-    size?: keyof typeof toggleSizes;
-    items: ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item>[];
-  }
+  ToggleGroupProps
 >(
   (
     { className, variant = 'default', size = 'default', items, ...props },

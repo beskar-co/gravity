@@ -16,3 +16,10 @@ export const CustomAspectRatio: StoryObj<typeof Video> = {
     className: 'aspect-[2744/1822]',
   },
 };
+
+export const WithControls: StoryObj<typeof Video> = {
+  args: {
+    url: 'https://vimeo.com/794348644',
+    controls: true,
+  },
+};

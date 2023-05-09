@@ -1,6 +1,6 @@
 'use client';
 
-import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, FC } from 'react';
 import { forwardRef } from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
@@ -16,7 +16,7 @@ type AccordionProps = ComponentPropsWithoutRef<
   }[];
 };
 
-export const Accordion = forwardRef<
+export const Accordion: FC<AccordionProps> = forwardRef<
   ElementRef<typeof AccordionPrimitive.Root>,
   AccordionProps
 >(({ className, data, ...props }, ref) => (

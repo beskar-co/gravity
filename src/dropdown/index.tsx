@@ -82,7 +82,7 @@ const DropdownItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
   );
 };
 
-export const Dropdown = forwardRef<
+export const Dropdown: FC<DropdownProps> = forwardRef<
   ElementRef<typeof DropdownMenuPrimitive.Root>,
   DropdownProps
 >(({ className, children, items, ...props }, ref) => (

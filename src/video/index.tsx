@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, FC } from 'react';
 import { forwardRef } from 'react';
 import type { ReactPlayerProps } from 'react-player';
 import dynamic from 'next/dynamic';
@@ -21,10 +21,10 @@ type VideoProps = ReactPlayerProps & {
   className?: string;
 };
 
-export const Video = forwardRef<
+export const Video: FC<VideoProps> = forwardRef<
   ComponentPropsWithoutRef<typeof Player>,
   VideoProps
->(({ className, ...props }, ref) => (
+>(({ className, style, width, height, ...props }, ref) => (
   <div
     className={clsx(
       'relative w-full overflow-hidden rounded',
@@ -36,9 +36,10 @@ export const Video = forwardRef<
       style={{
         position: 'absolute',
         inset: 0,
+        ...style,
       }}
-      width="100%"
-      height="100%"
+      width={width ?? '100%'}
+      height={height ?? '100%'}
       ref={ref}
       {...props}
     />
