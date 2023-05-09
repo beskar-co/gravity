@@ -1,7 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Textarea } from './';
 
-const meta: Meta<typeof Textarea> = { component: Textarea };
+const meta: Meta<typeof Textarea> = {
+  component: Textarea,
+  argTypes: {
+    onBlur: { action: 'blurred' },
+    onFocus: { action: 'focused' },
+    onValueChange: { action: 'value changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Textarea> = {

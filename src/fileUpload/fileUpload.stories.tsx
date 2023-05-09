@@ -1,7 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FileUpload } from './';
 
-const meta: Meta<typeof FileUpload> = { component: FileUpload };
+const meta: Meta<typeof FileUpload> = {
+  component: FileUpload,
+  argTypes: {
+    onChange: { action: 'changed' },
+    onError: { action: 'error' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof FileUpload> = {

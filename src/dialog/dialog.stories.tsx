@@ -1,7 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Dialog, DialogAction, DialogCancel } from './';
 
-const meta: Meta<typeof Dialog> = { component: Dialog };
+const meta: Meta<typeof Dialog> = {
+  component: Dialog,
+  argTypes: {
+    onOpenChange: { action: 'open changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Dialog> = {

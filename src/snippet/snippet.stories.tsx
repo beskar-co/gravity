@@ -1,7 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Snippet } from './';
 
-const meta: Meta<typeof Snippet> = { component: Snippet };
+const meta: Meta<typeof Snippet> = {
+  component: Snippet,
+  argTypes: {
+    onCopyError: { action: 'copy error' },
+    onCopySuccess: { action: 'copy success' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Snippet> = {

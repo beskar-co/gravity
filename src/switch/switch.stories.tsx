@@ -1,7 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Switch } from './';
 
-const meta: Meta<typeof Switch> = { component: Switch };
+const meta: Meta<typeof Switch> = {
+  component: Switch,
+  argTypes: {
+    onCheckedChange: { action: 'checked changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Switch> = {

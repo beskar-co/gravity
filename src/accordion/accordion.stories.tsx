@@ -1,7 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Accordion } from './';
 
-const meta: Meta<typeof Accordion> = { component: Accordion };
+const meta: Meta<typeof Accordion> = {
+  component: Accordion,
+  argTypes: {
+    onValueChange: { action: 'value changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Accordion> = {

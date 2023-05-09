@@ -41,18 +41,19 @@ const DialogCancel = forwardRef<
 DialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName;
 
 type DialogProps = ComponentPropsWithoutRef<
-  typeof AlertDialogPrimitive.Content
+  typeof AlertDialogPrimitive.Root
 > & {
+  className?: string;
   content: ReactNode;
   title?: string;
   description?: string;
 };
 
 const Dialog: FC<DialogProps> = forwardRef<
-  ElementRef<typeof AlertDialogPrimitive.Content>,
+  ElementRef<typeof AlertDialogPrimitive.Root>,
   DialogProps
 >(({ className, content, title, description, children, ...props }, ref) => (
-  <AlertDialogPrimitive.Root>
+  <AlertDialogPrimitive.Root {...props}>
     <AlertDialogPrimitive.Trigger asChild>
       {children}
     </AlertDialogPrimitive.Trigger>

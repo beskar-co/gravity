@@ -1,7 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Video } from './';
 
-const meta: Meta<typeof Video> = { component: Video };
+const meta: Meta<typeof Video> = {
+  component: Video,
+  argTypes: {
+    onBuffer: { action: 'buffer' },
+    onBufferEnd: { action: 'buffer end' },
+    onClickPreview: { action: 'click preview' },
+    onDisablePIP: { action: 'disable pip' },
+    onDuration: { action: 'duration' },
+    onEnablePIP: { action: 'enable pip' },
+    onEnded: { action: 'ended' },
+    onError: { action: 'error' },
+    onPause: { action: 'pause' },
+    onPlay: { action: 'play' },
+    onProgress: { action: 'progress' },
+    onReady: { action: 'ready' },
+    onSeek: { action: 'seek' },
+    onStart: { action: 'start' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Video> = {

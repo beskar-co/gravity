@@ -17,7 +17,12 @@ import {
   UsersIcon,
 } from '@heroicons/react/20/solid';
 
-const meta: Meta<typeof Dropdown> = { component: Dropdown };
+const meta: Meta<typeof Dropdown> = {
+  component: Dropdown,
+  argTypes: {
+    onOpenChange: { action: 'open changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Dropdown> = {

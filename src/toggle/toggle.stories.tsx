@@ -2,7 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Toggle } from './';
 import { CommandLineIcon } from '@heroicons/react/20/solid';
 
-const meta: Meta<typeof Toggle> = { component: Toggle };
+const meta: Meta<typeof Toggle> = {
+  component: Toggle,
+  argTypes: {
+    onPressedChange: { action: 'pressed changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Toggle> = {

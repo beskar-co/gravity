@@ -1,7 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './';
 
-const meta: Meta<typeof Input> = { component: Input };
+const meta: Meta<typeof Input> = {
+  component: Input,
+  argTypes: {
+    onBlur: { action: 'blurred' },
+    onFocus: { action: 'focused' },
+    onValueChange: { action: 'value changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Input> = {

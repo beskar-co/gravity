@@ -1,7 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Tabs } from './';
 
-const meta: Meta<typeof Tabs> = { component: Tabs };
+const meta: Meta<typeof Tabs> = {
+  component: Tabs,
+  argTypes: {
+    onValueChange: { action: 'value changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Tabs> = {

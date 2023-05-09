@@ -1,7 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { RadioGroup } from './';
 
-const meta: Meta<typeof RadioGroup> = { component: RadioGroup };
+const meta: Meta<typeof RadioGroup> = {
+  component: RadioGroup,
+  argTypes: {
+    onValueChange: { action: 'value changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof RadioGroup> = {

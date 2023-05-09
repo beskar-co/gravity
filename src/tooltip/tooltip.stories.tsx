@@ -2,7 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Tooltip } from './';
 import { PlusIcon } from '@heroicons/react/20/solid';
 
-const meta: Meta<typeof Tooltip> = { component: Tooltip };
+const meta: Meta<typeof Tooltip> = {
+  component: Tooltip,
+  argTypes: {
+    onOpenChange: { action: 'open changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Tooltip> = {

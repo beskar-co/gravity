@@ -5,7 +5,12 @@ import { CogIcon } from '@heroicons/react/20/solid';
 import { Input } from '@/input';
 import { Label } from '@/label';
 
-const meta: Meta<typeof Popover> = { component: Popover };
+const meta: Meta<typeof Popover> = {
+  component: Popover,
+  argTypes: {
+    onOpenChange: { action: 'open changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Popover> = {

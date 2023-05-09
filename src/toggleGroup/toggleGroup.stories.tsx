@@ -3,7 +3,12 @@ import { CommandLineIcon, GifIcon, TvIcon } from '@heroicons/react/20/solid';
 import { EyeIcon } from '@heroicons/react/24/outline';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof ToggleGroup> = { component: ToggleGroup };
+const meta: Meta<typeof ToggleGroup> = {
+  component: ToggleGroup,
+  argTypes: {
+    onValueChange: { action: 'value changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof ToggleGroup> = {

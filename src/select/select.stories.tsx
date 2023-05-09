@@ -1,7 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Select } from './';
+import { BoltIcon } from '@heroicons/react/20/solid';
 
-const meta: Meta<typeof Select> = { component: Select };
+const meta: Meta<typeof Select> = {
+  component: Select,
+  argTypes: {
+    onValueChange: { action: 'value changed' },
+  },
+};
 export default meta;
 
 export const Default: StoryObj<typeof Select> = {
