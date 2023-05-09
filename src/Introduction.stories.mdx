@@ -18,6 +18,20 @@ Install the package with your package manager of choice.
 yarn add @beskar-labs/gravity
 ```
 
+Add Gravity as a Tailwind source (styles are compiled by the consumer app):
+
+```ts
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: [
+    './node_modules/@beskar-labs/gravity/**/*.js',
+    // ...
+  ],
+  // ...
+};
+```
+
 Add the relevant providers and components to your application:
 
 ```tsx
