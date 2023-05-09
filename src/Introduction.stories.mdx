@@ -5,3 +5,24 @@ import { Meta } from '@storybook/addon-docs';
 # Gravity
 
 Gravity is a WIP design system to power experiences from Beskar Labs.
+
+## Installation
+
+```sh
+yarn add @beskar-labs/gravity
+```
+
+## Setup
+
+Ensure you add the relevant providers.
+
+```tsx
+import { TooltipProvider } from '@beskar-labs/gravity';
+import type { ReactNode } from 'react';
+
+const RootLayout: FC<{
+  children: ReactNode;
+}> = () => <TooltipProvider>{children}</TooltipProvider>;
+
+export default RootLayout;
+```
