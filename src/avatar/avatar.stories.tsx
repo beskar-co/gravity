@@ -1,25 +1,19 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from './';
 
-export default {
-  title: 'Example/Avatar',
-  component: Avatar,
-  parameters: {
-    layout: 'fullscreen',
+const meta: Meta<typeof Avatar> = { component: Avatar };
+export default meta;
+
+export const Default: StoryObj<typeof Avatar> = {
+  args: {
+    src: 'https://github.com/haydenbleasel.png',
+    fallback: 'HB',
   },
-} as ComponentMeta<typeof Avatar>;
-
-const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  src: 'https://github.com/haydenbleasel.png',
-  fallback: 'HB',
 };
 
-export const NoSrc = Template.bind({});
-NoSrc.args = {
-  src: '',
-  fallback: 'HB',
+export const NoSrc: StoryObj<typeof Avatar> = {
+  args: {
+    src: '',
+    fallback: 'HB',
+  },
 };

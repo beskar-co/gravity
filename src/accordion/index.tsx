@@ -16,7 +16,7 @@ type AccordionProps = ComponentPropsWithoutRef<
   }[];
 };
 
-export const Accordion = forwardRef<
+export const Accordion: FC<AccordionProps> = forwardRef<
   ElementRef<typeof AccordionPrimitive.Root>,
   AccordionProps
 >(({ className, data, ...props }, ref) => (

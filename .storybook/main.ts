@@ -1,6 +1,6 @@
-import type { StorybookViteConfig } from '@storybook/builder-vite';
+import type { StorybookConfig } from '@storybook/nextjs';
 
-const config: StorybookViteConfig = {
+const config: StorybookConfig = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
@@ -17,17 +17,16 @@ const config: StorybookViteConfig = {
       },
     },
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: '@storybook/builder-vite',
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
   },
+  core: {},
   features: {
     storyStoreV7: true,
   },
-  viteFinal(viteConfig) {
-    // Add your configuration here
-    return viteConfig;
+  docs: {
+    autodocs: true,
   },
 };
-
 export default config;

@@ -1,30 +1,23 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Snippet } from './';
-import { TooltipProvider } from '../tooltip';
 
-export default {
-  title: 'Example/Snippet',
+const meta: Meta<typeof Snippet> = {
   component: Snippet,
-  parameters: {
-    layout: 'fullscreen',
+  argTypes: {
+    onCopyError: { action: 'copy error' },
+    onCopySuccess: { action: 'copy success' },
   },
-} as ComponentMeta<typeof Snippet>;
+};
+export default meta;
 
-const Template: ComponentStory<typeof Snippet> = (args) => (
-  <TooltipProvider>
-    <Snippet {...args} />
-  </TooltipProvider>
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  language: 'javascript',
-  // eslint-disable-next-line no-console
-  onCopyError: console.log,
-  // eslint-disable-next-line no-console
-  onCopySuccess: console.log,
-  children: `const waitlist = 'cleftordg0002l8082tu040gj';
+export const Default: StoryObj<typeof Snippet> = {
+  args: {
+    language: 'javascript',
+    // eslint-disable-next-line no-console
+    onCopyError: console.log,
+    // eslint-disable-next-line no-console
+    onCopySuccess: console.log,
+    children: `const waitlist = 'cleftordg0002l8082tu040gj';
 const email = 'janesmith@acme.com';
 const name = 'Jane Smith'; // Optional
 const phone = '555-555-5555'; // Optional
@@ -58,10 +51,12 @@ if (!response.ok) {
 }
 
 window.alert('You have been subscribed!');`,
+  },
 };
 
-export const SingleLine = Template.bind({});
-SingleLine.args = {
-  language: 'python',
-  children: `python -m SimpleHTTPServer 8080`,
+export const SingleLine: StoryObj<typeof Snippet> = {
+  args: {
+    language: 'python',
+    children: `python -m SimpleHTTPServer 8080`,
+  },
 };

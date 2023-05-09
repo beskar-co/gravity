@@ -1,6 +1,11 @@
 'use client';
 
-import type { ComponentPropsWithoutRef, ElementRef, ReactNode } from 'react';
+import type {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  FC,
+  ReactNode,
+} from 'react';
 import { forwardRef } from 'react';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import clsx from 'clsx';
@@ -12,7 +17,7 @@ type TooltipProps = ComponentPropsWithoutRef<typeof TooltipPrimitive.Root> & {
   children: ReactNode;
 };
 
-const Tooltip = forwardRef<
+const Tooltip: FC<TooltipProps> = forwardRef<
   ElementRef<typeof TooltipPrimitive.Root>,
   TooltipProps
 >(({ children, content, ...props }, ref) => (

@@ -1,33 +1,33 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Textarea } from './';
 
-export default {
-  title: 'Example/Textarea',
+const meta: Meta<typeof Textarea> = {
   component: Textarea,
-  parameters: {
-    layout: 'fullscreen',
+  argTypes: {
+    onBlur: { action: 'blurred' },
+    onFocus: { action: 'focused' },
+    onValueChange: { action: 'value changed' },
   },
-} as ComponentMeta<typeof Textarea>;
+};
+export default meta;
 
-const Template: ComponentStory<typeof Textarea> = (args) => (
-  <Textarea {...args} />
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  placeholder: 'Type your message here.',
+export const Default: StoryObj<typeof Textarea> = {
+  args: {
+    placeholder: 'Type your message here.',
+  },
 };
 
-export const WithLabel = Template.bind({});
-WithLabel.args = {
-  placeholder: 'Type your message here.',
-  label: 'Message',
+export const WithLabel: StoryObj<typeof Textarea> = {
+  args: {
+    placeholder: 'Type your message here.',
+    label: 'Message',
+  },
 };
 
-export const WithHint = Template.bind({});
-WithHint.args = {
-  placeholder: 'Type your message here.',
-  label: 'Message',
-  hint: 'We will never share your message with anyone else.',
+export const WithHint: StoryObj<typeof Textarea> = {
+  args: {
+    placeholder: 'Type your message here.',
+    label: 'Message',
+    hint: 'We will never share your message with anyone else.',
+  },
 };

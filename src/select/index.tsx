@@ -1,14 +1,14 @@
 'use client';
 
-import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, FC } from 'react';
 import { useState } from 'react';
 import { Fragment, forwardRef } from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
-import { Label } from '../label';
+import { Label } from '@/label';
 import Image from 'next/image';
-import { Badge } from '../badge';
-import { Input } from '../input';
+import { Badge } from '@/badge';
+import { Input } from '@/input';
 
 type SelectProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
   placeholder?: string;
@@ -27,7 +27,7 @@ type SelectProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
   }[];
 };
 
-export const Select = forwardRef<
+export const Select: FC<SelectProps> = forwardRef<
   ElementRef<typeof SelectPrimitive.Root>,
   SelectProps
 >(({ placeholder, data, label, search, ...props }, ref) => {
@@ -59,7 +59,7 @@ export const Select = forwardRef<
                     placeholder="Search..."
                     className="rounded-bl-none rounded-br-none border-0"
                     value={query}
-                    onChangeText={setQuery}
+                    onValueChange={setQuery}
                   />
                 </div>
               )}

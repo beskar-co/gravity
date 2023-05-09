@@ -1,24 +1,24 @@
 import clsx from 'clsx';
-import type { InputHTMLAttributes } from 'react';
+import type { FC, InputHTMLAttributes } from 'react';
 import { useId, forwardRef } from 'react';
-import { Label } from '../label';
-import { Hint } from '../hint';
+import { Label } from '@/label';
+import { Hint } from '@/hint';
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   hint?: string;
-  onChangeText?: (value: string) => void;
+  onValueChange?: (value: string) => void;
 };
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, onChangeText, ...props }, ref) => {
+const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
+  ({ className, onValueChange, ...props }, ref) => {
     const id = useId();
 
     const handleChange: InputHTMLAttributes<HTMLInputElement>['onChange'] = (
       event
     ) => {
       props.onChange?.(event);
-      onChangeText?.(event.target.value);
+      onValueChange?.(event.target.value);
     };
 
     return (

@@ -1,6 +1,11 @@
 'use client';
 
-import type { ComponentPropsWithoutRef, ElementRef, ReactNode } from 'react';
+import type {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  FC,
+  ReactNode,
+} from 'react';
 import { forwardRef } from 'react';
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import clsx from 'clsx';
@@ -36,18 +41,19 @@ const DialogCancel = forwardRef<
 DialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName;
 
 type DialogProps = ComponentPropsWithoutRef<
-  typeof AlertDialogPrimitive.Content
+  typeof AlertDialogPrimitive.Root
 > & {
+  className?: string;
   content: ReactNode;
   title?: string;
   description?: string;
 };
 
-const Dialog = forwardRef<
-  ElementRef<typeof AlertDialogPrimitive.Content>,
+const Dialog: FC<DialogProps> = forwardRef<
+  ElementRef<typeof AlertDialogPrimitive.Root>,
   DialogProps
 >(({ className, content, title, description, children, ...props }, ref) => (
-  <AlertDialogPrimitive.Root>
+  <AlertDialogPrimitive.Root {...props}>
     <AlertDialogPrimitive.Trigger asChild>
       {children}
     </AlertDialogPrimitive.Trigger>

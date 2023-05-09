@@ -1,9 +1,9 @@
 'use client';
 
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, FC } from 'react';
 import { forwardRef } from 'react';
 import { ClipboardDocumentIcon } from '@heroicons/react/24/outline';
-import { Tooltip } from '../tooltip';
+import { Tooltip } from '@/tooltip';
 import dynamic from 'next/dynamic';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import clsx from 'clsx';
@@ -224,7 +224,7 @@ const Highlighter = dynamic(
   { ssr: false }
 );
 
-export const Snippet = forwardRef<
+export const Snippet: FC<SnippetProps> = forwardRef<
   ComponentPropsWithoutRef<typeof Highlighter>,
   SnippetProps
 >(

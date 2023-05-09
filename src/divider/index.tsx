@@ -1,11 +1,11 @@
 'use client';
 
-import type { ElementRef } from 'react';
+import type { ElementRef, FC } from 'react';
 import { forwardRef } from 'react';
 import * as Separator from '@radix-ui/react-separator';
 import clsx from 'clsx';
 
-export const Divider = forwardRef<
+export const Divider: FC<Separator.SeparatorProps> = forwardRef<
   ElementRef<typeof Separator.Root>,
   Separator.SeparatorProps
 >(({ className, ...props }, ref) => (

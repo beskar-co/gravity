@@ -1,24 +1,43 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Video } from './';
 
-export default {
-  title: 'Example/Video',
+const meta: Meta<typeof Video> = {
   component: Video,
-  parameters: {
-    layout: 'fullscreen',
+  argTypes: {
+    onBuffer: { action: 'buffer' },
+    onBufferEnd: { action: 'buffer end' },
+    onClickPreview: { action: 'click preview' },
+    onDisablePIP: { action: 'disable pip' },
+    onDuration: { action: 'duration' },
+    onEnablePIP: { action: 'enable pip' },
+    onEnded: { action: 'ended' },
+    onError: { action: 'error' },
+    onPause: { action: 'pause' },
+    onPlay: { action: 'play' },
+    onProgress: { action: 'progress' },
+    onReady: { action: 'ready' },
+    onSeek: { action: 'seek' },
+    onStart: { action: 'start' },
   },
-} as ComponentMeta<typeof Video>;
+};
+export default meta;
 
-const Template: ComponentStory<typeof Video> = (args) => <Video {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  url: 'https://vimeo.com/794348644',
+export const Default: StoryObj<typeof Video> = {
+  args: {
+    url: 'https://vimeo.com/794348644',
+  },
 };
 
-export const CustomAspectRatio = Template.bind({});
-CustomAspectRatio.args = {
-  url: 'https://vimeo.com/794348644',
-  className: 'aspect-[2744/1822]',
+export const CustomAspectRatio: StoryObj<typeof Video> = {
+  args: {
+    url: 'https://vimeo.com/794348644',
+    className: 'aspect-[2744/1822]',
+  },
+};
+
+export const WithControls: StoryObj<typeof Video> = {
+  args: {
+    url: 'https://vimeo.com/794348644',
+    controls: true,
+  },
 };

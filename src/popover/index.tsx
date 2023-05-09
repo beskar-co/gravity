@@ -3,7 +3,12 @@
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import type { PopoverProps as PopoverPrimitiveProps } from '@radix-ui/react-popover';
 import clsx from 'clsx';
-import type { ComponentPropsWithoutRef, ElementRef, ReactNode } from 'react';
+import type {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  FC,
+  ReactNode,
+} from 'react';
 import { forwardRef } from 'react';
 
 type PopoverProps = ComponentPropsWithoutRef<
@@ -15,7 +20,7 @@ type PopoverProps = ComponentPropsWithoutRef<
   onOpenChange?: PopoverPrimitiveProps['onOpenChange'];
 };
 
-export const Popover = forwardRef<
+export const Popover: FC<PopoverProps> = forwardRef<
   ElementRef<typeof PopoverPrimitive.Content>,
   PopoverProps
 >(

@@ -1,29 +1,23 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { Tooltip, TooltipProvider } from './';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Tooltip } from './';
 import { PlusIcon } from '@heroicons/react/20/solid';
 
-export default {
-  title: 'Example/Tooltip',
+const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
-  parameters: {
-    layout: 'fullscreen',
+  argTypes: {
+    onOpenChange: { action: 'open changed' },
   },
-} as ComponentMeta<typeof Tooltip>;
+};
+export default meta;
 
-const Template: ComponentStory<typeof Tooltip> = (args) => (
-  <TooltipProvider>
-    <Tooltip {...args} />
-  </TooltipProvider>
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  content: 'Add to library',
-  children: (
-    <button type="button" className="w-10 rounded-full p-0">
-      <PlusIcon className="h-4 w-4" />
-      <span className="sr-only">Add</span>
-    </button>
-  ),
+export const Default: StoryObj<typeof Tooltip> = {
+  args: {
+    content: 'Add to library',
+    children: (
+      <button type="button" className="w-10 rounded-full p-0">
+        <PlusIcon className="h-4 w-4" />
+        <span className="sr-only">Add</span>
+      </button>
+    ),
+  },
 };

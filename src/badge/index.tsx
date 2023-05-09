@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import type { ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 import { forwardRef } from 'react';
 
 type BadgeProps = {
@@ -21,7 +21,7 @@ const badgeVariants = {
     'bg-transparent border border-neutral-200 text-neutral-900 dark:border-neutral-700 dark:text-white',
 };
 
-export const Badge = forwardRef<HTMLDivElement, BadgeProps>(
+export const Badge: FC<BadgeProps> = forwardRef<HTMLDivElement, BadgeProps>(
   ({ size = 'md', variant = 'primary', ...props }, ref) => (
     <span
       ref={ref}

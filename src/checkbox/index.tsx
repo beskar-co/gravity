@@ -1,19 +1,19 @@
 'use client';
 
-import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef, FC } from 'react';
 import { useId, forwardRef } from 'react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import clsx from 'clsx';
 import { CheckIcon } from '@heroicons/react/20/solid';
-import { Label } from '../label';
-import { Hint } from '../hint';
+import { Label } from '@/label';
+import { Hint } from '@/hint';
 
 type CheckboxProps = ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & {
   label: string;
   hint?: string;
 };
 
-const Checkbox = forwardRef<
+const Checkbox: FC<CheckboxProps> = forwardRef<
   ElementRef<typeof CheckboxPrimitive.Root>,
   CheckboxProps
 >(({ className, label, hint, ...props }, ref) => {

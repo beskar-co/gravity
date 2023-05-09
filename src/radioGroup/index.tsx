@@ -1,10 +1,10 @@
 'use client';
 
-import { Hint } from '../hint';
-import { Label } from '../label';
+import { Hint } from '@/hint';
+import { Label } from '@/label';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import clsx from 'clsx';
-import type { ComponentPropsWithoutRef, ElementRef } from 'react';
+import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 import { forwardRef } from 'react';
 
 type RadioGroupProps = ComponentPropsWithoutRef<
@@ -17,7 +17,7 @@ type RadioGroupProps = ComponentPropsWithoutRef<
   }[];
 };
 
-export const RadioGroup = forwardRef<
+export const RadioGroup: FC<RadioGroupProps> = forwardRef<
   ElementRef<typeof RadioGroupPrimitive.Root>,
   RadioGroupProps
 >(({ className, items, ...props }, ref) => (

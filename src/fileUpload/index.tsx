@@ -4,7 +4,7 @@ import type { ChangeEventHandler, FC } from 'react';
 import { useId, useRef } from 'react';
 import { useDropArea } from 'react-use';
 import { getExtension } from 'mime';
-import { Label } from '../label';
+import { Label } from '@/label';
 
 type FileUploadProps = {
   label?: string;

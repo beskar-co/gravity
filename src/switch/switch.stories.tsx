@@ -1,24 +1,23 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Switch } from './';
 
-export default {
-  title: 'Example/Switch',
+const meta: Meta<typeof Switch> = {
   component: Switch,
-  parameters: {
-    layout: 'fullscreen',
+  argTypes: {
+    onCheckedChange: { action: 'checked changed' },
   },
-} as ComponentMeta<typeof Switch>;
+};
+export default meta;
 
-const Template: ComponentStory<typeof Switch> = (args) => <Switch {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Airplane Mode',
+export const Default: StoryObj<typeof Switch> = {
+  args: {
+    label: 'Airplane Mode',
+  },
 };
 
-export const WithHint = Template.bind({});
-WithHint.args = {
-  label: 'Airplane Mode',
-  hint: 'Turn on airplane mode to disable all wireless connections.',
+export const WithHint: StoryObj<typeof Switch> = {
+  args: {
+    label: 'Airplane Mode',
+    hint: 'Turn on airplane mode to disable all wireless connections.',
+  },
 };

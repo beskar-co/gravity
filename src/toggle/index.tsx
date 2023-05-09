@@ -2,8 +2,13 @@
 
 import * as TogglePrimitive from '@radix-ui/react-toggle';
 import clsx from 'clsx';
-import type { ComponentPropsWithoutRef, ElementRef } from 'react';
+import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 import { forwardRef } from 'react';
+
+type ToggleProps = ComponentPropsWithoutRef<typeof TogglePrimitive.Root> & {
+  variant?: keyof typeof toggleVariants;
+  size?: keyof typeof toggleSizes;
+};
 
 const toggleVariants = {
   default: 'bg-transparent',
@@ -17,12 +22,9 @@ const toggleSizes = {
   lg: 'h-11 px-5',
 };
 
-export const Toggle = forwardRef<
+export const Toggle: FC<ToggleProps> = forwardRef<
   ElementRef<typeof TogglePrimitive.Root>,
-  ComponentPropsWithoutRef<typeof TogglePrimitive.Root> & {
-    variant?: keyof typeof toggleVariants;
-    size?: keyof typeof toggleSizes;
-  }
+  ToggleProps
 >(({ className, variant = 'default', size = 'default', ...props }, ref) => (
   <TogglePrimitive.Root
     ref={ref}

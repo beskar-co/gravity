@@ -1,6 +1,5 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { Dropdown } from '.';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Dropdown } from './';
 import {
   ArrowLeftOnRectangleIcon,
   BoltIcon,
@@ -18,110 +17,107 @@ import {
   UsersIcon,
 } from '@heroicons/react/20/solid';
 
-export default {
-  title: 'Example/Dropdown',
+const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
-  parameters: {
-    layout: 'fullscreen',
+  argTypes: {
+    onOpenChange: { action: 'open changed' },
   },
-} as ComponentMeta<typeof Dropdown>;
+};
+export default meta;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => (
-  <Dropdown {...args} />
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  className: 'w-56',
-  children: <button type="button">Open</button>,
-  items: [
-    {
-      label: 'My Account',
-    },
-    {
-      items: [
-        {
-          icon: UserIcon,
-          label: 'Profile',
-          shortcut: '⇧⌘P',
-          onClick: () => console.log('Profile'),
-        },
-        {
-          icon: CreditCardIcon,
-          label: 'Billing',
-          shortcut: '⌘B',
-          href: 'https://google.com',
-          target: '_blank',
-          rel: 'noopener noreferrer',
-        },
-        {
-          icon: CogIcon,
-          label: 'Settings',
-          shortcut: '⌘S',
-        },
-        {
-          icon: BoltIcon,
-          label: 'Keyboard shortcuts',
-          shortcut: '⌘K',
-        },
-      ],
-    },
-    {
-      items: [
-        {
-          icon: UsersIcon,
-          label: 'Team',
-        },
-        {
-          icon: UserPlusIcon,
-          label: 'Invite users',
-          items: [
-            {
-              icon: EnvelopeIcon,
-              label: 'Email',
-            },
-            {
-              icon: ChatBubbleBottomCenterIcon,
-              label: 'Message',
-            },
-            {
-              icon: PlusCircleIcon,
-              label: 'More...',
-            },
-          ],
-        },
-        {
-          icon: PlusIcon,
-          label: 'New Team',
-          shortcut: '⌘+T',
-        },
-      ],
-    },
-    {
-      items: [
-        {
-          icon: CodeBracketIcon,
-          label: 'GitHub',
-        },
-        {
-          icon: LifebuoyIcon,
-          label: 'Support',
-        },
-        {
-          icon: CloudIcon,
-          label: 'API',
-          disabled: true,
-        },
-      ],
-    },
-    {
-      items: [
-        {
-          icon: ArrowLeftOnRectangleIcon,
-          label: 'Log out',
-          shortcut: '⇧⌘Q',
-        },
-      ],
-    },
-  ],
+export const Default: StoryObj<typeof Dropdown> = {
+  args: {
+    className: 'w-56',
+    children: <button type="button">Open</button>,
+    items: [
+      {
+        label: 'My Account',
+      },
+      {
+        items: [
+          {
+            icon: UserIcon,
+            label: 'Profile',
+            shortcut: '⇧⌘P',
+            onClick: () => console.log('Profile'),
+          },
+          {
+            icon: CreditCardIcon,
+            label: 'Billing',
+            shortcut: '⌘B',
+            href: 'https://google.com',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+          },
+          {
+            icon: CogIcon,
+            label: 'Settings',
+            shortcut: '⌘S',
+          },
+          {
+            icon: BoltIcon,
+            label: 'Keyboard shortcuts',
+            shortcut: '⌘K',
+          },
+        ],
+      },
+      {
+        items: [
+          {
+            icon: UsersIcon,
+            label: 'Team',
+          },
+          {
+            icon: UserPlusIcon,
+            label: 'Invite users',
+            items: [
+              {
+                icon: EnvelopeIcon,
+                label: 'Email',
+              },
+              {
+                icon: ChatBubbleBottomCenterIcon,
+                label: 'Message',
+              },
+              {
+                icon: PlusCircleIcon,
+                label: 'More...',
+              },
+            ],
+          },
+          {
+            icon: PlusIcon,
+            label: 'New Team',
+            shortcut: '⌘+T',
+          },
+        ],
+      },
+      {
+        items: [
+          {
+            icon: CodeBracketIcon,
+            label: 'GitHub',
+          },
+          {
+            icon: LifebuoyIcon,
+            label: 'Support',
+          },
+          {
+            icon: CloudIcon,
+            label: 'API',
+            disabled: true,
+          },
+        ],
+      },
+      {
+        items: [
+          {
+            icon: ArrowLeftOnRectangleIcon,
+            label: 'Log out',
+            shortcut: '⇧⌘Q',
+          },
+        ],
+      },
+    ],
+  },
 };
