@@ -1,60 +1,56 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './';
 
-export default {
-  title: 'Example/Button',
-  component: Button,
-  parameters: {
-    layout: 'fullscreen',
+const meta: Meta<typeof Button> = { component: Button };
+export default meta;
+
+export const Default: StoryObj<typeof Button> = {
+  args: {
+    children: 'Button',
   },
-  argTypes: {
-    onClick: { action: 'Button Clicked' },
+};
+
+export const Secondary: StoryObj<typeof Button> = {
+  args: {
+    variant: 'secondary',
+    children: 'Button',
   },
-} as ComponentMeta<typeof Button>;
-
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  children: 'Button',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  variant: 'secondary',
-  children: 'Button',
+export const Tertiary: StoryObj<typeof Button> = {
+  args: {
+    variant: 'tertiary',
+    children: 'Button',
+  },
 };
 
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-  variant: 'tertiary',
-  children: 'Button',
+export const Small: StoryObj<typeof Button> = {
+  args: {
+    children: 'Button',
+    size: 'sm',
+  },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  children: 'Button',
-  size: 'sm',
+export const Large: StoryObj<typeof Button> = {
+  args: {
+    children: 'Button',
+    size: 'lg',
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  children: 'Button',
-  size: 'lg',
+export const Destructive: StoryObj<typeof Button> = {
+  args: {
+    variant: 'destructive',
+    children: 'Button',
+  },
 };
 
-export const Destructive = Template.bind({});
-Destructive.args = {
-  variant: 'destructive',
-  children: 'Button',
-};
-
-export const Link = Template.bind({});
-Link.args = {
-  href: 'https://www.google.com',
-  children: 'Button',
-  target: '_blank',
-  rel: 'noopener noreferrer',
-  variant: 'link',
+export const Link: StoryObj<typeof Button> = {
+  args: {
+    href: 'https://www.google.com',
+    children: 'Button',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    variant: 'link',
+  },
 };

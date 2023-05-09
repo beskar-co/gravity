@@ -1,20 +1,11 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Progress } from './';
 
-export default {
-  title: 'Example/Progress',
-  component: Progress,
-  parameters: {
-    layout: 'fullscreen',
+const meta: Meta<typeof Progress> = { component: Progress };
+export default meta;
+
+export const Default: StoryObj<typeof Progress> = {
+  args: {
+    value: 33,
   },
-} as ComponentMeta<typeof Progress>;
-
-const Template: ComponentStory<typeof Progress> = (args) => (
-  <Progress {...args} />
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  value: 33,
 };

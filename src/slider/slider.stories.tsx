@@ -1,23 +1,17 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Slider } from './';
 
-export default {
-  title: 'Example/Slider',
-  component: Slider,
-  parameters: {
-    layout: 'fullscreen',
+const meta: Meta<typeof Slider> = { component: Slider };
+export default meta;
+
+export const Default: StoryObj<typeof Slider> = {
+  args: {
+    value: [50],
   },
-} as ComponentMeta<typeof Slider>;
-
-const Template: ComponentStory<typeof Slider> = (args) => <Slider {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  value: [50],
 };
 
-export const TwoValues = Template.bind({});
-TwoValues.args = {
-  value: [50, 75],
+export const TwoValues: StoryObj<typeof Slider> = {
+  args: {
+    value: [50, 75],
+  },
 };

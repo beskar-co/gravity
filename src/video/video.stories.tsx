@@ -1,24 +1,18 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Video } from './';
 
-export default {
-  title: 'Example/Video',
-  component: Video,
-  parameters: {
-    layout: 'fullscreen',
+const meta: Meta<typeof Video> = { component: Video };
+export default meta;
+
+export const Default: StoryObj<typeof Video> = {
+  args: {
+    url: 'https://vimeo.com/794348644',
   },
-} as ComponentMeta<typeof Video>;
-
-const Template: ComponentStory<typeof Video> = (args) => <Video {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  url: 'https://vimeo.com/794348644',
 };
 
-export const CustomAspectRatio = Template.bind({});
-CustomAspectRatio.args = {
-  url: 'https://vimeo.com/794348644',
-  className: 'aspect-[2744/1822]',
+export const CustomAspectRatio: StoryObj<typeof Video> = {
+  args: {
+    url: 'https://vimeo.com/794348644',
+    className: 'aspect-[2744/1822]',
+  },
 };

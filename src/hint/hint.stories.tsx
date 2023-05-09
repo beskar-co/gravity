@@ -1,18 +1,11 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import { Hint } from './';
 
-export default {
-  title: 'Example/Hint',
-  component: Hint,
-  parameters: {
-    layout: 'fullscreen',
+const meta: Meta<typeof Hint> = { component: Hint };
+export default meta;
+
+export const Default: StoryObj<typeof Hint> = {
+  args: {
+    children: 'This is a hint.',
   },
-} as ComponentMeta<typeof Hint>;
-
-const Template: ComponentStory<typeof Hint> = (args) => <Hint {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  children: 'This is a hint.',
 };
