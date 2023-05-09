@@ -1,3 +1,10 @@
+## [0.9.1](https://github.com/beskar-co/gravity/compare/v0.9.0...v0.9.1) (2023-05-09)
+
+
+### Bug Fixes
+
+* **intro:** improve documentation ([92db9ae](https://github.com/beskar-co/gravity/commit/92db9aee20d61f5c5b9b01e441b452095573fd58))
+
 # [0.9.0](https://github.com/beskar-co/gravity/compare/v0.8.0...v0.9.0) (2023-05-09)
 
 
