@@ -1,3 +1,5 @@
+'use client';
+
 import { DocumentArrowUpIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import type { ChangeEventHandler, FC } from 'react';

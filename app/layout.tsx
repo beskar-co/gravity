@@ -1,5 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import '@/tailwind.css';
+import { TooltipProvider } from '@/tooltip';
+import { Toaster } from '@/toast';
 
 export const metadata = {
   title: 'Gravity | Beskar Labs Design System',
@@ -11,7 +13,12 @@ const RootLayout: FC<{
   children: ReactNode;
 }> = ({ children }) => (
   <html lang="en">
-    <body className="bg-white dark:bg-black">{children}</body>
+    <body className="bg-white dark:bg-black">
+      <TooltipProvider>
+        {children}
+        <Toaster />
+      </TooltipProvider>
+    </body>
   </html>
 );
 

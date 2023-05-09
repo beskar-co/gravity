@@ -25,30 +25,30 @@ export const Default: StoryObj<typeof Popover> = {
           </p>
         </div>
         <div className="grid gap-2">
-          <div className="grid grid-cols-3 items-center gap-4">
-            <Label htmlFor="width">Width</Label>
-            <Input id="width" defaultValue="100%" className="col-span-2 h-8" />
-          </div>
-          <div className="grid grid-cols-3 items-center gap-4">
-            <Label htmlFor="maxWidth">Max. width</Label>
-            <Input
-              id="maxWidth"
-              defaultValue="300px"
-              className="col-span-2 h-8"
-            />
-          </div>
-          <div className="grid grid-cols-3 items-center gap-4">
-            <Label htmlFor="height">Height</Label>
-            <Input id="height" defaultValue="25px" className="col-span-2 h-8" />
-          </div>
-          <div className="grid grid-cols-3 items-center gap-4">
-            <Label htmlFor="maxHeight">Max. height</Label>
-            <Input
-              id="maxHeight"
-              defaultValue="none"
-              className="col-span-2 h-8"
-            />
-          </div>
+          <Input
+            label="Width"
+            id="width"
+            defaultValue="100%"
+            className="col-span-2 h-8"
+          />
+          <Input
+            label="Max. width"
+            id="maxWidth"
+            defaultValue="300px"
+            className="col-span-2 h-8"
+          />
+          <Input
+            label="Height"
+            id="height"
+            defaultValue="25px"
+            className="col-span-2 h-8"
+          />
+          <Input
+            label="Max. height"
+            id="maxHeight"
+            defaultValue="none"
+            className="col-span-2 h-8"
+          />
         </div>
       </div>
     ),
