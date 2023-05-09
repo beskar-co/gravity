@@ -60,3 +60,12 @@ export const SingleLine: StoryObj<typeof Snippet> = {
     children: `python -m SimpleHTTPServer 8080`,
   },
 };
+
+export const WithDefaultHandlers: StoryObj<typeof Snippet> = {
+  args: {
+    language: 'python',
+    children: `python -m SimpleHTTPServer 8080`,
+    onCopyError: undefined,
+    onCopySuccess: undefined,
+  },
+};

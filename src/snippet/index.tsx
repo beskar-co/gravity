@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import clsx from 'clsx';
 import type { SyntaxHighlighterProps } from 'react-syntax-highlighter';
+import { toast } from '@/toast';
 
 type Language =
   | '1c'
@@ -229,16 +230,23 @@ export const Snippet: FC<SnippetProps> = forwardRef<
   SnippetProps
 >(
   (
-    { language, children, onCopySuccess, onCopyError, className, ...props },
+    {
+      language,
+      children,
+      onCopySuccess = toast.success,
+      onCopyError = toast.error,
+      className,
+      ...props
+    },
     ref
   ) => {
     const handleCopy = async (text: string) => {
       try {
         await navigator.clipboard.writeText(text);
 
-        onCopySuccess?.('Copied code to clipboard');
+        onCopySuccess('Copied code to clipboard');
       } catch (error) {
-        onCopyError?.('Failed to copy code to clipboard');
+        onCopyError('Failed to copy code to clipboard');
       }
     };
 
@@ -265,24 +273,22 @@ export const Snippet: FC<SnippetProps> = forwardRef<
         >
           {code}
         </Highlighter>
-        {onCopySuccess && onCopyError && (
-          <Tooltip content="Copy to clipboard">
-            <button
-              type="button"
-              className={clsx(
-                'absolute rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800',
-                lines.length > 1 ? 'right-4 top-4' : 'right-2.5 top-2.5'
-              )}
-              onClick={async () => handleCopy(children)}
-            >
-              <ClipboardDocumentIcon
-                className="h-4 w-4 text-neutral-400"
-                width={16}
-                height={16}
-              />
-            </button>
-          </Tooltip>
-        )}
+        <Tooltip content="Copy to clipboard">
+          <button
+            type="button"
+            className={clsx(
+              'absolute rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800',
+              lines.length > 1 ? 'right-4 top-4' : 'right-2.5 top-2.5'
+            )}
+            onClick={async () => handleCopy(children)}
+          >
+            <ClipboardDocumentIcon
+              className="h-4 w-4 text-neutral-400"
+              width={16}
+              height={16}
+            />
+          </button>
+        </Tooltip>
       </div>
     );
   }

@@ -28,3 +28,12 @@ export const WithValue: StoryObj<typeof FileUpload> = {
     }),
   },
 };
+
+export const WithDefaultErrorHandler: StoryObj<typeof FileUpload> = {
+  args: {
+    label: 'Cover Photo',
+    accept: ['.jpg', '.jpeg', '.png'],
+    maxSize: 5,
+    onError: undefined,
+  },
+};

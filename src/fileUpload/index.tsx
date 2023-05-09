@@ -5,6 +5,7 @@ import { useId, useRef } from 'react';
 import { useDropArea } from 'react-use';
 import { getExtension } from 'mime';
 import { Label } from '@/label';
+import { toast } from '@/toast';
 
 type FileUploadProps = {
   label?: string;
@@ -20,7 +21,7 @@ export const FileUpload: FC<FileUploadProps> = ({
   label,
   value,
   onChange,
-  onError,
+  onError = toast.error,
   accept,
   maxSize = 5,
   maxFiles = 1,
@@ -28,7 +29,7 @@ export const FileUpload: FC<FileUploadProps> = ({
   const id = useId();
   const handleChange = (files: File[]) => {
     if (files.length > maxFiles) {
-      onError?.(
+      onError(
         `Only ${maxFiles} file${
           maxFiles > 1 ? 's' : ''
         } can be uploaded at a time`
@@ -59,7 +60,7 @@ export const FileUpload: FC<FileUploadProps> = ({
     } catch (error) {
       const castedError = error as Error;
 
-      onError?.(castedError.message);
+      onError(castedError.message);
     }
   };
 
