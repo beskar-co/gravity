@@ -15,5 +15,6 @@
   "eslint.experimental.useFlatConfig": true,
   "eslint.options": {
     "overrideConfigFile": "eslint.config.mjs"
-  }
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
