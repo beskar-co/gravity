@@ -1,5 +1,7 @@
 import type { Parameters } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-styling';
+import { Preview } from '@storybook/react';
+import { TooltipProvider } from '@/tooltip';
 
 import './tailwind.css';
 
@@ -36,3 +38,16 @@ export const decorators = [
     attributeName: 'data-mode',
   }),
 ];
+
+const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <TooltipProvider>
+        {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
+        <Story />
+      </TooltipProvider>
+    ),
+  ],
+};
+
+export default preview;
