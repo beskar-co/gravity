@@ -3,7 +3,9 @@
   "description": "Beskar Labs Design System",
   "version": "0.10.16",
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 3000",
+    "dev": "concurrently \"npm:dev:storybook\" \"npm:dev:next\"",
+    "dev:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev",
+    "dev:next": "next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider storybook build",
     "package": "tsup",
     "postpackage": "node scripts/postprocess.js && node scripts/copy.js",
@@ -93,6 +95,7 @@
     "@types/react-syntax-highlighter": "^15.5.6",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
+    "concurrently": "^8.0.1",
     "eslint-plugin-storybook": "^0.6.12",
     "jest": "^29.5.0",
     "next": "13.4.2",
