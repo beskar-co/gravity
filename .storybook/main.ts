@@ -1,4 +1,4 @@
-import type { StorybookConfig } from '@storybook/react-vite';
+import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -18,16 +18,12 @@ const config: StorybookConfig = {
     '@storybook/addon-mdx-gfm',
   ],
   framework: {
-    name: '@storybook/react-vite',
+    name: '@storybook/nextjs',
     options: {},
   },
   core: {},
   features: {
     storyStoreV7: true,
-  },
-  viteFinal(viteConfig) {
-    // Add your configuration here
-    return viteConfig;
   },
   docs: {
     autodocs: true,
