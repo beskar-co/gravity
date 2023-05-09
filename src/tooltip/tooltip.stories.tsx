@@ -6,7 +6,7 @@ const meta: Meta<typeof Tooltip> = { component: Tooltip };
 export default meta;
 
 export const Default: StoryObj<typeof Tooltip> = {
-  args = {
+  args: {
     content: 'Add to library',
     children: (
       <button type="button" className="w-10 rounded-full p-0">
