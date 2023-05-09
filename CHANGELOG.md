@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/beskar-co/gravity/compare/v0.7.0...v0.8.0) (2023-05-09)
+
+
+### Features
+
+* **storybook:** upgrade to Storybook 7 ([#2](https://github.com/beskar-co/gravity/issues/2)) ([76f0b5b](https://github.com/beskar-co/gravity/commit/76f0b5b261a65a366edfa3cbd81830f9db1e02fb))
+
 # [0.7.0](https://github.com/beskar-co/gravity/compare/v0.6.0...v0.7.0) (2023-05-08)
 
 
