@@ -80,11 +80,7 @@ const Home = async (): Promise<ReactNode> => {
             <Snippet className="mt-4" language="bash">
               yarn add @beskar-labs/gravity
             </Snippet>
-            <Button
-              variant="link"
-              href="http://localhost:3001"
-              className="mt-4"
-            >
+            <Button variant="link" href="/docs" className="mt-4">
               or browse the components
             </Button>
           </div>
