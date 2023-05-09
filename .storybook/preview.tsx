@@ -3,7 +3,7 @@ import { withThemeByDataAttribute } from '@storybook/addon-styling';
 import { Preview } from '@storybook/react';
 import { TooltipProvider } from '@/tooltip';
 
-import './tailwind.css';
+import '@/tailwind.css';
 
 export const parameters: Parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
