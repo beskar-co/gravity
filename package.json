@@ -37,6 +37,7 @@
   "dependencies": {
     "@beskar-labs/use-sticky": "^2.0.5",
     "@heroicons/react": "^2.0.18",
+    "@octokit/rest": "^19.0.7",
     "@radix-ui/react-accordion": "^1.1.1",
     "@radix-ui/react-alert-dialog": "^1.0.3",
     "@radix-ui/react-avatar": "^1.0.2",
