@@ -1,16 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { toast } from './';
+import { Button } from '@/button';
 
-const meta: Meta<typeof toast> = { component: toast };
+const meta: Meta<typeof Button> = {
+  component: Button,
+  render: (args) => <Button {...args}>Show toast</Button>,
+};
 export default meta;
 
-export const Default: StoryObj<typeof toast> = {
+export const Default: StoryObj<typeof Button> = {
   args: {
     onClick: () => toast('Hello world!'),
   },
 };
 
-export const Success: StoryObj<typeof toast> = {
+export const Success: StoryObj<typeof Button> = {
   args: {
     onClick: () =>
       toast.success('Success!', {
@@ -19,7 +23,7 @@ export const Success: StoryObj<typeof toast> = {
   },
 };
 
-export const Error: StoryObj<typeof toast> = {
+export const Error: StoryObj<typeof Button> = {
   args: {
     onClick: () =>
       toast.error('Something went wrong!', {
@@ -28,7 +32,7 @@ export const Error: StoryObj<typeof toast> = {
   },
 };
 
-export const Action: StoryObj<typeof toast> = {
+export const Action: StoryObj<typeof Button> = {
   args: {
     onClick: () => {
       toast('Event has been created', {
