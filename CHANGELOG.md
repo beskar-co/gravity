@@ -1,3 +1,10 @@
+# [0.9.0](https://github.com/beskar-co/gravity/compare/v0.8.0...v0.9.0) (2023-05-09)
+
+
+### Features
+
+* **hovercard:** add hovercard component ([38199cd](https://github.com/beskar-co/gravity/commit/38199cddc94fddf4d48999da25304d7285e8f550))
+
 # [0.8.0](https://github.com/beskar-co/gravity/compare/v0.7.0...v0.8.0) (2023-05-09)
 
 
