@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Toast } from './';
+import { toast } from './';
 
-const meta: Meta<typeof Toast> = { component: Toast };
+const meta: Meta<typeof toast> = { component: toast };
 export default meta;
 
-export const Default: StoryObj<typeof Toast> = {
+export const Default: StoryObj<typeof toast> = {
   args: {
     onClick: () => toast('Hello world!'),
   },
 };
 
-export const Success: StoryObj<typeof Toast> = {
+export const Success: StoryObj<typeof toast> = {
   args: {
     onClick: () =>
       toast.success('Success!', {
@@ -19,7 +19,7 @@ export const Success: StoryObj<typeof Toast> = {
   },
 };
 
-export const Error: StoryObj<typeof Toast> = {
+export const Error: StoryObj<typeof toast> = {
   args: {
     onClick: () =>
       toast.error('Something went wrong!', {
@@ -28,7 +28,7 @@ export const Error: StoryObj<typeof Toast> = {
   },
 };
 
-export const Action: StoryObj<typeof Toast> = {
+export const Action: StoryObj<typeof toast> = {
   args: {
     onClick: () => {
       toast('Event has been created', {
