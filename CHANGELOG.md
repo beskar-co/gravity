@@ -1,3 +1,10 @@
+## [0.9.3](https://github.com/beskar-co/gravity/compare/v0.9.2...v0.9.3) (2023-05-09)
+
+
+### Bug Fixes
+
+* **errors:** add better default error / success handlers ([bd0a554](https://github.com/beskar-co/gravity/commit/bd0a55413ef969b4cfd9788c495f5cf59028fee8))
+
 ## [0.9.2](https://github.com/beskar-co/gravity/compare/v0.9.1...v0.9.2) (2023-05-09)
 
 
