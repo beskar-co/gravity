@@ -1,3 +1,10 @@
+## [0.9.4](https://github.com/beskar-co/gravity/compare/v0.9.3...v0.9.4) (2023-05-09)
+
+
+### Bug Fixes
+
+* **storybook:** disable keyboard shortcuts ([cb0d5f9](https://github.com/beskar-co/gravity/commit/cb0d5f9d2758a3519071ce7b7c46509e7f6e452d))
+
 ## [0.9.3](https://github.com/beskar-co/gravity/compare/v0.9.2...v0.9.3) (2023-05-09)
 
 
