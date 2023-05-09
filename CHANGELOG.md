@@ -1,3 +1,10 @@
+## [0.9.5](https://github.com/beskar-co/gravity/compare/v0.9.4...v0.9.5) (2023-05-09)
+
+
+### Bug Fixes
+
+* **storybook:** add accessibility addon ([d82ab3c](https://github.com/beskar-co/gravity/commit/d82ab3c6031268797adabacb26ed25c6f227c8d0))
+
 ## [0.9.4](https://github.com/beskar-co/gravity/compare/v0.9.3...v0.9.4) (2023-05-09)
 
 
