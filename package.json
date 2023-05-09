@@ -82,7 +82,6 @@
     "@storybook/addon-essentials": "^7.0.10",
     "@storybook/addon-interactions": "^7.0.10",
     "@storybook/addon-links": "^7.0.10",
-    "@storybook/addon-mdx-gfm": "^7.0.10",
     "@storybook/addon-styling": "^1.0.6",
     "@storybook/nextjs": "^7.0.10",
     "@storybook/react": "^7.0.10",
