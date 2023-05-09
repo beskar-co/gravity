@@ -1,7 +1,7 @@
 'use client';
 
-import { Hint } from '../hint';
-import { Label } from '../label';
+import { Hint } from '@/hint';
+import { Label } from '@/label';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import clsx from 'clsx';
 import type { ComponentPropsWithoutRef, ElementRef } from 'react';

@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import type { TextareaHTMLAttributes } from 'react';
 import { useId, forwardRef } from 'react';
-import { Label } from '../label';
-import { Hint } from '../hint';
+import { Label } from '@/label';
+import { Hint } from '@/hint';
 
 export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label?: string;
