@@ -18,11 +18,17 @@ Ensure you add the relevant providers.
 
 ```tsx
 import { TooltipProvider } from '@beskar-labs/gravity/tooltip';
+import { Toaster } from '@beskar-labs/gravity/toast';
 import type { ReactNode } from 'react';
 
 const RootLayout: FC<{
   children: ReactNode;
-}> = () => <TooltipProvider>{children}</TooltipProvider>;
+}> = () => (
+  <>
+    <TooltipProvider>{children}</TooltipProvider>
+    <Toaster />
+  </>
+);
 
 export default RootLayout;
 ```
