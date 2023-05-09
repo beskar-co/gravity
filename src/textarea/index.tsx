@@ -7,19 +7,19 @@ import { Hint } from '@/hint';
 export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label?: string;
   hint?: string;
-  onChangeText?: (text: string) => void;
+  onValueChange?: (text: string) => void;
 };
 
 const Textarea: FC<TextareaProps> = forwardRef<
   HTMLTextAreaElement,
   TextareaProps
->(({ className, onChangeText, ...props }, ref) => {
+>(({ className, onValueChange, ...props }, ref) => {
   const id = useId();
 
   const handleChange: TextareaHTMLAttributes<HTMLTextAreaElement>['onChange'] =
     (event) => {
       props.onChange?.(event);
-      onChangeText?.(event.target.value);
+      onValueChange?.(event.target.value);
     };
 
   return (

@@ -59,7 +59,7 @@ export const Select: FC<SelectProps> = forwardRef<
                     placeholder="Search..."
                     className="rounded-bl-none rounded-br-none border-0"
                     value={query}
-                    onChangeText={setQuery}
+                    onValueChange={setQuery}
                   />
                 </div>
               )}

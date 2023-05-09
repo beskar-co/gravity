@@ -7,18 +7,18 @@ import { Hint } from '@/hint';
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   hint?: string;
-  onChangeText?: (value: string) => void;
+  onValueChange?: (value: string) => void;
 };
 
 const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, onChangeText, ...props }, ref) => {
+  ({ className, onValueChange, ...props }, ref) => {
     const id = useId();
 
     const handleChange: InputHTMLAttributes<HTMLInputElement>['onChange'] = (
       event
     ) => {
       props.onChange?.(event);
-      onChangeText?.(event.target.value);
+      onValueChange?.(event.target.value);
     };
 
     return (
