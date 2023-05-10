@@ -7,7 +7,7 @@ const nextConfig = {
     return [
       {
         source: '/docs',
-        destination: 'http://localhost:3001/',
+        destination: 'http://localhost:6006/',
       },
     ];
   },

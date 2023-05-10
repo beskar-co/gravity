@@ -4,7 +4,7 @@
   "version": "0.10.16",
   "scripts": {
     "dev": "concurrently \"npm:dev:storybook\" \"npm:dev:next\"",
-    "dev:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 3001",
+    "dev:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 6006",
     "dev:next": "next dev",
     "build": "npm run build:next && npm run build:storybook",
     "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook build -o public/components",
