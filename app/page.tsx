@@ -6,7 +6,6 @@ import clsx from 'clsx';
 import { Snippet } from '@/snippet';
 
 const octokit = new Octokit();
-const npmLink = 'https://npmjs.com/package/@beskar-labs/gravity';
 
 const formatDate = (date: string | null): string =>
   date
@@ -46,14 +45,8 @@ const Home = async (): Promise<ReactNode> => {
           <div className="col-span-5">
             <div className="hidden sm:mb-8 sm:flex">
               <div className="relative inline-flex gap-2 rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-black/10 hover:ring-black/20">
-                <span>
-                  {latestRelease.data.name} released{' '}
-                  {formatDate(latestRelease.data.published_at)}
-                </span>
-                <a href={npmLink} className="font-semibold text-black">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  Download on NPM <span aria-hidden="true">&rarr;</span>
-                </a>
+                {latestRelease.data.name} &middot;{' '}
+                {formatDate(latestRelease.data.published_at)}
               </div>
             </div>
 
