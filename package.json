@@ -7,7 +7,7 @@
     "dev:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 6006",
     "dev:next": "next dev",
     "build": "npm run build:next && npm run build:storybook",
-    "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook build -o public/components",
+    "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook build -o .next/server/app/docs",
     "build:next": "next build",
     "package": "tsup",
     "postpackage": "node scripts/postprocess.js && node scripts/copy.js",
