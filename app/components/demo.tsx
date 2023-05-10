@@ -1,8 +1,7 @@
 'use client';
 
 import type { ComponentPropsWithoutRef, FC } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Badge } from '@/badge';
 import { Checkbox } from '@/checkbox';
 import { Dialog, DialogAction, DialogCancel } from '@/dialog';
@@ -199,6 +198,25 @@ const PopoverContent: ComponentPropsWithoutRef<typeof Popover>['content'] = (
   </div>
 );
 
+const selectData: ComponentPropsWithoutRef<typeof Select>['data'] = [
+  {
+    label: 'Regular',
+    items: [
+      { label: 'Apple', value: 'apple' },
+      { label: 'Banana', value: 'banana' },
+      { label: 'Orange', value: 'orange' },
+    ],
+  },
+  {
+    label: 'With Icons',
+    items: [
+      { label: 'Bolt', value: 'bolt', icon: BoltIcon },
+      { label: 'Cloud', value: 'cloud', icon: CloudIcon },
+      { label: 'Credit Card', value: 'credit-card', icon: CreditCardIcon },
+    ],
+  },
+];
+
 const Demo: FC = () => {
   const [sliderValue, setSliderValue] = useState([25, 75]);
   const [progressValue, setProgressValue] = useState(50);
@@ -248,7 +266,7 @@ const Demo: FC = () => {
       </div>
       <div className="flex w-full items-center gap-4">
         <Progress value={progressValue} />
-        <Select data={[]} />
+        <Select placeholder="Choose an item..." data={selectData} />
       </div>
       <div className="flex w-full items-center gap-4">
         <Slider value={sliderValue} onValueChange={setSliderValue} />
