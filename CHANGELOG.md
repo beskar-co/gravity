@@ -1,3 +1,10 @@
+## [0.9.9](https://github.com/beskar-co/gravity/compare/v0.9.8...v0.9.9) (2023-05-14)
+
+
+### Bug Fixes
+
+* **badge:** add support for className ([0730d0a](https://github.com/beskar-co/gravity/commit/0730d0a4a301e0703e00d244eaf59d2492f61344))
+
 ## [0.9.8](https://github.com/beskar-co/gravity/compare/v0.9.7...v0.9.8) (2023-05-14)
 
 
