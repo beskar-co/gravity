@@ -1,3 +1,10 @@
+## [0.9.6](https://github.com/beskar-co/gravity/compare/v0.9.5...v0.9.6) (2023-05-14)
+
+
+### Bug Fixes
+
+* **imports:** fix path imports ([607915e](https://github.com/beskar-co/gravity/commit/607915edc96ebd53e79561b3a173f994e9d6add5))
+
 ## [0.9.5](https://github.com/beskar-co/gravity/compare/v0.9.4...v0.9.5) (2023-05-09)
 
 
