@@ -1,3 +1,10 @@
+## [0.9.7](https://github.com/beskar-co/gravity/compare/v0.9.6...v0.9.7) (2023-05-14)
+
+
+### Bug Fixes
+
+* **snippet:** add showCopy bool ([5e17eac](https://github.com/beskar-co/gravity/commit/5e17eac86f05863b4d1bc6d0bbc4ab3d6a9d5fe1))
+
 ## [0.9.6](https://github.com/beskar-co/gravity/compare/v0.9.5...v0.9.6) (2023-05-14)
 
 
