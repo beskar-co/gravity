@@ -1,3 +1,10 @@
+## [0.9.8](https://github.com/beskar-co/gravity/compare/v0.9.7...v0.9.8) (2023-05-14)
+
+
+### Bug Fixes
+
+* **video:** fix style tag ([36847e1](https://github.com/beskar-co/gravity/commit/36847e1d74c3726500064084b1b0243dcd3970eb))
+
 ## [0.9.7](https://github.com/beskar-co/gravity/compare/v0.9.6...v0.9.7) (2023-05-14)
 
 
