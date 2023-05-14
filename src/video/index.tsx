@@ -31,12 +31,12 @@ export const Video: FC<VideoProps> = forwardRef<
       className,
       !className?.includes('aspect-') && 'aspect-video'
     )}
+    style={style}
   >
     <Player
       style={{
         position: 'absolute',
         inset: 0,
-        ...style,
       }}
       width={width ?? '100%'}
       height={height ?? '100%'}
