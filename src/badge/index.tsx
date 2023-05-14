@@ -6,6 +6,7 @@ type BadgeProps = {
   children: ReactNode;
   size?: 'md' | 'sm';
   variant?: 'primary' | 'secondary' | 'tertiary';
+  className?: string;
 };
 
 const badgeSizes = {
@@ -22,13 +23,14 @@ const badgeVariants = {
 };
 
 export const Badge: FC<BadgeProps> = forwardRef<HTMLDivElement, BadgeProps>(
-  ({ size = 'md', variant = 'primary', ...props }, ref) => (
+  ({ size = 'md', variant = 'primary', className, ...props }, ref) => (
     <span
       ref={ref}
       className={clsx(
         'inline-flex items-center rounded-full font-medium',
         badgeSizes[size],
-        badgeVariants[variant]
+        badgeVariants[variant],
+        className
       )}
       {...props}
     />
