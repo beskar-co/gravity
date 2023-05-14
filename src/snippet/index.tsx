@@ -213,6 +213,7 @@ type SnippetProps = Omit<SyntaxHighlighterProps, 'language' | 'children'> & {
   children: string;
   onCopySuccess?: (text: string) => void;
   onCopyError?: (text: string) => void;
+  showCopy?: boolean;
   className?: string;
 };
 
@@ -236,6 +237,7 @@ export const Snippet: FC<SnippetProps> = forwardRef<
       onCopySuccess = toast.success,
       onCopyError = toast.error,
       className,
+      showCopy,
       ...props
     },
     ref
@@ -273,22 +275,24 @@ export const Snippet: FC<SnippetProps> = forwardRef<
         >
           {code}
         </Highlighter>
-        <Tooltip content="Copy to clipboard">
-          <button
-            type="button"
-            className={clsx(
-              'absolute rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800',
-              lines.length > 1 ? 'right-4 top-4' : 'right-2.5 top-2.5'
-            )}
-            onClick={async () => handleCopy(children)}
-          >
-            <ClipboardDocumentIcon
-              className="h-4 w-4 text-neutral-400"
-              width={16}
-              height={16}
-            />
-          </button>
-        </Tooltip>
+        {showCopy && (
+          <Tooltip content="Copy to clipboard">
+            <button
+              type="button"
+              className={clsx(
+                'absolute rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800',
+                lines.length > 1 ? 'right-4 top-4' : 'right-2.5 top-2.5'
+              )}
+              onClick={async () => handleCopy(children)}
+            >
+              <ClipboardDocumentIcon
+                className="h-4 w-4 text-neutral-400"
+                width={16}
+                height={16}
+              />
+            </button>
+          </Tooltip>
+        )}
       </div>
     );
   }
