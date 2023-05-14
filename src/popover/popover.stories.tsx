@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Popover } from './';
-import { Button } from '@/button';
+import { Button } from '../button';
 import { CogIcon } from '@heroicons/react/20/solid';
-import { Input } from '@/input';
-import { Label } from '@/label';
+import { Input } from '../input';
+import { Label } from '../label';
 
 const meta: Meta<typeof Popover> = {
   component: Popover,

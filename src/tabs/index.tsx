@@ -3,7 +3,7 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { Select } from '@/select';
+import { Select } from '../select';
 import type {
   ComponentPropsWithoutRef,
   ElementRef,

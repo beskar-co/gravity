@@ -5,8 +5,8 @@ import { useId, forwardRef } from 'react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import clsx from 'clsx';
 import { CheckIcon } from '@heroicons/react/20/solid';
-import { Label } from '@/label';
-import { Hint } from '@/hint';
+import { Label } from '../label';
+import { Hint } from '../hint';
 
 type CheckboxProps = ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & {
   label: string;

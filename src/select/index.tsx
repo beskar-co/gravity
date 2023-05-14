@@ -5,10 +5,10 @@ import { useState } from 'react';
 import { Fragment, forwardRef } from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
-import { Label } from '@/label';
+import { Label } from '../label';
 import Image from 'next/image';
-import { Badge } from '@/badge';
-import { Input } from '@/input';
+import { Badge } from '../badge';
+import { Input } from '../input';
 
 type SelectProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
   placeholder?: string;
