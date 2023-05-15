@@ -1,12 +1,19 @@
 'use client';
 
-import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import clsx from 'clsx';
-import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
-import { forwardRef } from 'react';
+import type {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  FC,
+  HTMLProps,
+} from 'react';
+import { useState, forwardRef } from 'react';
 import Link from 'next/link';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
+import { usePathname } from 'next/navigation';
+import type { ButtonProps } from '../button';
+import { Button } from '../button';
 
 type ModifiedLink = Omit<ComponentPropsWithoutRef<typeof Link>, 'href'> & {
   href: string;
@@ -17,133 +24,125 @@ type NavigationDropdownItemProps = {
   items: ({
     label: string;
     description?: string;
-    active?: boolean;
     icon?: typeof ChevronDownIcon;
     href: string;
   } & ModifiedLink)[];
   feature?: FC;
 };
 
-type NavigationLinkItemProps = ModifiedLink & {
-  active?: boolean;
-};
-
-type NavigationMenuProps = ComponentPropsWithoutRef<
-  typeof NavigationMenuPrimitive.Root
-> & {
+type NavigationMenuProps = HTMLProps<HTMLDivElement> & {
+  logo?: FC;
   items: ({
     label: string;
-  } & (NavigationDropdownItemProps | NavigationLinkItemProps))[];
+  } & (NavigationDropdownItemProps | ModifiedLink))[];
+  actions?: ButtonProps[];
+};
+
+const NavigationItem: FC<{ data: NavigationMenuProps['items'][number] }> = ({
+  data,
+}) => {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  const baseClassName = clsx(
+    'inline-flex w-max gap-1 items-center justify-center',
+    'rounded-md bg-transparent px-3 py-2 text-sm font-medium transition-colors',
+    'dark:text-neutral-100',
+    'hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100',
+    'disabled:pointer-events-none disabled:opacity-50',
+    'focus:outline-none focus:bg-neutral-100 dark:focus:bg-neutral-800'
+  );
+
+  return (
+    <div key={data.label}>
+      {'items' in data ? (
+        <button
+          type="button"
+          onMouseOver={() => setOpen(true)}
+          onMouseLeave={() => setOpen(false)}
+          onFocus={() => setOpen(true)}
+          onBlur={() => setOpen(false)}
+        >
+          <div
+            className={clsx(
+              baseClassName,
+              open && 'bg-neutral-50 dark:bg-neutral-800'
+            )}
+          >
+            {data.label}
+            <ChevronDownIcon className="relative h-3 w-3" />
+          </div>
+          {open && (
+            <div className="absolute z-10">
+              {data.items.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={clsx(
+                    baseClassName,
+                    item.href === pathname &&
+                      'bg-neutral-50 dark:bg-neutral-800'
+                  )}
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={
+                    item.href.startsWith('http')
+                      ? 'noopener noreferrer'
+                      : undefined
+                  }
+                >
+                  {item.label}
+                  {item.href.startsWith('http') && (
+                    <ArrowUpRightIcon className="relative h-3 w-3" />
+                  )}
+                </Link>
+              ))}
+            </div>
+          )}
+        </button>
+      ) : (
+        <Link
+          href={data.href}
+          className={clsx(
+            baseClassName,
+            data.href === pathname && 'bg-neutral-50 dark:bg-neutral-800'
+          )}
+          target={data.href.startsWith('http') ? '_blank' : undefined}
+          rel={data.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+        >
+          {data.label}
+          {data.href.startsWith('http') && (
+            <ArrowUpRightIcon className="relative h-3 w-3" />
+          )}
+        </Link>
+      )}
+    </div>
+  );
 };
 
 export const NavigationMenu: FC<NavigationMenuProps> = forwardRef<
-  ElementRef<typeof NavigationMenuPrimitive.Root>,
+  ElementRef<'nav'>,
   NavigationMenuProps
->(({ className, children, items, ...props }, ref) => (
-  <NavigationMenuPrimitive.Root
+>(({ className, logo: Logo, items, actions, ...props }, ref) => (
+  <nav
+    className={clsx('flex items-center justify-between gap-4', className)}
     ref={ref}
-    className={clsx(
-      'relative z-10 flex flex-1 items-center justify-center',
-      className
-    )}
     {...props}
   >
-    <NavigationMenuPrimitive.List className="group flex flex-1 list-none items-center justify-center gap-1">
-      {items.map((item) => (
-        <NavigationMenuPrimitive.Item key={item.label}>
-          {'href' in item ? (
-            <NavigationMenuPrimitive.Link
-              href={item.href}
-              asChild
-              data-active={item.active}
-              className={clsx(
-                'group inline-flex w-max items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-medium transition-colors',
-                'hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active=true]:bg-neutral-50 data-[state=open]:bg-neutral-50 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:bg-neutral-800',
-                'dark:data-[active=true]:bg-neutral-800 dark:data-[state=open]:bg-neutral-800'
-              )}
-            >
-              <Link
-                href={item.href}
-                target={item.href.startsWith('http') ? '_blank' : undefined}
-                rel={
-                  item.href.startsWith('http')
-                    ? 'noopener noreferrer'
-                    : undefined
-                }
-              >
-                {item.label}
-                {item.href.startsWith('http') && (
-                  <ArrowUpRightIcon className="relative ml-1 h-3 w-3" />
-                )}
-              </Link>
-            </NavigationMenuPrimitive.Link>
-          ) : (
-            <>
-              <NavigationMenuPrimitive.Trigger className="group inline-flex w-max items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active=true]:bg-neutral-50 data-[state=open]:bg-neutral-50 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:bg-neutral-800 dark:data-[active=true]:bg-neutral-800 dark:data-[state=open]:bg-neutral-800">
-                {item.label}
-                <ChevronDownIcon
-                  className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
-                  aria-hidden="true"
-                />
-              </NavigationMenuPrimitive.Trigger>
-              <NavigationMenuPrimitive.Content className="left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto">
-                <div className="flex">
-                  {item.feature && (
-                    <div className="flex-1 shrink-0 py-4 pl-4">
-                      <item.feature />
-                    </div>
-                  )}
-                  <ul
-                    className={clsx(
-                      'grid flex-1 gap-3',
-                      item.layout === 'list' &&
-                        'w-[400px] p-4 md:w-[500px] lg:w-[600px]',
-                      item.layout === 'grid' &&
-                        'grid-cols-2 p-6 md:w-[400px] lg:w-[500px]'
-                    )}
-                  >
-                    {item.items.map((subItem) => (
-                      <NavigationMenuPrimitive.Item key={subItem.label}>
-                        <NavigationMenuPrimitive.Link
-                          href={subItem.href}
-                          asChild
-                          data-active={subItem.active}
-                        >
-                          <Link
-                            href={subItem.href}
-                            className="flex select-none gap-2 space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-neutral-100 focus:bg-neutral-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-                          >
-                            {subItem.icon && (
-                              <subItem.icon className="h-6 w-6 shrink-0 text-neutral-500 dark:text-neutral-400" />
-                            )}
-                            <div className="grid gap-1">
-                              <div className="text-sm font-medium leading-none text-black dark:text-white">
-                                {subItem.label}
-                              </div>
-                              <p className="line-clamp-2 text-sm leading-snug text-neutral-500 dark:text-neutral-400">
-                                {subItem.description}
-                              </p>
-                            </div>
-                          </Link>
-                        </NavigationMenuPrimitive.Link>
-                      </NavigationMenuPrimitive.Item>
-                    ))}
-                  </ul>
-                </div>
-              </NavigationMenuPrimitive.Content>
-            </>
-          )}
-        </NavigationMenuPrimitive.Item>
-      ))}
-      {children}
-
-      {/* <NavigationMenuPrimitive.Indicator className="top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in">
-        <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-neutral-200 shadow-md dark:bg-neutral-800" />
-      </NavigationMenuPrimitive.Indicator> */}
-    </NavigationMenuPrimitive.List>
-    <div className="absolute left-0 top-full flex justify-center">
-      <NavigationMenuPrimitive.Viewport className="origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border border-neutral-200 bg-white shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 dark:border-neutral-800 dark:bg-neutral-900 md:w-[var(--radix-navigation-menu-viewport-width)]" />
+    <div className="flex items-center gap-4">
+      {Logo && <Logo />}
+      <div className="flex items-center gap-1">
+        {items.map((item) => (
+          <NavigationItem key={item.label} data={item} />
+        ))}
+      </div>
     </div>
-  </NavigationMenuPrimitive.Root>
+    {actions?.length && (
+      <div className="flex items-center gap-1">
+        {actions.map((action, index) => (
+          <Button key={index} {...action} />
+        ))}
+      </div>
+    )}
+  </nav>
 ));
-NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName;
+NavigationMenu.displayName = 'NavigationMenu';
