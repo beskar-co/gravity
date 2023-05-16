@@ -128,7 +128,7 @@ const items: ComponentPropsWithoutRef<typeof NavigationMenu>['items'] = [
     ),
   },
   {
-    label: 'Documentation',
+    label: 'Docs',
     href: 'https://www.google.com/',
   },
 ];
