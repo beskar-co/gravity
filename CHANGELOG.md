@@ -1,3 +1,12 @@
+## [0.10.1](https://github.com/beskar-co/gravity/compare/v0.10.0...v0.10.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* **navbar:** attempt auto-responsive layout ([0da9151](https://github.com/beskar-co/gravity/commit/0da9151fa778561adfd411c34fb05a747e3e1546))
+* **navigationMenu:** misc ts fixes ([73a9347](https://github.com/beskar-co/gravity/commit/73a9347a79b90698bf5fb9a170993736988f5ed4))
+* **storybook:** bump storybook version ([d81255d](https://github.com/beskar-co/gravity/commit/d81255d4082937adfa8c432f16d0b5e20256191f))
+
 # [0.10.0](https://github.com/beskar-co/gravity/compare/v0.9.9...v0.10.0) (2023-05-16)
 
 
