@@ -2,7 +2,8 @@
 
 import clsx from 'clsx';
 import type { ComponentPropsWithoutRef, FC, HTMLProps } from 'react';
-import { useRef, useState } from 'react';
+import { Fragment } from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
@@ -10,6 +11,7 @@ import useSticky from '@beskar-labs/use-sticky';
 import { usePathname } from 'next/navigation';
 import type { ButtonProps } from '../button';
 import { Button } from '../button';
+import { Popover } from '../popover';
 
 type ModifiedLink = Omit<ComponentPropsWithoutRef<typeof Link>, 'href'> & {
   href: string;
@@ -17,8 +19,8 @@ type ModifiedLink = Omit<ComponentPropsWithoutRef<typeof Link>, 'href'> & {
 
 type NavigationDropdownItemProps =
   | {
-      width: 'full' | 'inline';
       layout: 'list' | 'grid';
+      className?: string;
       items: ({
         label: string;
         description?: string;
@@ -28,6 +30,7 @@ type NavigationDropdownItemProps =
     }
   | {
       layout: 'custom';
+      className?: string;
       children: FC;
     };
 
@@ -40,29 +43,46 @@ type NavigationMenuProps = HTMLProps<HTMLDivElement> & {
 };
 
 const baseClassName = clsx(
-  'inline-flex w-max gap-1 items-center justify-center',
-  'rounded-md bg-transparent px-3 py-2 text-sm font-medium transition-colors',
+  'inline-flex gap-1 items-center justify-center',
+  'rounded-md bg-transparent px-3 py-2 text-sm transition-colors',
   'dark:text-neutral-100',
   'hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100',
   'disabled:pointer-events-none disabled:opacity-50',
   'focus:outline-none focus:bg-neutral-100 dark:focus:bg-neutral-800'
 );
 
-const NavigationLink: FC<ModifiedLink> = ({ href, children }) => {
+export const NavigationMenuLink: FC<
+  NavigationDropdownItemProps['items'][number]
+> = ({ icon: Icon, label, description, href, children }) => {
   const pathname = usePathname();
+
   return (
     <Link
       href={href}
       className={clsx(
         baseClassName,
+        'w-full gap-2',
         href === pathname && 'bg-neutral-50 dark:bg-neutral-800'
       )}
       target={href.startsWith('http') ? '_blank' : undefined}
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
     >
+      {Icon && (
+        <Icon className="mr-1 h-6 w-6 shrink-0 self-start text-neutral-500 dark:text-neutral-400" />
+      )}
+      <span className="grid w-full gap-1">
+        <span className="text-sm font-medium text-black dark:text-white">
+          {label}
+        </span>
+        {description && (
+          <span className="line-clamp-2 text-sm leading-snug text-neutral-500 dark:text-neutral-400">
+            {description}
+          </span>
+        )}
+      </span>
       {children}
       {href.startsWith('http') && (
-        <ArrowUpRightIcon className="relative h-3 w-3" />
+        <ArrowUpRightIcon className="h-3 w-3 shrink-0" />
       )}
     </Link>
   );
@@ -70,44 +90,43 @@ const NavigationLink: FC<ModifiedLink> = ({ href, children }) => {
 
 const NavigationItem: FC<{ data: NavigationMenuProps['items'][number] }> = ({
   data,
-}) => {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div key={data.label}>
-      {'items' in data ? (
-        <button
-          type="button"
-          onMouseOver={() => setOpen(true)}
-          onMouseLeave={() => setOpen(false)}
-          onFocus={() => setOpen(true)}
-          onBlur={() => setOpen(false)}
-        >
-          <div
-            className={clsx(
-              baseClassName,
-              open && 'bg-neutral-50 dark:bg-neutral-800'
+}) => (
+  <Fragment key={data.label}>
+    {'href' in data ? (
+      <NavigationMenuLink key={data.label} {...data} />
+    ) : (
+      <Popover
+        className={clsx(
+          data.layout === 'list' && 'w-[317px]',
+          data.layout === 'grid' && 'w-[600px]',
+          data.className
+        )}
+        content={
+          <>
+            {'items' in data && (
+              <div
+                className={clsx(
+                  data.layout === 'list' && 'grid gap-1',
+                  data.layout === 'grid' && 'grid grid-cols-2 gap-1'
+                )}
+              >
+                {data.items.map((item) => (
+                  <NavigationMenuLink key={item.label} {...item} />
+                ))}
+              </div>
             )}
-          >
-            {data.label}
-            <ChevronDownIcon className="relative h-3 w-3" />
-          </div>
-          {open && (
-            <div className="absolute z-10">
-              {data.items.map((item) => (
-                <NavigationLink href={item.href} key={item.label}>
-                  {item.label}
-                </NavigationLink>
-              ))}
-            </div>
-          )}
+            {'children' in data && <data.children />}
+          </>
+        }
+      >
+        <button type="button" className={clsx(baseClassName, 'font-medium')}>
+          {data.label}
+          <ChevronDownIcon className="h-3 w-3 shrink-0" />
         </button>
-      ) : (
-        <NavigationLink href={data.href}>{data.label}</NavigationLink>
-      )}
-    </div>
-  );
-};
+      </Popover>
+    )}
+  </Fragment>
+);
 
 export const NavigationMenu: FC<NavigationMenuProps> = ({
   className,
@@ -123,7 +142,7 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
     <nav
       className={clsx(
         'flex items-center justify-between gap-4',
-        'sticky top-0 z-50 flex items-center justify-between border-b px-4 py-3 backdrop-blur-sm transition-colors sm:px-8',
+        'sticky top-0 z-50 border-b px-4 py-3 backdrop-blur-sm transition-colors sm:px-8',
         'bg-white/95 dark:bg-black/95',
         sticky
           ? 'border-neutral-200 dark:border-neutral-900'

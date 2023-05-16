@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { NavigationMenu } from './';
-import { CommandLineIcon } from '@heroicons/react/20/solid';
+import { NavigationMenu, NavigationMenuLink } from './';
+import { BoltIcon, CommandLineIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import type { ComponentPropsWithoutRef } from 'react';
 
@@ -16,7 +16,7 @@ export default meta;
 
 const items: ComponentPropsWithoutRef<typeof NavigationMenu>['items'] = [
   {
-    label: 'Getting started',
+    label: 'List',
     layout: 'list',
     items: [
       {
@@ -29,7 +29,6 @@ const items: ComponentPropsWithoutRef<typeof NavigationMenu>['items'] = [
       {
         label: 'Installation',
         href: '/docs/installation',
-        description: 'How to install dependencies and structure your app.',
         icon: CommandLineIcon,
       },
       {
@@ -38,23 +37,9 @@ const items: ComponentPropsWithoutRef<typeof NavigationMenu>['items'] = [
         description: 'Styles for headings, paragraphs, lists...etc',
       },
     ],
-    feature: () => (
-      <Link
-        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-rose-500 to-indigo-700 p-6 no-underline outline-none focus:shadow-md"
-        href="/"
-      >
-        <CommandLineIcon className="h-6 w-6 text-white" />
-        <div className="mb-2 mt-4 text-lg font-medium text-white">
-          shadcn/ui
-        </div>
-        <p className="text-sm leading-tight text-white/90">
-          Beautifully designed components built with Radix UI and Tailwind CSS.
-        </p>
-      </Link>
-    ),
   },
   {
-    label: 'Components',
+    label: 'Grid',
     layout: 'grid',
     items: [
       {
@@ -96,6 +81,51 @@ const items: ComponentPropsWithoutRef<typeof NavigationMenu>['items'] = [
           'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
       },
     ],
+  },
+  {
+    label: 'Custom',
+    layout: 'custom',
+    className: 'w-[500px]',
+    children: () => (
+      <div className="grid grid-cols-2 gap-2">
+        <Link
+          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-rose-500 to-indigo-700 p-6 no-underline outline-none focus:shadow-md"
+          href="/"
+        >
+          <CommandLineIcon className="h-6 w-6 text-white" />
+          <div className="mb-2 mt-4 text-lg font-medium text-white">
+            shadcn/ui
+          </div>
+          <p className="text-sm leading-tight text-white/90">
+            Beautifully designed components built with Radix UI and Tailwind
+            CSS.
+          </p>
+        </Link>
+        <div className="flex flex-col items-start gap-1">
+          {[
+            {
+              label: 'Introduction',
+              href: '/docs',
+              description:
+                'Re-usable components built using Radix UI and Tailwind CSS.',
+              icon: CommandLineIcon,
+            },
+            {
+              label: 'Installation',
+              href: '/docs/installation',
+              icon: CommandLineIcon,
+            },
+            {
+              label: 'Typography',
+              href: '/docs/primitives/typography',
+              description: 'Styles for headings, paragraphs, lists...etc',
+            },
+          ].map((item) => (
+            <NavigationMenuLink {...item} key={item} />
+          ))}
+        </div>
+      </div>
+    ),
   },
   {
     label: 'Documentation',
