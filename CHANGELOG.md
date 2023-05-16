@@ -1,3 +1,12 @@
+## [0.10.3](https://github.com/beskar-co/gravity/compare/v0.10.2...v0.10.3) (2023-05-16)
+
+
+### Bug Fixes
+
+* **buttons:** fix button sizes and automatic icons ([dda9267](https://github.com/beskar-co/gravity/commit/dda9267fd75b5362350731809264c602ef625166))
+* **navigationMenu:** remove responsive menu dividers ([0611a0c](https://github.com/beskar-co/gravity/commit/0611a0c3ddfb874044b2366a4595dd4475abb8ff))
+* **popover:** fix popover background color ([11cce92](https://github.com/beskar-co/gravity/commit/11cce922292410429eeca0688f30f36f604ca9cf))
+
 ## [0.10.2](https://github.com/beskar-co/gravity/compare/v0.10.1...v0.10.2) (2023-05-16)
 
 
