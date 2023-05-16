@@ -120,7 +120,7 @@ const NavigationItem: FC<{ data: NavigationMenuProps['items'][number] }> = ({
                 ))}
               </div>
             )}
-            {'children' in data && <data.children />}
+            {'layout' in data && 'children' in data && <data.children />}
           </>
         }
       >
@@ -166,11 +166,9 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
         content={
           <div className="grid w-full gap-4">
             {items.map((item, index) => (
-              <>
-                {'href' in item && (
-                  <NavigationMenuLink key={item.label} {...item} />
-                )}
-                {'items' in item && (
+              <Fragment key={item.label}>
+                {'href' in item && <NavigationMenuLink {...item} />}
+                {'layout' in item && 'items' in item && (
                   <div className="grid gap-1">
                     <p className="text-sm font-medium text-neutral-500">
                       {item.label}
@@ -178,11 +176,11 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
                     {item.items.map(NavigationMenuLink)}
                   </div>
                 )}
-                {'children' in item && <item.children />}
+                {'layout' in item && 'children' in item && <item.children />}
                 {index !== items.length - 1 && (
                   <hr className="border-neutral-200 py-1 dark:border-neutral-900" />
                 )}
-              </>
+              </Fragment>
             ))}
             {actions?.length && (
               <>
