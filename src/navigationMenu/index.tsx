@@ -2,8 +2,7 @@
 
 import clsx from 'clsx';
 import type { ComponentPropsWithoutRef, FC, HTMLProps } from 'react';
-import { Fragment } from 'react';
-import { useRef } from 'react';
+import { useRef, Fragment } from 'react';
 import Link from 'next/link';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
@@ -17,22 +16,26 @@ type ModifiedLink = Omit<ComponentPropsWithoutRef<typeof Link>, 'href'> & {
   href: string;
 };
 
+type NavigationDropdownWithItemsProps = {
+  layout: 'list' | 'grid';
+  className?: string;
+  items: ({
+    label: string;
+    description?: string;
+    icon?: typeof ChevronDownIcon;
+    href: string;
+  } & ModifiedLink)[];
+};
+
+type NavigationItemWithLinkProps = {
+  layout: 'custom';
+  className?: string;
+  children: FC;
+};
+
 type NavigationDropdownItemProps =
-  | {
-      layout: 'list' | 'grid';
-      className?: string;
-      items: ({
-        label: string;
-        description?: string;
-        icon?: typeof ChevronDownIcon;
-        href: string;
-      } & ModifiedLink)[];
-    }
-  | {
-      layout: 'custom';
-      className?: string;
-      children: FC;
-    };
+  | NavigationDropdownWithItemsProps
+  | NavigationItemWithLinkProps;
 
 type NavigationMenuProps = HTMLProps<HTMLDivElement> & {
   logo?: FC;
@@ -51,8 +54,10 @@ const baseClassName = clsx(
   'focus:outline-none focus:bg-neutral-100 dark:focus:bg-neutral-800'
 );
 
+const iconClassName = 'h-3 w-3 shrink-0 text-neutral-500';
+
 export const NavigationMenuLink: FC<
-  NavigationDropdownItemProps['items'][number]
+  NavigationDropdownWithItemsProps['items'][number]
 > = ({ icon: Icon, label, description, href, children }) => {
   const pathname = usePathname();
 
@@ -68,21 +73,21 @@ export const NavigationMenuLink: FC<
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
     >
       {Icon && (
-        <Icon className="mr-1 h-6 w-6 shrink-0 self-start text-neutral-500 dark:text-neutral-400" />
+        <Icon className="mr-1 h-6 w-6 shrink-0 self-start text-neutral-500" />
       )}
       <span className="grid w-full gap-1">
         <span className="text-sm font-medium text-black dark:text-white">
           {label}
         </span>
         {description && (
-          <span className="line-clamp-2 text-sm leading-snug text-neutral-500 dark:text-neutral-400">
+          <span className="line-clamp-2 text-sm leading-snug text-neutral-500">
             {description}
           </span>
         )}
       </span>
       {children}
       {href.startsWith('http') && (
-        <ArrowUpRightIcon className="h-3 w-3 shrink-0" />
+        <ArrowUpRightIcon className={iconClassName} />
       )}
     </Link>
   );
@@ -121,7 +126,7 @@ const NavigationItem: FC<{ data: NavigationMenuProps['items'][number] }> = ({
       >
         <button type="button" className={clsx(baseClassName, 'font-medium')}>
           {data.label}
-          <ChevronDownIcon className="h-3 w-3 shrink-0" />
+          <ChevronDownIcon className={iconClassName} />
         </button>
       </Popover>
     )}
