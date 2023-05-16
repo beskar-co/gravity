@@ -1,3 +1,10 @@
+# [0.10.0](https://github.com/beskar-co/gravity/compare/v0.9.9...v0.10.0) (2023-05-16)
+
+
+### Features
+
+* **navigationMenu:** rebuild navbar ([#4](https://github.com/beskar-co/gravity/issues/4)) ([f7d4679](https://github.com/beskar-co/gravity/commit/f7d46797c1e26e44618d99308d4dceed79dc84fd))
+
 ## [0.9.9](https://github.com/beskar-co/gravity/compare/v0.9.8...v0.9.9) (2023-05-14)
 
 
