@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { NavigationMenu, NavigationMenuLink } from './';
-import { BoltIcon, CommandLineIcon } from '@heroicons/react/24/outline';
+import { CommandLineIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import type { ComponentPropsWithoutRef } from 'react';
 

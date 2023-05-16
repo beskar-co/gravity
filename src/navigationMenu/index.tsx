@@ -162,42 +162,44 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
           <Logo />
         </div>
       )}
-      <Popover
-        content={
-          <div className="grid w-full gap-4">
-            {items.map((item, index) => (
-              <Fragment key={item.label}>
-                {'href' in item && <NavigationMenuLink {...item} />}
-                {'layout' in item && 'items' in item && (
-                  <div className="grid gap-1">
-                    <p className="text-sm font-medium text-neutral-500">
-                      {item.label}
-                    </p>
-                    {item.items.map(NavigationMenuLink)}
-                  </div>
-                )}
-                {'layout' in item && 'children' in item && <item.children />}
-                {index !== items.length - 1 && (
+      <div className="sm:hidden">
+        <Popover
+          content={
+            <div className="grid w-full gap-4">
+              {items.map((item, index) => (
+                <Fragment key={item.label}>
+                  {'href' in item && <NavigationMenuLink {...item} />}
+                  {'layout' in item && 'items' in item && (
+                    <div className="grid gap-1">
+                      <p className="text-sm font-medium text-neutral-500">
+                        {item.label}
+                      </p>
+                      {item.items.map(NavigationMenuLink)}
+                    </div>
+                  )}
+                  {'layout' in item && 'children' in item && <item.children />}
+                  {index !== items.length - 1 && (
+                    <hr className="border-neutral-200 py-1 dark:border-neutral-900" />
+                  )}
+                </Fragment>
+              ))}
+              {actions?.length && (
+                <>
                   <hr className="border-neutral-200 py-1 dark:border-neutral-900" />
-                )}
-              </Fragment>
-            ))}
-            {actions?.length && (
-              <>
-                <hr className="border-neutral-200 py-1 dark:border-neutral-900" />
-                <div className="grid gap-2">
-                  {actions.map((action, index) => (
-                    <Button key={index} {...action} />
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
-        }
-        className="mt-2 flex h-[calc(100vh-49px)] w-screen overflow-auto rounded-none sm:hidden"
-      >
-        <Bars3Icon className="h-6 w-6 cursor-pointer text-neutral-500" />
-      </Popover>
+                  <div className="grid gap-2">
+                    {actions.map((action, index) => (
+                      <Button key={index} {...action} />
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          }
+          className="mt-2 h-[calc(100vh-49px)] w-screen overflow-auto rounded-none"
+        >
+          <Bars3Icon className="h-6 w-6 cursor-pointer text-neutral-500" />
+        </Popover>
+      </div>
       <div className="hidden items-center gap-4 sm:flex">
         <div className="flex items-center gap-1">
           {items.map((item) => (
