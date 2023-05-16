@@ -1,16 +1,12 @@
 'use client';
 
 import clsx from 'clsx';
-import type {
-  ComponentPropsWithoutRef,
-  ElementRef,
-  FC,
-  HTMLProps,
-} from 'react';
-import { useState, forwardRef } from 'react';
+import type { ComponentPropsWithoutRef, FC, HTMLProps } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
+import useSticky from '@beskar-labs/use-sticky';
 import { usePathname } from 'next/navigation';
 import type { ButtonProps } from '../button';
 import { Button } from '../button';
@@ -119,30 +115,45 @@ const NavigationItem: FC<{ data: NavigationMenuProps['items'][number] }> = ({
   );
 };
 
-export const NavigationMenu: FC<NavigationMenuProps> = forwardRef<
-  ElementRef<'nav'>,
-  NavigationMenuProps
->(({ className, logo: Logo, items, actions, ...props }, ref) => (
-  <nav
-    className={clsx('flex items-center justify-between gap-4', className)}
-    ref={ref}
-    {...props}
-  >
-    <div className="flex items-center gap-4">
-      {Logo && <Logo />}
-      <div className="flex items-center gap-1">
-        {items.map((item) => (
-          <NavigationItem key={item.label} data={item} />
-        ))}
+export const NavigationMenu: FC<NavigationMenuProps> = ({
+  className,
+  logo: Logo,
+  items,
+  actions,
+  ...props
+}) => {
+  const navRef = useRef<HTMLDivElement>(null);
+  const sticky = useSticky(navRef);
+
+  return (
+    <nav
+      className={clsx(
+        'flex items-center justify-between gap-4',
+        'sticky top-0 z-50 flex items-center justify-between border-b px-4 py-3 backdrop-blur-sm transition-colors sm:px-8',
+        'bg-white/95 dark:bg-black/95',
+        sticky
+          ? 'border-neutral-200 dark:border-neutral-900'
+          : 'border-transparent',
+        className
+      )}
+      ref={navRef}
+      {...props}
+    >
+      <div className="flex items-center gap-4">
+        {Logo && <Logo />}
+        <div className="flex items-center gap-1">
+          {items.map((item) => (
+            <NavigationItem key={item.label} data={item} />
+          ))}
+        </div>
       </div>
-    </div>
-    {actions?.length && (
-      <div className="flex items-center gap-1">
-        {actions.map((action, index) => (
-          <Button key={index} {...action} />
-        ))}
-      </div>
-    )}
-  </nav>
-));
-NavigationMenu.displayName = 'NavigationMenu';
+      {actions?.length && (
+        <div className="flex items-center gap-1">
+          {actions.map((action, index) => (
+            <Button key={index} {...action} />
+          ))}
+        </div>
+      )}
+    </nav>
+  );
+};

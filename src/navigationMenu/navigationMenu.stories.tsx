@@ -4,7 +4,14 @@ import { CommandLineIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 import type { ComponentPropsWithoutRef } from 'react';
 
-const meta: Meta<typeof NavigationMenu> = { component: NavigationMenu };
+const meta: Meta<typeof NavigationMenu> = {
+  component: NavigationMenu,
+  render: (args) => (
+    <div className="-m-4 h-[200vh]">
+      <NavigationMenu {...args} />
+    </div>
+  ),
+};
 export default meta;
 
 const items: ComponentPropsWithoutRef<typeof NavigationMenu>['items'] = [

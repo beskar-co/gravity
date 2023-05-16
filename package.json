@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/beskar-co/gravity#readme",
   "dependencies": {
+    "@beskar-labs/use-sticky": "^2.0.3",
     "@heroicons/react": "^2.0.17",
     "@radix-ui/react-accordion": "^1.1.1",
     "@radix-ui/react-alert-dialog": "^1.0.3",
