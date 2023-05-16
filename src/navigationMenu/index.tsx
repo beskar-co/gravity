@@ -166,7 +166,7 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
         <Popover
           content={
             <div className="grid w-full gap-4">
-              {items.map((item, index) => (
+              {items.map((item) => (
                 <Fragment key={item.label}>
                   {'href' in item && <NavigationMenuLink {...item} />}
                   {'layout' in item && 'items' in item && (
