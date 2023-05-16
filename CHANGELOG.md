@@ -1,3 +1,10 @@
+## [0.10.2](https://github.com/beskar-co/gravity/compare/v0.10.1...v0.10.2) (2023-05-16)
+
+
+### Bug Fixes
+
+* **navigationMenu:** fix CSS issue ([051e75c](https://github.com/beskar-co/gravity/commit/051e75ce3134b4cb112045bcc869a967731c1a34))
+
 ## [0.10.1](https://github.com/beskar-co/gravity/compare/v0.10.0...v0.10.1) (2023-05-16)
 
 
