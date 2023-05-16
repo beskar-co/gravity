@@ -52,10 +52,16 @@ export const Destructive: StoryObj<typeof Button> = {
 
 export const Link: StoryObj<typeof Button> = {
   args: {
+    href: '/',
+    children: 'Button',
+    variant: 'link',
+  },
+};
+
+export const ExternalLink: StoryObj<typeof Button> = {
+  args: {
     href: 'https://www.google.com',
     children: 'Button',
-    target: '_blank',
-    rel: 'noopener noreferrer',
     variant: 'link',
   },
 };

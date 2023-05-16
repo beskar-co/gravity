@@ -1,3 +1,4 @@
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import Link from 'next/link';
 import type {
@@ -10,9 +11,9 @@ import type {
 import { forwardRef } from 'react';
 
 const buttonSizes = {
-  sm: 'h-9 px-2',
-  md: 'h-10 py-2 px-4',
-  lg: 'h-11 px-8',
+  sm: 'py-2 px-3',
+  md: 'py-2.5 px-4',
+  lg: 'py-3 px-5',
 };
 
 const buttonVariants = {
@@ -50,7 +51,7 @@ export type ButtonProps = {
 );
 
 const baseClassName =
-  'inline-flex flex-nowrap whitespace-nowrap items-center justify-center text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-neutral-100 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900 dark:data-[state=open]:bg-neutral-800';
+  'inline-flex flex-nowrap gap-2 whitespace-nowrap items-center justify-center text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 active:scale-95 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-neutral-100 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900 dark:data-[state=open]:bg-neutral-800';
 
 const Button: FC<ButtonProps> = forwardRef<
   HTMLButtonElement | ElementRef<typeof Link>,
@@ -68,8 +69,15 @@ const Button: FC<ButtonProps> = forwardRef<
     <Link
       className={compiledClassName}
       ref={ref as ForwardedRef<ElementRef<typeof Link>>}
+      rel={(props.href as string).startsWith('http') ? 'noopener' : undefined}
+      target={(props.href as string).startsWith('http') ? '_blank' : undefined}
       {...props}
-    />
+    >
+      {props.children}
+      {(props.href as string).startsWith('http') && (
+        <ArrowUpRightIcon className="h-3 w-3" />
+      )}
+    </Link>
   ) : (
     // eslint-disable-next-line react/button-has-type
     <button
