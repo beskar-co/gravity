@@ -178,9 +178,6 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
                     </div>
                   )}
                   {'layout' in item && 'children' in item && <item.children />}
-                  {index !== items.length - 1 && (
-                    <hr className="border-neutral-200 py-1 dark:border-neutral-900" />
-                  )}
                 </Fragment>
               ))}
               {actions?.length && (
