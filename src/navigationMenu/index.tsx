@@ -185,7 +185,7 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
                   <hr className="border-neutral-200 py-1 dark:border-neutral-900" />
                   <div className="grid gap-2">
                     {actions.map((action, index) => (
-                      <Button key={index} {...action} />
+                      <Button size="sm" key={index} {...action} />
                     ))}
                   </div>
                 </>
