@@ -7,13 +7,13 @@ import Link from 'next/link';
 import { Bars3Icon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 import useSticky from '@beskar-labs/use-sticky';
-import { usePathname } from 'next/navigation';
 import type { ButtonProps } from '../button';
 import { Button } from '../button';
 import { Popover } from '../popover';
 
 type ModifiedLink = Omit<ComponentPropsWithoutRef<typeof Link>, 'href'> & {
   href: string;
+  active?: boolean;
 };
 
 type NavigationDropdownWithItemsProps = {
@@ -49,49 +49,43 @@ const baseClassName = clsx(
   'inline-flex gap-1 items-center justify-center',
   'rounded-md bg-transparent px-3 py-2 text-sm transition-colors',
   'dark:text-neutral-100',
-  'hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100',
+  'hover:bg-neutral-100 dark:hover:bg-neutral-900 dark:hover:text-neutral-100',
   'disabled:pointer-events-none disabled:opacity-50',
-  'focus:outline-none focus:bg-neutral-100 dark:focus:bg-neutral-800'
+  'focus:outline-none focus:bg-neutral-100 dark:focus:bg-neutral-900'
 );
 
 const iconClassName = 'h-3 w-3 shrink-0 text-neutral-500';
 
 export const NavigationMenuLink: FC<
   NavigationDropdownWithItemsProps['items'][number]
-> = ({ icon: Icon, label, description, href, children }) => {
-  const pathname = usePathname();
-
-  return (
-    <Link
-      href={href}
-      className={clsx(
-        baseClassName,
-        'w-full gap-2',
-        href === pathname && 'bg-neutral-50 dark:bg-neutral-800'
-      )}
-      target={href.startsWith('http') ? '_blank' : undefined}
-      rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-    >
-      {Icon && (
-        <Icon className="mr-1 h-6 w-6 shrink-0 self-start text-neutral-500" />
-      )}
-      <span className="grid w-full gap-1">
-        <span className="text-sm font-medium text-black dark:text-white">
-          {label}
-        </span>
-        {description && (
-          <span className="line-clamp-2 text-sm leading-snug text-neutral-500">
-            {description}
-          </span>
-        )}
+> = ({ icon: Icon, label, description, href, active, children }) => (
+  <Link
+    href={href}
+    className={clsx(
+      baseClassName,
+      'w-full gap-2',
+      active && '!dark:bg-neutral-900 !bg-neutral-100'
+    )}
+    target={href.startsWith('http') ? '_blank' : undefined}
+    rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+  >
+    {Icon && (
+      <Icon className="mr-1 h-6 w-6 shrink-0 self-start text-neutral-500" />
+    )}
+    <span className="grid w-full gap-1">
+      <span className="text-sm font-medium text-black dark:text-white">
+        {label}
       </span>
-      {children}
-      {href.startsWith('http') && (
-        <ArrowUpRightIcon className={iconClassName} />
+      {description && (
+        <span className="line-clamp-2 text-sm leading-snug text-neutral-500">
+          {description}
+        </span>
       )}
-    </Link>
-  );
-};
+    </span>
+    {children}
+    {href.startsWith('http') && <ArrowUpRightIcon className={iconClassName} />}
+  </Link>
+);
 
 const NavigationItem: FC<{ data: NavigationMenuProps['items'][number] }> = ({
   data,
