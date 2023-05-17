@@ -1,3 +1,10 @@
+## [0.10.7](https://github.com/beskar-co/gravity/compare/v0.10.6...v0.10.7) (2023-05-17)
+
+
+### Bug Fixes
+
+* **navigationMenu:** more misc fixes ([bde34a8](https://github.com/beskar-co/gravity/commit/bde34a8c3b3a9ed21b36f873f13e60a40050b537))
+
 ## [0.10.6](https://github.com/beskar-co/gravity/compare/v0.10.5...v0.10.6) (2023-05-17)
 
 
