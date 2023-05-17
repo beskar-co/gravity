@@ -168,7 +168,9 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
                       <p className="text-sm font-medium text-neutral-500">
                         {item.label}
                       </p>
-                      {item.items.map(NavigationMenuLink)}
+                      {item.items.map((subItem) => (
+                        <NavigationMenuLink key={subItem.label} {...subItem} />
+                      ))}
                     </div>
                   )}
                   {'layout' in item && 'children' in item && <item.children />}
@@ -200,7 +202,7 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
         {actions?.length && (
           <div className="flex items-center gap-2">
             {actions.map((action, index) => (
-              <Button key={index} {...action} />
+              <Button size="sm" key={index} {...action} />
             ))}
           </div>
         )}
