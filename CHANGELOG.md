@@ -1,3 +1,10 @@
+## [0.10.6](https://github.com/beskar-co/gravity/compare/v0.10.5...v0.10.6) (2023-05-17)
+
+
+### Bug Fixes
+
+* **navigationMenu:** fix key ([efb0411](https://github.com/beskar-co/gravity/commit/efb0411d83d993232a0a0022dd88e39da3956215))
+
 ## [0.10.5](https://github.com/beskar-co/gravity/compare/v0.10.4...v0.10.5) (2023-05-17)
 
 
