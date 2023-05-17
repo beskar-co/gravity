@@ -92,7 +92,7 @@ const NavigationItem: FC<{ data: NavigationMenuProps['items'][number] }> = ({
 }) => (
   <Fragment key={data.label}>
     {'href' in data ? (
-      <NavigationMenuLink key={data.label} {...data} />
+      <NavigationMenuLink {...data} />
     ) : (
       <Popover
         className={clsx(
