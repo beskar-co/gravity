@@ -1,3 +1,10 @@
+## [0.10.4](https://github.com/beskar-co/gravity/compare/v0.10.3...v0.10.4) (2023-05-17)
+
+
+### Bug Fixes
+
+* **navbar:** reduce button size ([5da8e88](https://github.com/beskar-co/gravity/commit/5da8e88e732f5afbc27912a1458fab09a74da394))
+
 ## [0.10.3](https://github.com/beskar-co/gravity/compare/v0.10.2...v0.10.3) (2023-05-16)
 
 
