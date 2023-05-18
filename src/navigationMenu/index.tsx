@@ -2,8 +2,7 @@
 
 import clsx from 'clsx';
 import type { ComponentPropsWithoutRef, FC, HTMLProps } from 'react';
-import { useState } from 'react';
-import { useRef, Fragment } from 'react';
+import { useState, useRef, Fragment } from 'react';
 import Link from 'next/link';
 import { Bars3Icon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
