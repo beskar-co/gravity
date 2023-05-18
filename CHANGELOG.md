@@ -1,3 +1,11 @@
+## [0.10.8](https://github.com/beskar-co/gravity/compare/v0.10.7...v0.10.8) (2023-05-18)
+
+
+### Bug Fixes
+
+* **navigationBar:** close navbar popover on link click ([ee11542](https://github.com/beskar-co/gravity/commit/ee11542933b63c0a585ee368390e1075aaf6a17e))
+* **video:** add custom loading animation ([29f801e](https://github.com/beskar-co/gravity/commit/29f801eeb11f97f3f781b8f9642ffbf93585296d))
+
 ## [0.10.7](https://github.com/beskar-co/gravity/compare/v0.10.6...v0.10.7) (2023-05-17)
 
 
