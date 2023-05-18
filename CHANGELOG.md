@@ -1,3 +1,10 @@
+## [0.10.11](https://github.com/beskar-co/gravity/compare/v0.10.10...v0.10.11) (2023-05-18)
+
+
+### Bug Fixes
+
+* **navigationMenu:** fix duplicate import ([46329df](https://github.com/beskar-co/gravity/commit/46329dfa23988476c6238b0307028efaf0bc0a75))
+
 ## [0.10.10](https://github.com/beskar-co/gravity/compare/v0.10.9...v0.10.10) (2023-05-18)
 
 
