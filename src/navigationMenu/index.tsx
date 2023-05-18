@@ -50,9 +50,9 @@ const baseClassName = clsx(
   'inline-flex gap-1 items-center justify-center',
   'rounded-md bg-transparent px-3 py-2 text-sm transition-colors',
   'dark:text-neutral-100',
-  'hover:bg-neutral-100 dark:hover:bg-neutral-900 dark:hover:text-neutral-100',
+  'hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100',
   'disabled:pointer-events-none disabled:opacity-50',
-  'focus:outline-none focus:bg-neutral-100 dark:focus:bg-neutral-900'
+  'focus:outline-none focus:bg-neutral-100 dark:focus:bg-neutral-800'
 );
 
 const iconClassName = 'h-3 w-3 shrink-0 text-neutral-500';
@@ -65,7 +65,7 @@ export const NavigationMenuLink: FC<
     className={clsx(
       baseClassName,
       'w-full gap-2',
-      active && '!dark:bg-neutral-900 !bg-neutral-100'
+      active && '!dark:bg-neutral-800 !bg-neutral-100'
     )}
     target={href.startsWith('http') ? '_blank' : undefined}
     rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -156,7 +156,7 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
         'sticky top-0 z-50 border-b px-4 py-3 backdrop-blur-sm transition-colors sm:px-8',
         'bg-white/95 dark:bg-black/95',
         sticky
-          ? 'border-neutral-200 dark:border-neutral-900'
+          ? 'border-neutral-200 dark:border-neutral-800'
           : 'border-transparent',
         className
       )}
@@ -190,7 +190,7 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
               ))}
               {actions?.length && (
                 <>
-                  <hr className="border-neutral-200 py-1 dark:border-neutral-900" />
+                  <hr className="border-neutral-200 py-1 dark:border-neutral-800" />
                   <div className="grid gap-2">
                     {actions.map((action, index) => (
                       <Button size="sm" key={index} {...action} />
