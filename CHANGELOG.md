@@ -1,3 +1,10 @@
+## [0.10.10](https://github.com/beskar-co/gravity/compare/v0.10.9...v0.10.10) (2023-05-18)
+
+
+### Bug Fixes
+
+* **navigationMenu:** fix nav menu colors in dark mode ([92fd89e](https://github.com/beskar-co/gravity/commit/92fd89e7a78101ef138b607c75ad9c2cf975c2cd))
+
 ## [0.10.9](https://github.com/beskar-co/gravity/compare/v0.10.8...v0.10.9) (2023-05-18)
 
 
