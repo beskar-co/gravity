@@ -1,3 +1,10 @@
+## [0.10.9](https://github.com/beskar-co/gravity/compare/v0.10.8...v0.10.9) (2023-05-18)
+
+
+### Bug Fixes
+
+* **video:** use placeholder for dynamic loading as well ([5302db1](https://github.com/beskar-co/gravity/commit/5302db1e752754a0b9d0bcfcbd6f05f46b5681db))
+
 ## [0.10.8](https://github.com/beskar-co/gravity/compare/v0.10.7...v0.10.8) (2023-05-18)
 
 
