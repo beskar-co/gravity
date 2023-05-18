@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import type { ComponentPropsWithoutRef, FC, HTMLProps } from 'react';
+import { useState } from 'react';
 import { useRef, Fragment } from 'react';
 import Link from 'next/link';
 import { Bars3Icon, ChevronDownIcon } from '@heroicons/react/24/outline';
@@ -58,7 +59,7 @@ const iconClassName = 'h-3 w-3 shrink-0 text-neutral-500';
 
 export const NavigationMenuLink: FC<
   NavigationDropdownWithItemsProps['items'][number]
-> = ({ icon: Icon, label, description, href, active, children }) => (
+> = ({ icon: Icon, label, description, href, active, children, ...props }) => (
   <Link
     href={href}
     className={clsx(
@@ -68,6 +69,7 @@ export const NavigationMenuLink: FC<
     )}
     target={href.startsWith('http') ? '_blank' : undefined}
     rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+    {...props}
   >
     {Icon && (
       <Icon className="mr-1 h-6 w-6 shrink-0 self-start text-neutral-500" />
@@ -89,43 +91,53 @@ export const NavigationMenuLink: FC<
 
 const NavigationItem: FC<{ data: NavigationMenuProps['items'][number] }> = ({
   data,
-}) => (
-  <Fragment key={data.label}>
-    {'href' in data ? (
-      <NavigationMenuLink {...data} />
-    ) : (
-      <Popover
-        className={clsx(
-          data.layout === 'list' && 'w-[317px]',
-          data.layout === 'grid' && 'w-[600px]',
-          data.className
-        )}
-        content={
-          <>
-            {'items' in data && (
-              <div
-                className={clsx(
-                  data.layout === 'list' && 'grid gap-1',
-                  data.layout === 'grid' && 'grid grid-cols-2 gap-1'
-                )}
-              >
-                {data.items.map((item) => (
-                  <NavigationMenuLink key={item.label} {...item} />
-                ))}
-              </div>
-            )}
-            {'layout' in data && 'children' in data && <data.children />}
-          </>
-        }
-      >
-        <button type="button" className={clsx(baseClassName, 'font-medium')}>
-          {data.label}
-          <ChevronDownIcon className={iconClassName} />
-        </button>
-      </Popover>
-    )}
-  </Fragment>
-);
+}) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <Fragment key={data.label}>
+      {'href' in data ? (
+        <NavigationMenuLink {...data} />
+      ) : (
+        <Popover
+          open={open}
+          onOpenChange={setOpen}
+          className={clsx(
+            data.layout === 'list' && 'w-[317px]',
+            data.layout === 'grid' && 'w-[600px]',
+            data.className
+          )}
+          content={
+            <>
+              {'items' in data && (
+                <div
+                  className={clsx(
+                    data.layout === 'list' && 'grid gap-1',
+                    data.layout === 'grid' && 'grid grid-cols-2 gap-1'
+                  )}
+                >
+                  {data.items.map((item) => (
+                    <NavigationMenuLink
+                      {...item}
+                      key={item.label}
+                      onClick={() => setOpen(false)}
+                    />
+                  ))}
+                </div>
+              )}
+              {'layout' in data && 'children' in data && <data.children />}
+            </>
+          }
+        >
+          <button type="button" className={clsx(baseClassName, 'font-medium')}>
+            {data.label}
+            <ChevronDownIcon className={iconClassName} />
+          </button>
+        </Popover>
+      )}
+    </Fragment>
+  );
+};
 
 export const NavigationMenu: FC<NavigationMenuProps> = ({
   className,

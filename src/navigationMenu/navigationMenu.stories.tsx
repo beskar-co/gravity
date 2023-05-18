@@ -16,6 +16,16 @@ export default meta;
 
 const items: ComponentPropsWithoutRef<typeof NavigationMenu>['items'] = [
   {
+    label: 'Stub',
+    layout: 'list',
+    items: [
+      {
+        label: 'Stub',
+        href: '#',
+      },
+    ],
+  },
+  {
     label: 'Home',
     href: '/',
     active: true,
