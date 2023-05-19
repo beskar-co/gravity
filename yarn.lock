@@ -1259,10 +1259,10 @@
     stylelint-config-standard "^32.0.0"
     stylelint-prettier "^3.0.0"
 
-"@beskar-labs/use-sticky@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@beskar-labs/use-sticky/-/use-sticky-2.0.4.tgz#d5a36d851a1baba1942edf03c233bf10c2ed3f23"
-  integrity sha512-QF9EGVVjAUODIwUnlVyzv5S6CZadRf24K3lBPHItzOR5iA1FNceLpZ8shakRQkM0993NGztQgzpH1AVEVkn3UA==
+"@beskar-labs/use-sticky@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@beskar-labs/use-sticky/-/use-sticky-2.0.5.tgz#ee3f6df60c6cab0839be316acbcd0e85da3e730e"
+  integrity sha512-5WXPmPyGuSjVDf0jhaR2obh9PRcz7WEsrcf9SlkU8ayY+IusYMR1xdZAdRIQchiV5+KZsZI9KNXy34jtLRW3oQ==
 
 "@colors/colors@1.5.0":
   version "1.5.0"

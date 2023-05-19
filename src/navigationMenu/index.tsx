@@ -6,7 +6,7 @@ import { useState, useRef, Fragment } from 'react';
 import Link from 'next/link';
 import { Bars3Icon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
-import useSticky from '@beskar-labs/use-sticky';
+import { useSticky } from '@beskar-labs/use-sticky';
 import type { ButtonProps } from '../button';
 import { Button } from '../button';
 import { Popover } from '../popover';
