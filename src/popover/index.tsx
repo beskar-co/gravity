@@ -11,8 +11,9 @@ import type {
 } from 'react';
 import { forwardRef } from 'react';
 
-type PopoverProps = ComponentPropsWithoutRef<
-  typeof PopoverPrimitive.Content
+type PopoverProps = Omit<
+  ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>,
+  'content'
 > & {
   content: ReactNode;
   children: ReactNode;
