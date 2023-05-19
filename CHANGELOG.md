@@ -1,3 +1,12 @@
+## [0.10.12](https://github.com/beskar-co/gravity/compare/v0.10.11...v0.10.12) (2023-05-19)
+
+
+### Bug Fixes
+
+* **navigationMenu:** bump deps ([5f564fb](https://github.com/beskar-co/gravity/commit/5f564fbfc092b6cfe929ff85ad290bde760c030b))
+* **package:** fix package.json ([7021c5f](https://github.com/beskar-co/gravity/commit/7021c5f654c8bb9cb8ee225f46fdd6dcf92be71c))
+* **popover:** omit content ([3cb18de](https://github.com/beskar-co/gravity/commit/3cb18dea0d7eb5e1b563d0b223d7c20e0b569538))
+
 ## [0.10.11](https://github.com/beskar-co/gravity/compare/v0.10.10...v0.10.11) (2023-05-18)
 
 
