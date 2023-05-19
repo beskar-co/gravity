@@ -1,3 +1,10 @@
+## [0.10.13](https://github.com/beskar-co/gravity/compare/v0.10.12...v0.10.13) (2023-05-19)
+
+
+### Bug Fixes
+
+* **navigationMenu:** update useSticky ([21f765d](https://github.com/beskar-co/gravity/commit/21f765df8c495ac805adaacfe14279b7032c3b7a))
+
 ## [0.10.12](https://github.com/beskar-co/gravity/compare/v0.10.11...v0.10.12) (2023-05-19)
 
 
