@@ -1,3 +1,10 @@
+## [0.10.14](https://github.com/beskar-co/gravity/compare/v0.10.13...v0.10.14) (2023-05-20)
+
+
+### Bug Fixes
+
+* **settings:** fix vscode settings ([a38f9a0](https://github.com/beskar-co/gravity/commit/a38f9a0c4c4f4098e0f18841d2022b4d3ab1cba3))
+
 ## [0.10.13](https://github.com/beskar-co/gravity/compare/v0.10.12...v0.10.13) (2023-05-19)
 
 
