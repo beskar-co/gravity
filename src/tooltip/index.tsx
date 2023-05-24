@@ -15,18 +15,20 @@ const TooltipProvider = TooltipPrimitive.Provider;
 type TooltipProps = ComponentPropsWithoutRef<typeof TooltipPrimitive.Root> & {
   content: string;
   children: ReactNode;
+  side?: TooltipPrimitive.TooltipContentProps['side'];
 };
 
 const Tooltip: FC<TooltipProps> = forwardRef<
   ElementRef<typeof TooltipPrimitive.Root>,
   TooltipProps
->(({ children, content, ...props }, ref) => (
+>(({ children, content, side, ...props }, ref) => (
   <TooltipPrimitive.Root delayDuration={0} {...props}>
     <TooltipPrimitive.Trigger ref={ref} asChild>
       {children}
     </TooltipPrimitive.Trigger>
     <TooltipPrimitive.Content
       sideOffset={4}
+      side={side}
       className={clsx(
         'z-50 overflow-hidden rounded-md border border-neutral-100 bg-white px-3 py-1.5 text-sm text-neutral-700 shadow-md animate-in fade-in-50 data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400'
       )}
