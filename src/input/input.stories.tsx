@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './';
+import { useState } from 'react';
 
 const meta: Meta<typeof Input> = {
   component: Input,
@@ -32,5 +33,17 @@ export const WithHint: StoryObj<typeof Input> = {
     placeholder: 'jane@acme.com',
     label: 'Email',
     hint: 'We will never share your email with anyone else.',
+  },
+};
+
+export const WithDate: StoryObj<typeof Input> = {
+  args: {
+    type: 'date',
+    placeholder: 'Pick a date...',
+  },
+  render: (args) => {
+    const [value, setValue] = useState('');
+
+    return <Input {...args} value={value} onValueChange={setValue} />;
   },
 };
