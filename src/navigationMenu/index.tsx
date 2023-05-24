@@ -64,7 +64,7 @@ export const NavigationMenuLink: FC<
     className={clsx(
       baseClassName,
       'w-full gap-2',
-      active && '!dark:bg-neutral-800 !bg-neutral-100'
+      active && '!bg-neutral-100 dark:!bg-neutral-800'
     )}
     target={href.startsWith('http') ? '_blank' : undefined}
     rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
