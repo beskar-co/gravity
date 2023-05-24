@@ -1,3 +1,10 @@
+## [0.10.16](https://github.com/beskar-co/gravity/compare/v0.10.15...v0.10.16) (2023-05-24)
+
+
+### Bug Fixes
+
+* **tooltip:** also support align ([c1ae64e](https://github.com/beskar-co/gravity/commit/c1ae64ebbc43a64236b05a6f2a43b409c807ca05))
+
 ## [0.10.15](https://github.com/beskar-co/gravity/compare/v0.10.14...v0.10.15) (2023-05-24)
 
 
