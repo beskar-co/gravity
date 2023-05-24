@@ -1,3 +1,10 @@
+## [0.10.15](https://github.com/beskar-co/gravity/compare/v0.10.14...v0.10.15) (2023-05-24)
+
+
+### Bug Fixes
+
+* **config:** update next config ([5b6a229](https://github.com/beskar-co/gravity/commit/5b6a229b3fd31c5098873c49faa57b2011394ad1))
+
 ## [0.10.14](https://github.com/beskar-co/gravity/compare/v0.10.13...v0.10.14) (2023-05-20)
 
 
