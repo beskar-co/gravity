@@ -64,7 +64,13 @@ const DropdownItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
         data-disabled={item.disabled}
         asChild
       >
-        <Link {...item}>{Inner}</Link>
+        <Link
+          {...item}
+          rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+          target={item.href.startsWith('http') ? '_blank' : undefined}
+        >
+          {Inner}
+        </Link>
       </DropdownMenuPrimitive.Item>
     );
   }
