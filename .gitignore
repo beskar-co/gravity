@@ -40,3 +40,6 @@ storybook-static
 
 # tsup
 dist
+
+# storybook-vercel
+public/docs

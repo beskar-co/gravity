@@ -29,7 +29,7 @@ const HoverCard: FC<HoverCardProps> = forwardRef<
       align="center"
       sideOffset={4}
       className={clsx(
-        'bg-popover text-popover-foreground z-50 w-64 rounded-md border p-4 shadow-md outline-none animate-in zoom-in-90',
+        'z-50 w-64 rounded-md border bg-white p-4 text-neutral-900 shadow-md outline-none animate-in zoom-in-90',
         className
       )}
       {...props}

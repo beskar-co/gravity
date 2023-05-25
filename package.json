@@ -3,8 +3,12 @@
   "description": "Beskar Labs Design System",
   "version": "0.10.16",
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 3000",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider storybook build",
+    "dev": "concurrently \"npm:dev:storybook\" \"npm:dev:next\"",
+    "dev:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 6006",
+    "dev:next": "next dev",
+    "build": "npm run build:storybook && npm run build:next",
+    "build:storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook build -o public/docs",
+    "build:next": "next build",
     "package": "tsup",
     "postpackage": "node scripts/postprocess.js && node scripts/copy.js",
     "release": "semantic-release"
@@ -35,6 +39,7 @@
   "dependencies": {
     "@beskar-labs/use-sticky": "^2.0.5",
     "@heroicons/react": "^2.0.18",
+    "@octokit/rest": "^19.0.7",
     "@radix-ui/react-accordion": "^1.1.1",
     "@radix-ui/react-alert-dialog": "^1.0.3",
     "@radix-ui/react-avatar": "^1.0.2",
@@ -93,6 +98,7 @@
     "@types/react-syntax-highlighter": "^15.5.6",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
+    "concurrently": "^8.0.1",
     "eslint-plugin-storybook": "^0.6.12",
     "jest": "^29.5.0",
     "next": "13.4.2",
