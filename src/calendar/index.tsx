@@ -4,8 +4,18 @@ import { DayPicker } from 'react-day-picker';
 import clsx from 'clsx';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import { FC } from 'react';
+import { Select } from '../select';
+import { Input } from '../input';
+import { Button } from '../button';
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
+
+const months = Array.from({ length: 12 }, (_, i) => ({
+  label: new Date(0, i).toLocaleString('default', {
+    month: 'long',
+  }),
+  value: `${i}`,
+}));
 
 export const Calendar: FC<CalendarProps> = ({
   className,
@@ -52,6 +62,30 @@ export const Calendar: FC<CalendarProps> = ({
       components={{
         IconLeft: () => <ChevronLeftIcon className="h-4 w-4" />,
         IconRight: () => <ChevronRightIcon className="h-4 w-4" />,
+        Caption: (captionProps) => (
+          <div id={captionProps.id} className="flex items-center gap-2">
+            <Button
+              variant="tertiary"
+              onClick={() => props.onPrevClick?.(captionProps.displayMonth)}
+            >
+              <ChevronLeftIcon className="h-4 w-4" />
+            </Button>
+            <Select
+              data={[{ label: 'Months', items: months }]}
+              value={`${captionProps.displayMonth.getMonth()}`}
+              onValueChange={(value) => {
+                props.onSelect?.(value);
+              }}
+            />
+            <Input value={`${captionProps.displayMonth.getFullYear()}`} />
+            <Button
+              variant="tertiary"
+              onClick={() => props.onNextClick?.(captionProps.displayMonth)}
+            >
+              <ChevronRightIcon className="h-4 w-4" />
+            </Button>
+          </div>
+        ),
       }}
       {...props}
     />
