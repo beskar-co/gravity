@@ -3,7 +3,7 @@
 import type { ElementRef, ComponentPropsWithoutRef, FC } from 'react';
 import { useId, forwardRef } from 'react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import { Label } from '../label';
 import { Hint } from '../hint';
@@ -24,14 +24,14 @@ const Checkbox: FC<CheckboxProps> = forwardRef<
       <CheckboxPrimitive.Root
         ref={ref}
         id={id}
-        className={clsx(
+        className={twMerge(
           'peer h-4 w-4 shrink-0 rounded-sm border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700 dark:text-neutral-50 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900',
           className
         )}
         {...props}
       >
         <CheckboxPrimitive.Indicator
-          className={clsx('flex items-center justify-center')}
+          className={twMerge('flex items-center justify-center')}
         >
           <CheckIcon
             className="h-4 w-4 text-neutral-900 dark:text-white"

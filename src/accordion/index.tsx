@@ -4,7 +4,7 @@ import type { ElementRef, ComponentPropsWithoutRef, FC } from 'react';
 import { forwardRef } from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 type AccordionProps = ComponentPropsWithoutRef<
   typeof AccordionPrimitive.Root
@@ -29,7 +29,7 @@ export const Accordion: FC<AccordionProps> = forwardRef<
       >
         <AccordionPrimitive.Header className="flex">
           <AccordionPrimitive.Trigger
-            className={clsx(
+            className={twMerge(
               'flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
               'text-neutral-900 dark:text-white'
             )}
@@ -39,7 +39,7 @@ export const Accordion: FC<AccordionProps> = forwardRef<
           </AccordionPrimitive.Trigger>
         </AccordionPrimitive.Header>
         <AccordionPrimitive.Content
-          className={clsx(
+          className={twMerge(
             'overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
             'text-neutral-900 dark:text-white'
           )}

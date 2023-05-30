@@ -1,5 +1,5 @@
 import { DocumentArrowUpIcon } from '@heroicons/react/24/outline';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type { ChangeEventHandler, FC } from 'react';
 import { useId, useRef } from 'react';
 import { useDropArea } from 'react-use';
@@ -84,7 +84,7 @@ export const FileUpload: FC<FileUploadProps> = ({
       {label && <Label htmlFor={id}>{label}</Label>}
 
       <div
-        className={clsx(
+        className={twMerge(
           'flex justify-center rounded-md border-2 border-dashed px-6 pb-6 pt-5 transition-colors',
           'border-neutral-100 dark:border-neutral-800',
           state.over && 'bg-neutral-100 dark:bg-neutral-900'
@@ -93,20 +93,20 @@ export const FileUpload: FC<FileUploadProps> = ({
       >
         <div className="grid gap-2 text-center">
           <DocumentArrowUpIcon
-            className={clsx(
+            className={twMerge(
               'mx-auto h-12 w-12',
               'text-neutral-500 dark:text-neutral-400'
             )}
           />
           <div
-            className={clsx(
+            className={twMerge(
               'flex text-sm',
               'text-neutral-500 dark:text-neutral-400'
             )}
           >
             <label
               htmlFor="file-upload"
-              className={clsx(
+              className={twMerge(
                 'relative mx-auto cursor-pointer rounded-md font-medium transition-colors focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2',
                 'text-black dark:text-white',
                 'focus-within:ring-neutral-100 dark:focus-within:ring-neutral-900'
@@ -126,7 +126,7 @@ export const FileUpload: FC<FileUploadProps> = ({
             {!value && <p className="pl-1">or drag and drop</p>}
           </div>
           <p
-            className={clsx(
+            className={twMerge(
               'text-xs',
               'text-neutral-500 dark:text-neutral-400'
             )}

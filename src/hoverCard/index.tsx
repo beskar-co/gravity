@@ -1,7 +1,7 @@
 'use client';
 
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type {
   ComponentPropsWithoutRef,
   ElementRef,
@@ -28,7 +28,7 @@ const HoverCard: FC<HoverCardProps> = forwardRef<
       ref={ref}
       align="center"
       sideOffset={4}
-      className={clsx(
+      className={twMerge(
         'bg-popover text-popover-foreground z-50 w-64 rounded-md border p-4 shadow-md outline-none animate-in zoom-in-90',
         className
       )}

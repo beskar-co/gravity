@@ -1,6 +1,6 @@
 'use client';
 
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type { ComponentPropsWithoutRef, FC } from 'react';
 import { forwardRef, useState } from 'react';
 import type { ReactPlayerProps } from 'react-player';
@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic';
 
 const Placeholder: FC<{ className?: string }> = ({ className }) => (
   <div
-    className={clsx(
+    className={twMerge(
       'pointer-events-none relative z-10 flex h-full w-full select-none items-center justify-center bg-neutral-100 transition-opacity dark:bg-neutral-900',
       className
     )}
@@ -60,7 +60,7 @@ export const Video: FC<VideoProps> = forwardRef<
 
   return (
     <div
-      className={clsx(
+      className={twMerge(
         'relative w-full overflow-hidden rounded',
         className,
         !className?.includes('aspect-') && 'aspect-video'

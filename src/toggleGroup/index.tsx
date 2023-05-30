@@ -1,7 +1,7 @@
 'use client';
 
 import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 import { forwardRef } from 'react';
 
@@ -37,7 +37,7 @@ export const ToggleGroup: FC<ToggleGroupProps> = forwardRef<
       {items.map((item, index) => (
         <ToggleGroupPrimitive.Item
           key={item.value}
-          className={clsx(
+          className={twMerge(
             'inline-flex items-center justify-center text-sm font-medium transition-colors hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus:ring-offset-neutral-900 dark:data-[state=on]:bg-neutral-700 dark:data-[state=on]:text-neutral-100',
             toggleVariants[variant],
             toggleSizes[size],

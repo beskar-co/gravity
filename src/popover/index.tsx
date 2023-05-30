@@ -2,7 +2,7 @@
 
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import type { PopoverProps as PopoverPrimitiveProps } from '@radix-ui/react-popover';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type {
   ComponentPropsWithoutRef,
   ElementRef,
@@ -46,7 +46,7 @@ export const Popover: FC<PopoverProps> = forwardRef<
           align={align}
           sideOffset={4}
           side={side}
-          className={clsx(
+          className={twMerge(
             'z-50 w-72 rounded-md border border-neutral-100 bg-white p-4 shadow-md outline-none animate-in data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 dark:border-neutral-800 dark:bg-neutral-900',
             className
           )}

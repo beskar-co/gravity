@@ -1,7 +1,7 @@
 'use client';
 
 import * as ProgressPrimitive from '@radix-ui/react-progress';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 import { forwardRef } from 'react';
 
@@ -13,7 +13,7 @@ const Progress: FC<ProgressProps> = forwardRef<
 >(({ className, value, ...props }, ref) => (
   <ProgressPrimitive.Root
     ref={ref}
-    className={clsx(
+    className={twMerge(
       'relative h-4 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-800',
       className
     )}

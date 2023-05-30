@@ -3,7 +3,7 @@
 import { Hint } from '../hint';
 import { Label } from '../label';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type { ComponentPropsWithoutRef, ElementRef, FC } from 'react';
 import { forwardRef } from 'react';
 
@@ -22,7 +22,7 @@ export const RadioGroup: FC<RadioGroupProps> = forwardRef<
   RadioGroupProps
 >(({ className, items, ...props }, ref) => (
   <RadioGroupPrimitive.Root
-    className={clsx('grid gap-2', className)}
+    className={twMerge('grid gap-2', className)}
     {...props}
     ref={ref}
   >

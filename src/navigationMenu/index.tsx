@@ -1,6 +1,6 @@
 'use client';
 
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type { ComponentPropsWithoutRef, FC, HTMLProps } from 'react';
 import { useState, useRef, Fragment } from 'react';
 import Link from 'next/link';
@@ -45,7 +45,7 @@ type NavigationMenuProps = HTMLProps<HTMLDivElement> & {
   actions?: ButtonProps[];
 };
 
-const baseClassName = clsx(
+const baseClassName = twMerge(
   'inline-flex gap-1 items-center justify-center',
   'rounded-md bg-transparent px-3 py-2 text-sm transition-colors',
   'dark:text-neutral-100',
@@ -61,7 +61,7 @@ export const NavigationMenuLink: FC<
 > = ({ icon: Icon, label, description, href, active, children, ...props }) => (
   <Link
     href={href}
-    className={clsx(
+    className={twMerge(
       baseClassName,
       'w-full gap-2',
       active && '!bg-neutral-100 dark:!bg-neutral-800'
@@ -101,7 +101,7 @@ const NavigationItem: FC<{ data: NavigationMenuProps['items'][number] }> = ({
         <Popover
           open={open}
           onOpenChange={setOpen}
-          className={clsx(
+          className={twMerge(
             data.layout === 'list' && 'w-[317px]',
             data.layout === 'grid' && 'w-[600px]',
             data.className
@@ -110,7 +110,7 @@ const NavigationItem: FC<{ data: NavigationMenuProps['items'][number] }> = ({
             <>
               {'items' in data && (
                 <div
-                  className={clsx(
+                  className={twMerge(
                     data.layout === 'list' && 'grid gap-1',
                     data.layout === 'grid' && 'grid grid-cols-2 gap-1'
                   )}
@@ -128,7 +128,10 @@ const NavigationItem: FC<{ data: NavigationMenuProps['items'][number] }> = ({
             </>
           }
         >
-          <button type="button" className={clsx(baseClassName, 'font-medium')}>
+          <button
+            type="button"
+            className={twMerge(baseClassName, 'font-medium')}
+          >
             {data.label}
             <ChevronDownIcon className={iconClassName} />
           </button>
@@ -150,7 +153,7 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({
 
   return (
     <nav
-      className={clsx(
+      className={twMerge(
         'flex items-center justify-between gap-4',
         'sticky top-0 z-50 border-b px-4 py-3 backdrop-blur-sm transition-colors sm:px-8',
         'bg-white/95 dark:bg-black/95',

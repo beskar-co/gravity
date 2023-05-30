@@ -3,7 +3,7 @@
 import type { ElementRef, ComponentPropsWithoutRef, FC } from 'react';
 import { Fragment, forwardRef } from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type { PlusIcon } from '@heroicons/react/20/solid';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
@@ -35,7 +35,7 @@ export type DropdownProps = ComponentPropsWithoutRef<
 };
 
 const DropdownItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
-  const className = clsx(
+  const className = twMerge(
     'relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none',
     'focus:bg-neutral-100 dark:focus:bg-neutral-700',
     'data-[disabled]:pointer-events-none data-[disabled]:opacity-50'
@@ -99,7 +99,7 @@ export const Dropdown: FC<DropdownProps> = forwardRef<
     <DropdownMenuPrimitive.Content
       collisionPadding={16}
       ref={ref}
-      className={clsx(
+      className={twMerge(
         'z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-100 bg-white p-1 text-neutral-700 shadow-md animate-in slide-in-from-left-1 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400',
         className
       )}
@@ -126,7 +126,7 @@ export const Dropdown: FC<DropdownProps> = forwardRef<
                   </DropdownMenuPrimitive.SubTrigger>
                   <DropdownMenuPrimitive.Portal>
                     <DropdownMenuPrimitive.SubContent
-                      className={clsx(
+                      className={twMerge(
                         'z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-100 bg-white p-1 text-neutral-700 shadow-md animate-in slide-in-from-left-1 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400'
                       )}
                     >

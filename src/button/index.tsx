@@ -1,5 +1,5 @@
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import Link from 'next/link';
 import type {
   ButtonHTMLAttributes,
@@ -17,24 +17,24 @@ const buttonSizes = {
 };
 
 const buttonVariants = {
-  primary: clsx(
+  primary: twMerge(
     'bg-neutral-900 text-white hover:bg-neutral-700',
     'dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200'
   ),
-  destructive: clsx(
+  destructive: twMerge(
     'bg-red-500 text-white hover:bg-red-600',
     'dark:hover:bg-red-600'
   ),
-  secondary: clsx(
+  secondary: twMerge(
     'bg-neutral-100 text-neutral-900 hover:bg-neutral-200',
     'dark:bg-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-600'
   ),
-  tertiary: clsx(
+  tertiary: twMerge(
     'bg-transparent border',
     'border-white/80 hover:bg-neutral-100 text-neutral-800',
     'dark:border-white/20 dark:text-neutral-100 dark:hover:bg-neutral-700'
   ),
-  link: clsx(
+  link: twMerge(
     'underline-offset-4 hover:underline',
     'bg-transparent text-neutral-900 hover:bg-transparent',
     'dark:text-neutral-100 dark:bg-transparent dark:hover:bg-transparent'
@@ -57,7 +57,7 @@ const Button: FC<ButtonProps> = forwardRef<
   HTMLButtonElement | ElementRef<typeof Link>,
   ButtonProps
 >(({ className, variant = 'primary', size = 'md', rounded, ...props }, ref) => {
-  const compiledClassName = clsx(
+  const compiledClassName = twMerge(
     baseClassName,
     rounded ? 'rounded-full' : 'rounded-md',
     buttonVariants[variant],

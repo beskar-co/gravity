@@ -6,7 +6,7 @@ import { ClipboardDocumentIcon } from '@heroicons/react/24/outline';
 import { Tooltip } from '../tooltip';
 import dynamic from 'next/dynamic';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type { SyntaxHighlighterProps } from 'react-syntax-highlighter';
 import { toast } from '../toast';
 
@@ -257,7 +257,7 @@ export const Snippet: FC<SnippetProps> = forwardRef<
 
     return (
       <div
-        className={clsx(
+        className={twMerge(
           'relative overflow-hidden rounded bg-black p-4',
           className
         )}
@@ -279,7 +279,7 @@ export const Snippet: FC<SnippetProps> = forwardRef<
           <Tooltip content="Copy to clipboard">
             <button
               type="button"
-              className={clsx(
+              className={twMerge(
                 'absolute rounded bg-neutral-900 p-2 transition-colors hover:bg-neutral-800',
                 lines.length > 1 ? 'right-4 top-4' : 'right-2.5 top-2.5'
               )}

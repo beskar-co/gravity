@@ -2,7 +2,7 @@
 
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import Link from 'next/link';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import { Select } from '../select';
 import type {
   ComponentPropsWithoutRef,
@@ -28,7 +28,7 @@ const Badge: FC<{
   active: boolean;
 }> = ({ children, active }) => (
   <span
-    className={clsx(
+    className={twMerge(
       active
         ? 'bg-neutral-200 text-neutral-900'
         : 'bg-neutral-100 text-neutral-500',
@@ -67,10 +67,10 @@ const Tabs: FC<TabsProps> = forwardRef<
       {...props}
       value={value}
       ref={ref}
-      className={clsx('hidden sm:block', className)}
+      className={twMerge('hidden sm:block', className)}
     >
       <TabsPrimitive.List
-        className={clsx(
+        className={twMerge(
           '-mb-px flex gap-4 border-b md:gap-6',
           'border-neutral-200 dark:border-neutral-800'
         )}
@@ -79,7 +79,7 @@ const Tabs: FC<TabsProps> = forwardRef<
           <TabsPrimitive.Trigger
             key={item.value}
             value={item.value}
-            className={clsx(
+            className={twMerge(
               'flex whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-sm font-medium',
               'text-neutral-500 hover:border-neutral-700 hover:text-neutral-600',
               'dark:text-neutral-400 dark:hover:border-neutral-200 dark:hover:text-neutral-300',

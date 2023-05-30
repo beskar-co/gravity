@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 import type { FC, ReactNode } from 'react';
 import { forwardRef } from 'react';
 
@@ -26,7 +26,7 @@ export const Badge: FC<BadgeProps> = forwardRef<HTMLDivElement, BadgeProps>(
   ({ size = 'md', variant = 'primary', className, ...props }, ref) => (
     <span
       ref={ref}
-      className={clsx(
+      className={twMerge(
         'inline-flex items-center rounded-full font-medium',
         badgeSizes[size],
         badgeVariants[variant],
