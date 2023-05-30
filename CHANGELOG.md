@@ -1,3 +1,10 @@
+## [0.10.17](https://github.com/beskar-co/gravity/compare/v0.10.16...v0.10.17) (2023-05-30)
+
+
+### Bug Fixes
+
+* **classnames:** switch from clsx to tailwind-merge ([429f928](https://github.com/beskar-co/gravity/commit/429f9284eb2db966cc9e8264ec22a2b92d442bab))
+
 ## [0.10.16](https://github.com/beskar-co/gravity/compare/v0.10.15...v0.10.16) (2023-05-24)
 
 
