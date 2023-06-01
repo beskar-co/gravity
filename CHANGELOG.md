@@ -1,3 +1,11 @@
+## [0.10.18](https://github.com/beskar-co/gravity/compare/v0.10.17...v0.10.18) (2023-06-01)
+
+
+### Bug Fixes
+
+* **select:** add classname support to select ([08374c9](https://github.com/beskar-co/gravity/commit/08374c9b458624c999eceaa431eca3e0346a976c))
+* **select:** fix potential overflow in select label ([0344383](https://github.com/beskar-co/gravity/commit/03443833053a59597c117e0bcd133d4bf451185c))
+
 ## [0.10.17](https://github.com/beskar-co/gravity/compare/v0.10.16...v0.10.17) (2023-05-30)
 
 
