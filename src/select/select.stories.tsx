@@ -12,9 +12,10 @@ export default meta;
 
 export const Default: StoryObj<typeof Select> = {
   args: {
+    className: 'max-w-[10rem]',
     disabled: false,
     name: 'fruit',
-    placeholder: 'Select a fruit',
+    placeholder: 'Select a fruit, something good you like',
     data: [
       { label: 'Fruits', items: [{ value: 'apple', label: 'Apple' }] },
       {

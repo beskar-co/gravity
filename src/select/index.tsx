@@ -41,7 +41,12 @@ export const Select: FC<SelectProps> = forwardRef<
   );
 
   return (
-    <div className={twMerge('grid w-full items-center gap-1.5', className)}>
+    <div
+      className={twMerge(
+        'flex w-full flex-col items-center gap-1.5',
+        className
+      )}
+    >
       {label && <Label>{label}</Label>}
       <SelectPrimitive.Root {...props}>
         <SelectPrimitive.Trigger
@@ -49,8 +54,10 @@ export const Select: FC<SelectProps> = forwardRef<
           className="flex h-10 w-full items-center justify-between rounded-md border border-neutral-300 bg-transparent px-3 py-2 text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700 dark:text-neutral-50 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900"
           {...props}
         >
-          <SelectPrimitive.Value placeholder={placeholder} />
-          <ChevronDownIcon className="h-4 w-4 opacity-50" />
+          <div className="w-full truncate">
+            <SelectPrimitive.Value placeholder={placeholder} />
+          </div>
+          <ChevronDownIcon className="h-4 w-4 shrink-0 opacity-50" />
         </SelectPrimitive.Trigger>
         <SelectPrimitive.Portal>
           <SelectPrimitive.Content className="relative z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-100 bg-white text-neutral-700 shadow-md animate-in fade-in-80 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400">
