@@ -9,8 +9,10 @@ import { Label } from '../label';
 import Image from 'next/image';
 import { Badge } from '../badge';
 import { Input } from '../input';
+import { twMerge } from 'tailwind-merge';
 
 type SelectProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
+  className?: string;
   placeholder?: string;
   label?: string;
   search?: boolean;
@@ -30,7 +32,7 @@ type SelectProps = ComponentPropsWithoutRef<typeof SelectPrimitive.Root> & {
 export const Select: FC<SelectProps> = forwardRef<
   ElementRef<typeof SelectPrimitive.Root>,
   SelectProps
->(({ placeholder, data, label, search, ...props }, ref) => {
+>(({ placeholder, data, label, search, className, ...props }, ref) => {
   const [query, setQuery] = useState('');
   const queryData = data.filter((group) =>
     group.items.some((item) =>
@@ -39,7 +41,7 @@ export const Select: FC<SelectProps> = forwardRef<
   );
 
   return (
-    <div className="grid w-full items-center gap-1.5">
+    <div className={twMerge('grid w-full items-center gap-1.5', className)}>
       {label && <Label>{label}</Label>}
       <SelectPrimitive.Root {...props}>
         <SelectPrimitive.Trigger
