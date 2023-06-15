@@ -17,6 +17,7 @@ const config: StorybookConfig = {
       },
     },
     '@storybook/addon-a11y',
+    'storybook-tailwind-dark-mode',
   ],
   framework: {
     name: '@storybook/nextjs',

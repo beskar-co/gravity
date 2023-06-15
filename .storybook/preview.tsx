@@ -1,5 +1,4 @@
 import type { Parameters } from '@storybook/react';
-import { withThemeByDataAttribute } from '@storybook/addon-styling';
 import { Preview } from '@storybook/react';
 import { TooltipProvider } from '@/tooltip';
 import { Toaster } from '@/toast';
@@ -29,18 +28,15 @@ export const parameters: Parameters = {
   },
 };
 
-export const decorators = [
-  withThemeByDataAttribute({
-    themes: {
-      light: 'light',
-      dark: 'dark',
-    },
-    defaultTheme: 'light',
-    attributeName: 'data-mode',
-  }),
-];
-
 const preview: Preview = {
+  globalTypes: {
+    darkMode: {
+      defaultValue: false,
+    },
+    className: {
+      defaultValue: 'dark', // Set your custom dark mode class name
+    },
+  },
   decorators: [
     (Story) => (
       <>

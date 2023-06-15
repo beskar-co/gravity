@@ -3,7 +3,7 @@ import animate from 'tailwindcss-animate';
 
 const config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: ['class', '[data-mode="dark"]'],
+  darkMode: 'class',
   theme: {
     extend: {
       keyframes: {
