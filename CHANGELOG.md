@@ -1,3 +1,12 @@
+## [0.10.19](https://github.com/beskar-co/gravity/compare/v0.10.18...v0.10.19) (2023-06-15)
+
+
+### Bug Fixes
+
+* **dropdown:** improve class composition ([f4caf9c](https://github.com/beskar-co/gravity/commit/f4caf9c36ac1cab81388c63aae98d5bf627cda2b))
+* **dropdown:** made dropdowns darker ([a28fc57](https://github.com/beskar-co/gravity/commit/a28fc5748a7b4a50a6ba91b4df24bbfeb378b09b))
+* **storybook:** fix dark mode ([d771cee](https://github.com/beskar-co/gravity/commit/d771cee2b56f8e5a5bfb061156192391eb23ecb9))
+
 ## [0.10.18](https://github.com/beskar-co/gravity/compare/v0.10.17...v0.10.18) (2023-06-01)
 
 
