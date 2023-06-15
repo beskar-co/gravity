@@ -37,7 +37,7 @@ export type DropdownProps = ComponentPropsWithoutRef<
 const DropdownItem: FC<{ item: DropdownItemProps }> = ({ item }) => {
   const className = twMerge(
     'relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none',
-    'focus:bg-neutral-100 dark:focus:bg-neutral-700',
+    'focus:bg-neutral-100 dark:focus:bg-neutral-800',
     'data-[disabled]:pointer-events-none data-[disabled]:opacity-50'
   );
   const Inner = (
@@ -100,7 +100,7 @@ export const Dropdown: FC<DropdownProps> = forwardRef<
       collisionPadding={16}
       ref={ref}
       className={twMerge(
-        'z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-100 bg-white p-1 text-neutral-700 shadow-md animate-in slide-in-from-left-1 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400',
+        'z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-100 bg-white p-1 text-neutral-700 shadow-md animate-in slide-in-from-left-1 dark:border-neutral-900 dark:bg-neutral-900 dark:text-neutral-400',
         className
       )}
     >
@@ -115,7 +115,7 @@ export const Dropdown: FC<DropdownProps> = forwardRef<
             {item.items?.map((subItem) =>
               subItem.items ? (
                 <DropdownMenuPrimitive.Sub key={subItem.label}>
-                  <DropdownMenuPrimitive.SubTrigger className="flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-neutral-100 data-[state=open]:bg-neutral-100 dark:focus:bg-neutral-700 dark:data-[state=open]:bg-neutral-700">
+                  <DropdownMenuPrimitive.SubTrigger className="flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm font-medium outline-none focus:bg-neutral-100 data-[state=open]:bg-neutral-100 dark:focus:bg-neutral-800 dark:data-[state=open]:bg-neutral-800">
                     {subItem.icon && (
                       <div className="mr-2 h-4 w-4">
                         <subItem.icon />
@@ -127,7 +127,7 @@ export const Dropdown: FC<DropdownProps> = forwardRef<
                   <DropdownMenuPrimitive.Portal>
                     <DropdownMenuPrimitive.SubContent
                       className={twMerge(
-                        'z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-100 bg-white p-1 text-neutral-700 shadow-md animate-in slide-in-from-left-1 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400'
+                        'z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-100 bg-white p-1 text-neutral-700 shadow-md animate-in slide-in-from-left-1 dark:border-neutral-900 dark:bg-neutral-900 dark:text-neutral-400'
                       )}
                     >
                       {subItem.items.map((subSubItem) => (
@@ -145,7 +145,7 @@ export const Dropdown: FC<DropdownProps> = forwardRef<
             )}
           </DropdownMenuPrimitive.Group>
           {index !== items.length - 1 && (
-            <DropdownMenuPrimitive.Separator className="-mx-1 my-1 h-px bg-neutral-100 dark:bg-neutral-700" />
+            <DropdownMenuPrimitive.Separator className="-mx-1 my-1 h-px bg-neutral-100 dark:bg-neutral-800" />
           )}
         </Fragment>
       ))}
