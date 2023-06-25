@@ -41,12 +41,7 @@ export const Select: FC<SelectProps> = forwardRef<
   );
 
   return (
-    <div
-      className={twMerge(
-        'flex w-full flex-col items-center gap-1.5',
-        className
-      )}
-    >
+    <div className={twMerge('flex w-full flex-col gap-1.5', className)}>
       {label && <Label>{label}</Label>}
       <SelectPrimitive.Root {...props}>
         <SelectPrimitive.Trigger
