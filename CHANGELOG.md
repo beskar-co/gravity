@@ -1,3 +1,10 @@
+## [0.10.20](https://github.com/beskar-co/gravity/compare/v0.10.19...v0.10.20) (2023-06-25)
+
+
+### Bug Fixes
+
+* **select:** fix centered select label ([42870b1](https://github.com/beskar-co/gravity/commit/42870b13d71cbe9e50dedc7a4546081e9b17e221))
+
 ## [0.10.19](https://github.com/beskar-co/gravity/compare/v0.10.18...v0.10.19) (2023-06-15)
 
 
