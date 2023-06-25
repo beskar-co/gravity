@@ -1,3 +1,10 @@
+## [0.10.21](https://github.com/beskar-co/gravity/compare/v0.10.20...v0.10.21) (2023-06-25)
+
+
+### Bug Fixes
+
+* **select:** fix classname passthrough ([fe72ded](https://github.com/beskar-co/gravity/commit/fe72ded6a8de3f86c124fd1be7652f8f1e56e4dc))
+
 ## [0.10.20](https://github.com/beskar-co/gravity/compare/v0.10.19...v0.10.20) (2023-06-25)
 
 
