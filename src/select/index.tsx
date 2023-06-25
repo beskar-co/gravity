@@ -41,12 +41,15 @@ export const Select: FC<SelectProps> = forwardRef<
   );
 
   return (
-    <div className={twMerge('flex w-full flex-col gap-1.5', className)}>
+    <div className="flex w-full flex-col gap-1.5">
       {label && <Label>{label}</Label>}
       <SelectPrimitive.Root {...props}>
         <SelectPrimitive.Trigger
           ref={ref}
-          className="flex h-10 w-full items-center justify-between rounded-md border border-neutral-300 bg-transparent px-3 py-2 text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700 dark:text-neutral-50 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900"
+          className={twMerge(
+            'flex h-10 w-full items-center justify-between rounded-md border border-neutral-300 bg-transparent px-3 py-2 text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700 dark:text-neutral-50 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900',
+            className
+          )}
           {...props}
         >
           <div className="w-full truncate">
