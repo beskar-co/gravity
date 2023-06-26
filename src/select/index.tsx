@@ -47,7 +47,10 @@ export const Select: FC<SelectProps> = forwardRef<
         <SelectPrimitive.Trigger
           ref={ref}
           className={twMerge(
-            'flex h-10 w-full items-center justify-between rounded-md border border-neutral-300 bg-transparent px-3 py-2 text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700 dark:text-neutral-50 dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900',
+            'flex h-10 w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+            'placeholder:text-neutral-500',
+            'border-neutral-300 text-black focus:ring-neutral-400',
+            'dark:border-neutral-700 dark:text-white dark:focus:ring-neutral-400 dark:focus:ring-offset-neutral-900',
             className
           )}
           {...props}
@@ -58,10 +61,22 @@ export const Select: FC<SelectProps> = forwardRef<
           <ChevronDownIcon className="h-4 w-4 shrink-0 opacity-50" />
         </SelectPrimitive.Trigger>
         <SelectPrimitive.Portal>
-          <SelectPrimitive.Content className="relative z-50 min-w-[8rem] overflow-hidden rounded-md border border-neutral-100 bg-white text-neutral-700 shadow-md animate-in fade-in-80 dark:border-neutral-800 dark:bg-neutral-800 dark:text-neutral-400">
+          <SelectPrimitive.Content
+            className={twMerge(
+              'relative z-50 min-w-[8rem] overflow-hidden rounded-md border shadow-md animate-in fade-in-80',
+              'border-neutral-100 bg-white text-neutral-700',
+              'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400'
+            )}
+          >
             <SelectPrimitive.Viewport className="p-1">
               {search && (
-                <div className="border-b border-neutral-200 pl-8 dark:border-neutral-700">
+                <div
+                  className={twMerge(
+                    'border-b pl-8',
+                    'border-neutral-200',
+                    'dark:border-neutral-700'
+                  )}
+                >
                   <Input
                     placeholder="Search..."
                     className="rounded-bl-none rounded-br-none border-0"
@@ -74,7 +89,13 @@ export const Select: FC<SelectProps> = forwardRef<
                 <Fragment key={group.label}>
                   <SelectPrimitive.Group>
                     {queryData.length > 1 && (
-                      <SelectPrimitive.Label className="py-1.5 pl-8 pr-2 text-sm font-semibold text-neutral-900 dark:text-neutral-300">
+                      <SelectPrimitive.Label
+                        className={twMerge(
+                          'py-1.5 pl-8 pr-2 text-sm font-semibold',
+                          'text-black',
+                          'dark:text-white'
+                        )}
+                      >
                         {group.label}
                       </SelectPrimitive.Label>
                     )}
@@ -83,7 +104,11 @@ export const Select: FC<SelectProps> = forwardRef<
                         value={item.value}
                         key={item.value}
                         disabled={item.disabled}
-                        className="relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-neutral-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-700"
+                        className={twMerge(
+                          'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+                          'focus:bg-neutral-100',
+                          'dark:focus:bg-neutral-800'
+                        )}
                       >
                         <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
                           <SelectPrimitive.ItemIndicator>
@@ -115,7 +140,13 @@ export const Select: FC<SelectProps> = forwardRef<
                     ))}
                   </SelectPrimitive.Group>
                   {data.length > 1 && index < data.length - 1 && (
-                    <SelectPrimitive.Separator className="-mx-1 my-1 h-px bg-neutral-100 dark:bg-neutral-700" />
+                    <SelectPrimitive.Separator
+                      className={twMerge(
+                        '-mx-1 my-1 h-px',
+                        'bg-neutral-100',
+                        'dark:bg-neutral-700'
+                      )}
+                    />
                   )}
                 </Fragment>
               ))}
