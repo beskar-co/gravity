@@ -1,3 +1,10 @@
+# [0.11.0](https://github.com/beskar-co/gravity/compare/v0.10.22...v0.11.0) (2023-06-26)
+
+
+### Features
+
+* **scrollarea:** create scrollarea component ([a22e67a](https://github.com/beskar-co/gravity/commit/a22e67a0797f0c25f0d432c7fa24e255d09523f9))
+
 ## [0.10.22](https://github.com/beskar-co/gravity/compare/v0.10.21...v0.10.22) (2023-06-26)
 
 
