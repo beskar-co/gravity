@@ -1,3 +1,10 @@
+## [0.10.22](https://github.com/beskar-co/gravity/compare/v0.10.21...v0.10.22) (2023-06-26)
+
+
+### Bug Fixes
+
+* **select:** fix select colors ([4b329c5](https://github.com/beskar-co/gravity/commit/4b329c5968ccf2f373d0a2ccd55912ef33c909a0))
+
 ## [0.10.21](https://github.com/beskar-co/gravity/compare/v0.10.20...v0.10.21) (2023-06-25)
 
 
